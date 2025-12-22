@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Aloevera Display Font - Title Font */
+@font-face {
+  font-family: 'Aloevera Display';
+  src: url('./aloevera-display/AloeveraDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Aloevera Display';
+  src: url('./aloevera-display/AloeveraDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Aloevera Display';
+  src: url('./aloevera-display/AloeveraDisplay-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+/* Behind The Nineties Font - Secondary Font */
+@font-face {
+  font-family: 'Behind The Nineties';
+  src: url('./behind-the-nineties/Behind The Nineties Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Behind The Nineties';
+  src: url('./behind-the-nineties/Behind The Nineties Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* Custom font utility classes */
+.font-aloevera {
+  font-family: 'Aloevera Display', sans-serif;
+}
+
+.font-nineties {
+  font-family: 'Behind The Nineties', sans-serif;
+}
