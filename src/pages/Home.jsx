@@ -65,7 +65,7 @@ export default function Home() {
       <Scroll3DSection />
       {/* Header */}
       <header
-        className='relative z-50 flex items-center justify-between px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-aloevera uppercase'
+        className='relative z-50 flex items-center justify-between px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
         style={{ color: "#FF1275" }}
       >
         {/* Left – OUR STORY */}
@@ -96,7 +96,7 @@ export default function Home() {
             Contact
           </a>
           <button
-            className='px-4 py-1.5 md:px-5 md:py-2 rounded-full font-semibold hover:bg-[#FF1275] hover:text-white transition-all duration-300 font-aloevera cursor-pointer'
+            className='px-4 py-1.5 md:px-5 md:py-2 rounded-full font-semibold hover:bg-[#FF1275] hover:text-white transition-all duration-300 font-montserrat cursor-pointer'
             style={{
               border: "1px solid #FF1275",
               backgroundColor: "transparent",
@@ -109,19 +109,19 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className='relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-visible px-8 py-16 mb-20'>
+      <section className='relative min-h-[calc(100vh-80px)] flex items-center overflow-visible px-16 lg:px-32 py-20 mb-20'>
         {/* Centered Content Container */}
-        <div className='relative w-full max-w-5xl'>
+        <div className='relative w-full'>
           {/* Heading and Can Container */}
           <div className='relative flex items-center justify-center min-h-96'>
             {/* SODA UNJUNKED Heading */}
             <h1
-              className='text-center font-aloevera'
+              className='text-center font-montserrat'
               style={{
                 color: "#FF1275E5",
                 fontSize: "200px",
                 lineHeight: "1.1",
-                fontWeight: "100",
+                fontWeight: "400",
                 letterSpacing: "-0.02em",
                 zIndex: "10",
                 position: "relative",
@@ -144,70 +144,113 @@ export default function Home() {
             </div> */}
           </div>
 
-          {/* CTA Button - Below the content */}
-          <div className='flex mt-12'>
-            <button
-              className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-aloevera'
-              style={{
-                border: `1px solid #FF1275E5`,
-                backgroundColor: "transparent",
-                color: "#FF1275E5",
-              }}
-            >
-              GET YOUR 12 PACK
-            </button>
+          {/* Product Description and CTA */}
+          <div className='mt-24 flex items-end justify-between'>
+            <div>
+              <div className='font-montserrat tracking-wide uppercase mb-4' style={{ color: "#FF1275E5" }}>
+                <p className='text-sm md:text-base'>rich, crafted cola.</p>
+                <p className='text-sm md:text-base'>sweetened with organic dates</p>
+                <p className='text-sm md:text-base'>nothing artificial.</p>
+              </div>
+              
+              {/* CTA Button */}
+              <button
+                className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
+                style={{
+                  border: `1px solid #FF1275E5`,
+                  backgroundColor: "transparent",
+                  color: "#FF1275E5",
+                }}
+              >
+                Buy now
+              </button>
+            </div>
+            
+            <div className='ml-8 p-3 rounded-full' style={{ 
+              border: '2px solid #FF1275E5', 
+              backgroundColor: 'transparent' 
+            }}>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#FF1275E5" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
+      <section className="my-32 py-32"></section>
 
       {/* Sugar Facts Section */}
       <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#500730" }}
       >
-        <div className='relative max-w-xl'>
-          <div className='text-left'>
-            {/* Heading with Nineties Font */}
-            <h2
-              className='font-nineties mb-8'
-              style={{
-                color: "#FF1275",
-                fontSize: "100px",
-                lineHeight: "1.1",
-                fontWeight: "400",
-                letterSpacing: "0.02em",
-                maxWidth: "600px",
-              }}
-            >
-              13g of sugar
-              <br />
-              from dates.
-            </h2>
+        <div className='relative w-full flex items-center justify-between gap-16'>
+          <div className='max-w-xl'>
+            <div className='text-left'>
+              {/* Heading with Nineties Font */}
+              <h2
+                className='font-nineties mb-8'
+                style={{
+                  color: "#FF1275",
+                  fontSize: "100px",
+                  lineHeight: "1.1",
+                  fontWeight: "400",
+                  letterSpacing: "0.02em",
+                  maxWidth: "600px",
+                }}
+              >
+                15g of sugar
+                <br />
+                from dates.
+              </h2>
 
-            {/* Benefits Text */}
-            <div
-              className='space-y-2 mb-8 font-aloevera tracking-widest text-xs md:text-sm'
-              style={{ color: "#FF1275" }}
-            >
-              <p>LIGHT ON THE BODY,</p>
-              <p>EASY ON THE MIND,</p>
-              <p>FREE FROM THE CRASH.</p>
+              {/* Benefits Text */}
+              <div
+                className='space-y-2 mb-8 mt-32 font-montserrat tracking-widest text-xs md:text-sm'
+                style={{ color: "#FF1275" }}
+              >
+                <p>LIGHT ON THE BODY,</p>
+                <p>EASY ON THE MIND,</p>
+                <p>FREE FROM THE CRASH.</p>
+              </div>
+
+              {/* CTA Button */}
+              <button
+                className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
+                style={{
+                  border: `2px solid #FF1275`,
+                  backgroundColor: "transparent",
+                  color: "#FF1275",
+                }}
+              >
+                BUY a 12-PACK TODAY
+              </button>
             </div>
-
-            {/* CTA Button */}
-            <button
-              className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-aloevera'
-              style={{
-                border: `2px solid #FF1275`,
-                backgroundColor: "#FF1275",
-                color: "#500730",
-              }}
-            >
-              GET YOUR 12 PACK
-            </button>
+          </div>
+          
+          {/* Right Image */}
+          <div className='flex-shrink-0 mt-32 '>
+            <img
+              src='/images/hero1.png'
+              alt='Product'
+              className='w-[50%] ml-auto object-contain mt-32 '
+            />
           </div>
         </div>
       </section>
+      <section className="my-32 py-32"></section>
 
       {/* Our Story Section */}
       <section
@@ -229,16 +272,14 @@ export default function Home() {
                 letterSpacing: "0.02em",
               }}
             >
-              a new
+              a million miles
               <br />
-              perspective
-              <br />
-              on taste
+              in the making
             </h2>
 
             {/* Story Text */}
             <div
-              className='space-y-3 font-aloevera tracking-widest text-xs md:text-sm'
+              className='space-y-3 font-montserrat tracking-widest text-xs md:text-sm'
               style={{ color: "#FF1275" }}
             >
               <p>WE TRAVELLED THE WORLD</p>
@@ -251,15 +292,67 @@ export default function Home() {
           </div>
 
           {/* Right Image */}
-          <div className='flex justify-center items-center'>
+          <div className='flex justify-center items-center mt-32'>
             <img
               src='/images/hero2.png'
               alt='Our Story'
-              className='w-full h-auto drop-shadow-lg'
+              className='w-full h-auto drop-shadow-lg mt-32 pt-32'
             />
           </div>
         </div>
       </section>
+      {/* Reference Section - Light on the spots */}
+      <section
+        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
+        style={{ backgroundColor: "#500730" }}
+      >
+        <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-16 w-full items-center '>
+          {/* Left Content */}
+          <div className='flex-shrink-0'>
+            <img
+              src='/images/hero3.png'
+              alt='Product'
+              className='object-contain'
+            />
+          </div>
+          <div className='flex-1'>
+            <div className='text-left'>
+              <h2
+                className='font-montserrat uppercase mb-2'
+                style={{
+                  color: "#FF1275",
+                  fontSize: "18px",
+                  lineHeight: "2",
+                  fontWeight: "300",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Light on the body,
+                <br />
+                easy on the mind,
+                <br />
+                Free from the crash.
+              </h2>
+
+              {/* CTA Button */}
+              <button
+                className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat mt-4'
+                style={{
+                  border: `2px solid #FF1275`,
+                  backgroundColor: "transparent",
+                  color: "#FF1275",
+                }}
+              >
+                Get your 12 pack
+              </button>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          
+        </div>
+      </section>
+      <section className="my-32 py-32"></section>
 
       {/* Cola Sublime Section */}
       <section
@@ -311,12 +404,12 @@ export default function Home() {
             <div className='text-left pt-24'>
               {/* Heading */}
               <h2
-                className='font-aloevera mb-12'
+                className='font-montserrat mb-12'
                 style={{
                   color: "#FF1275",
                   fontSize: "140px",
                   lineHeight: "0.9",
-                  fontWeight: "100",
+                  fontWeight: "400",
                   letterSpacing: "0.03em",
                 }}
               >
@@ -325,11 +418,12 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-10 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-aloevera'
+                className='px-10 py-3 rounded-full text-xs hover:opacity-70 transition uppercase tracking-widest font-montserrat'
                 style={{
                   border: "none",
                   backgroundColor: "#FF1275",
                   color: "#500730",
+                  fontWeight: "600",
                 }}
               >
                 TRY UNPOP NOW
@@ -358,7 +452,7 @@ export default function Home() {
           {/* Left Content */}
           <div className='text-center flex-1 z-10'>
             <h2
-              className='font-aloevera mb-8'
+              className='font-quick-writers mb-8'
               style={{
                 color: "#FF1275",
                 fontSize: "120px",
@@ -371,43 +465,20 @@ export default function Home() {
               <br />
               sugar
               <br />
-              <span style={{ fontSize: "80px", fontStyle: "italic" }}>
+              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
                 from dates
               </span>
             </h2>
-          </div>
-
-          {/* Right Image - Rotated and Mirrored */}
-          <div className='absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none'>
-            <div
-              style={{
-                width: "689px",
-                height: "473px",
-                position: "relative",
-                transform: "translateX(100px) rotateY(180deg) rotate(330deg)",
-                opacity: 1,
-              }}
-            >
-              <img
-                src='/images/hero3.png'
-                alt='Sugar from dates'
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
           </div>
         </div>
       </section>
 
       {/* Soda Back to Its Senses Section */}
-      <section
-        className='relative w-full py-32 pb-0 overflow-visible'
+       <section
+        className='relative py-20 overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#500730" }}
       >
-        <div className='relative max-w-7xl mx-auto px-8 lg:px-16 flex flex-col'>
+        <div className='relative mx-auto px-8 lg:px-16 flex flex-col'>
           {/* Main Row - Heading and Ingredients */}
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative z-20'>
             {/* Left - Heading */}
@@ -454,7 +525,7 @@ export default function Home() {
                     letterSpacing: "0.08em",
                     lineHeight: "1.6",
                   }}
-                  className='font-aloevera'
+                  className='font-montserrat'
                 >
                   Why it's there
                 </p>
@@ -481,7 +552,7 @@ export default function Home() {
                     letterSpacing: "0.08em",
                     lineHeight: "1.6",
                   }}
-                  className='font-aloevera'
+                  className='font-montserrat'
                 >
                   VANILLA BEAN,
                   <br />
@@ -511,7 +582,7 @@ export default function Home() {
                     letterSpacing: "0.08em",
                     lineHeight: "1.6",
                   }}
-                  className='font-aloevera'
+                  className='font-montserrat'
                 >
                   NATURAL SWEETNESS
                   <br />
@@ -544,7 +615,7 @@ export default function Home() {
                     letterSpacing: "0.08em",
                     lineHeight: "1.6",
                   }}
-                  className='font-aloevera'
+                  className='font-montserrat'
                 >
                   THE KIND THAT
                   <br />
@@ -642,7 +713,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               HF CORN SYRUP OR ASPARTAME
             </div>
@@ -654,7 +725,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               STEVIA + SUGAR + PREBIOTICS
             </div>
@@ -666,7 +737,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               DATE SYRUP + STEVIA
             </div>
@@ -692,7 +763,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               CLOYING SUGAR CRASH
             </div>
@@ -704,7 +775,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               CHALKY, FAKE-SWEET
             </div>
@@ -716,7 +787,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               CLEAN, CRISP, & GONE
             </div>
@@ -742,7 +813,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               NOSTALGIA & JINGLES
             </div>
@@ -754,7 +825,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               SCIENCE PROJECT MEETS NSYNC
             </div>
@@ -766,7 +837,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               HONESTLY
             </div>
@@ -792,7 +863,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               HEAVY
             </div>
@@ -804,7 +875,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               CONFUSED
             </div>
@@ -816,7 +887,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               ALIVE, FIZZY, REAL
             </div>
@@ -842,7 +913,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               A FEELING FROM 1987
             </div>
@@ -854,7 +925,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               QUESTIONABLE GUT SCIENCE
             </div>
@@ -866,7 +937,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               SODA, HOW IT OUGHT TO BE
             </div>
@@ -875,7 +946,7 @@ export default function Home() {
           {/* CTA Button */}
           <div className='flex justify-center mt-16'>
             <button
-              className='px-10 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-aloevera'
+              className='px-10 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
               style={{
                 border: "none",
                 backgroundColor: "#FF1275",
@@ -887,11 +958,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section
-        className='relative w-full py-32 overflow-visible'
+         <section
+        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#500730" }}
       >
-        <div className='relative max-w-7xl mx-auto px-8 lg:px-16'>
+        <div className='relative mx-auto px-8 lg:px-16'>
           {/* Heading */}
           <div className='text-center mb-16'>
             <h2
@@ -919,7 +990,7 @@ export default function Home() {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
             {/* Left - Story Text */}
             <div
-              className='space-y-3 font-aloevera tracking-widest text-xs md:text-sm'
+              className='space-y-3 font-montserrat tracking-widest text-xs md:text-sm'
               style={{ color: "#FF1275" }}
             >
               <p>WE DIDN'T ASK FOR PERMISSION.</p>
@@ -975,12 +1046,12 @@ export default function Home() {
             <div className='text-left z-20 flex items-end gap-8'>
               {/* Heading */}
               <h2
-                className='font-aloevera'
+                className='font-montserrat'
                 style={{
                   color: "#FF1275",
                   fontSize: "140px",
                   lineHeight: "0.9",
-                  fontWeight: "100",
+                  fontWeight: "400",
                   letterSpacing: "0.03em",
                 }}
               >
@@ -993,7 +1064,7 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-8 py-2 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-aloevera'
+                className='px-8 py-2 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
                 style={{
                   border: "1px solid #FF1275",
                   backgroundColor: "transparent",
@@ -1043,7 +1114,7 @@ export default function Home() {
             style={{ transform: "skewY(-2deg)" }}
           >
             <p
-              className='font-nineties italic'
+              className='font-quick-writers italic'
               style={{
                 color: "#FF1275",
                 fontSize: "56px",
@@ -1055,7 +1126,7 @@ export default function Home() {
               REAL FRUIT. PLENTY OF FIZZ.
             </p>
             <p
-              className='font-nineties italic mt-6'
+              className='font-quick-writers italic mt-6'
               style={{
                 color: "#FF1275",
                 fontSize: "56px",
@@ -1067,7 +1138,7 @@ export default function Home() {
               YOU DRINK IT, YOU BURP.
             </p>
             <p
-              className='font-nineties italic mt-6'
+              className='font-quick-writers italic mt-6'
               style={{
                 color: "#FF1275",
                 fontSize: "56px",
@@ -1079,7 +1150,7 @@ export default function Home() {
               MAYBE YOU SMILE.
             </p>
             <p
-              className='font-nineties italic mt-6'
+              className='font-quick-writers italic mt-6'
               style={{
                 color: "#FF1275",
                 fontSize: "56px",
@@ -1091,7 +1162,7 @@ export default function Home() {
               THAT'S IT, THAT'S THE
             </p>
             <p
-              className='font-nineties italic mt-6'
+              className='font-quick-writers italic mt-6'
               style={{
                 color: "#FF1275",
                 fontSize: "64px",
@@ -1103,7 +1174,7 @@ export default function Home() {
               WHOLE BUSINESS PLAN.
             </p>
             <p
-              className='font-nineties italic mt-12'
+              className='font-quick-writers italic mt-12'
               style={{
                 color: "#FF1275",
                 fontSize: "36px",
@@ -1130,13 +1201,13 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section
-        className='relative w-full py-0 overflow-hidden'
+       <section
+        className='relative py-20 overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
         <div className='relative w-full flex flex-col items-start justify-start pt-24 pb-0'>
-          <div className='max-w-6xl mx-auto px-8 lg:px-16 w-full'>
+          <div className='mx-auto px-8 lg:px-16 w-full'>
             {/* Heading */}
             <h2
               className='font-nineties italic'
@@ -1173,7 +1244,7 @@ export default function Home() {
                     style={{ color: "#FF1275" }}
                   >
                     <span
-                      className='font-aloevera'
+                      className='font-montserrat'
                       style={{
                         fontSize: "16px",
                         fontStyle: "italic",
@@ -1211,7 +1282,7 @@ export default function Home() {
                   {/* Answer - Expandable */}
                   {openFaqIndex === index && (
                     <div
-                      className='pb-6 font-aloevera'
+                      className='pb-6 font-montserrat'
                       style={{
                         color: "#FF1275",
                         fontSize: "14px",
@@ -1267,7 +1338,7 @@ export default function Home() {
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                 }}
-                className='font-aloevera'
+                className='font-montserrat'
               >
                 UNPOP!
               </p>
@@ -1280,7 +1351,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 Buy Unpop!
               </a>
@@ -1293,7 +1364,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 Our Story
               </a>
@@ -1309,7 +1380,7 @@ export default function Home() {
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                 }}
-                className='font-aloevera'
+                className='font-montserrat'
               >
                 SUPPORT
               </p>
@@ -1322,7 +1393,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 Contact Us
               </a>
@@ -1335,7 +1406,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 FAQ
               </a>
@@ -1351,7 +1422,7 @@ export default function Home() {
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                 }}
-                className='font-aloevera'
+                className='font-montserrat'
               >
                 MORE
               </p>
@@ -1364,7 +1435,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 Terms of use
               </a>
@@ -1377,7 +1448,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 Sales Policy
               </a>
@@ -1390,7 +1461,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                   textDecoration: "none",
                 }}
-                className='font-aloevera hover:opacity-70 transition'
+                className='font-montserrat hover:opacity-70 transition'
               >
                 Privacy Policy
               </a>
@@ -1407,7 +1478,7 @@ export default function Home() {
                   textTransform: "uppercase",
                   marginBottom: "4px",
                 }}
-                className='font-aloevera'
+                className='font-montserrat'
               >
                 KEEP IN TOUCH!
               </p>
@@ -1424,7 +1495,7 @@ export default function Home() {
                     fontSize: "12px",
                     flex: 1,
                   }}
-                  className='font-aloevera'
+                  className='font-montserrat'
                 />
                 <button
                   style={{
@@ -1438,7 +1509,7 @@ export default function Home() {
                     cursor: "pointer",
                     letterSpacing: "0.03em",
                   }}
-                  className='font-aloevera hover:opacity-70 transition'
+                  className='font-montserrat hover:opacity-70 transition'
                 >
                   Subscribe
                 </button>
@@ -1454,7 +1525,7 @@ export default function Home() {
                   fontWeight: "400",
                   letterSpacing: "0.02em",
                 }}
-                className='font-aloevera'
+                className='font-montserrat'
               >
                 hello@drinkunpop.com
               </p>
@@ -1556,7 +1627,7 @@ export default function Home() {
                 fontWeight: "400",
                 letterSpacing: "0.02em",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               2025 © UNPOP!
             </p>
@@ -1568,7 +1639,7 @@ export default function Home() {
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
               }}
-              className='font-aloevera'
+              className='font-montserrat'
             >
               ALL RIGHTS RESERVED
             </p>
