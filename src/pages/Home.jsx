@@ -63,6 +63,7 @@ export default function Home() {
       style={{ backgroundColor: "#500730" }}
     >
       <Scroll3DSection />
+
       {/* Header */}
       <header
         className='relative z-50 flex items-center justify-between px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
@@ -107,7 +108,6 @@ export default function Home() {
           </button>
         </div>
       </header>
-
       {/* Hero Section */}
       <section className='relative min-h-[calc(100vh-80px)] flex items-center overflow-visible px-16 lg:px-32 py-20 mb-20'>
         {/* Centered Content Container */}
@@ -147,12 +147,17 @@ export default function Home() {
           {/* Product Description and CTA */}
           <div className='mt-24 flex items-end justify-between'>
             <div>
-              <div className='font-montserrat tracking-wide uppercase mb-4' style={{ color: "#FF1275E5" }}>
+              <div
+                className='font-montserrat tracking-wide uppercase mb-4'
+                style={{ color: "#FF1275E5" }}
+              >
                 <p className='text-sm md:text-base'>rich, crafted cola.</p>
-                <p className='text-sm md:text-base'>sweetened with organic dates</p>
+                <p className='text-sm md:text-base'>
+                  sweetened with organic dates
+                </p>
                 <p className='text-sm md:text-base'>nothing artificial.</p>
               </div>
-              
+
               {/* CTA Button */}
               <button
                 className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
@@ -165,32 +170,34 @@ export default function Home() {
                 Buy now
               </button>
             </div>
-            
-            <div className='ml-8 p-3 rounded-full' style={{ 
-              border: '2px solid #FF1275E5', 
-              backgroundColor: 'transparent' 
-            }}>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="#FF1275E5" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+
+            <div
+              className='ml-8 p-3 rounded-full'
+              style={{
+                border: "2px solid #FF1275E5",
+                backgroundColor: "transparent",
+              }}
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='#FF1275E5'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               >
-                <circle cx="9" cy="21" r="1"/>
-                <circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                <circle cx='9' cy='21' r='1' />
+                <circle cx='20' cy='21' r='1' />
+                <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6' />
               </svg>
             </div>
           </div>
         </div>
       </section>
-      <section className="my-32 py-32"></section>
-
+      <section className='my-32 py-32'></section>
       {/* Sugar Facts Section */}
       <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
@@ -239,7 +246,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          
+
           {/* Right Image */}
           <div className='flex-shrink-0 mt-32 '>
             <img
@@ -250,8 +257,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="my-32 py-32"></section>
-
+      <section className='my-32 py-32'></section>
       {/* Our Story Section */}
       <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
@@ -349,14 +355,14 @@ export default function Home() {
           </div>
 
           {/* Right Image */}
-          
         </div>
       </section>
-      <section className="my-32 py-32"></section>
+
+      <section id='cola-sublime' className='my-32 py-32'></section>
 
       {/* Cola Sublime Section */}
       <section
-        className='relative w-full py-0 overflow-hidden'
+        className='relative w-full py-0 overflow-hidden z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         {/* Top Pattern */}
@@ -445,7 +451,7 @@ export default function Home() {
 
       {/* Reference Section - 13g Sugar from Dates */}
       <section
-        className='relative w-full pt-32 pb-32 overflow-hidden'
+        className='relative w-full pt-32 pb-32 overflow-hidden z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         <div className='relative max-w-7xl mx-auto px-8 lg:px-16 h-full min-h-96 flex items-center justify-between'>
@@ -465,7 +471,14 @@ export default function Home() {
               <br />
               sugar
               <br />
-              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
+              <span
+                style={{
+                  fontSize: "80px",
+                  fontWeight: "600",
+                  textTransform: "uppercase",
+                  fontFamily: "Montserrat",
+                }}
+              >
                 from dates
               </span>
             </h2>
@@ -474,8 +487,8 @@ export default function Home() {
       </section>
 
       {/* Soda Back to Its Senses Section */}
-       <section
-        className='relative py-20 overflow-visible px-16 lg:px-32'
+      <section
+        className='relative py-20 overflow-visible px-16 lg:px-32 z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         <div className='relative mx-auto px-8 lg:px-16 flex flex-col'>
@@ -958,8 +971,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-         <section
-        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
+      <section
+        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32 z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         <div className='relative mx-auto px-8 lg:px-16'>
@@ -1026,7 +1039,7 @@ export default function Home() {
       </section>
       {/* The UNPOP Club Section */}
       <section
-        className='relative w-full py-0 overflow-hidden'
+        className='relative w-full py-0 overflow-hidden z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         {/* Top Pattern */}
@@ -1103,7 +1116,7 @@ export default function Home() {
 
       {/* Business Plan Section */}
       <section
-        className='relative w-full py-0 overflow-visible'
+        className='relative w-full py-0 overflow-visible z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
@@ -1201,8 +1214,8 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-       <section
-        className='relative py-20 overflow-visible px-16 lg:px-32'
+      <section
+        className='relative py-20 overflow-visible px-16 lg:px-32 z-[100]'
         style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
@@ -1313,7 +1326,7 @@ export default function Home() {
 
       {/* Footer Section */}
       <footer
-        className='relative w-full py-0 overflow-hidden'
+        className='relative w-full py-0 overflow-hidden z-[100]'
         style={{ backgroundColor: "#350622" }}
       >
         {/* Logo at Top */}
