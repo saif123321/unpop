@@ -13,18 +13,18 @@ export default function AnimatedModel({ url, progress }) {
 
   const firstName = names?.[0];
 
-  // --- Tweak these ---
+  
   const BASE_SCALE = 1.2;
   const BASE_Y = -2;
 
   const TARGET_SCALE = 0.7;
-  const TARGET_Y = -0; // move up a bit (less negative)
+  const TARGET_Y = 0;
 
-  // progress window for transform
+  
   const TRANSFORM_START = 0.02;
   const TRANSFORM_END = 0.05;
 
-  // progress window for full animation playback
+  
   const ANIM_END = 0.38;
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function AnimatedModel({ url, progress }) {
   }, [actions, firstName]);
 
   useEffect(() => {
-    // set initial baseline once
+   
     scene.position.set(0, BASE_Y, 0);
     scene.scale.setScalar(BASE_SCALE);
 
@@ -63,18 +63,18 @@ export default function AnimatedModel({ url, progress }) {
     const action = actions?.[firstName];
     if (!action) return;
 
-    // 1) Drive animation: progress 0..0.7 -> clip 0..1
+    
     const animT = invLerpClamped(progress, 0, ANIM_END);
     const clipDuration = action.getClip().duration;
     action.time = clipDuration * animT;
 
-    // 2) Transform only between 0.10..0.17
+  
     const t = invLerpClamped(progress, TRANSFORM_START, TRANSFORM_END);
 
     const targetScale = lerp(BASE_SCALE, TARGET_SCALE, t);
     const targetY = lerp(BASE_Y, TARGET_Y, t);
 
-    // Smooth with damp (nice feel)
+   
     const damp = THREE.MathUtils.damp;
 
     const s = damp(scene.scale.x, targetScale, 12, delta);
@@ -87,7 +87,7 @@ export default function AnimatedModel({ url, progress }) {
     <primitive
       object={scene}
       rotation={[-0.5, 0, 0]}
-      // no position/scale props here (we animate scene directly)
+      
     />
   );
 }

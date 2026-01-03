@@ -22,15 +22,15 @@ export default function Scroll3DSection({
   hdrAsBackground = false,
   backgroundColor = "#050816",
   offset = 0.0,
-  // NEW:
-  stopAtId = "cola-sublime", // section where the overlay should stop
-  stopOffsetPx = -300, // optionally stop a bit before/after the section
+
+  stopAtId = "cola-sublime", 
+  stopOffsetPx = -300,
 }) {
   const [progress, setProgress] = useState(0);
-  const [mode, setMode] = useState("fixed"); // "fixed" | "absolute"
+  const [mode, setMode] = useState("fixed"); 
   const [stopY, setStopY] = useState(null);
 
-  // Measure where to stop (top of #cola-sublime)
+ 
   useLayoutEffect(() => {
     const measure = () => {
       const el = document.getElementById(stopAtId);
@@ -43,7 +43,7 @@ export default function Scroll3DSection({
     measure();
     window.addEventListener("resize", measure);
 
-    // If content loads later (images/fonts), re-measure a bit
+   
     const t = setTimeout(measure, 250);
 
     return () => {
@@ -59,9 +59,9 @@ export default function Scroll3DSection({
       const y = window.scrollY || 0;
 
       if (stopY != null && y >= stopY) {
-        // reached stop point -> pin it in the document
+       
         if (mode !== "absolute") setMode("absolute");
-        // IMPORTANT: do NOT update progress anymore (freeze animation)
+      
       } else {
         if (mode !== "fixed") setMode("fixed");
         const p = getPageScrollProgress();
@@ -75,7 +75,7 @@ export default function Scroll3DSection({
     return () => cancelAnimationFrame(raf);
   }, [offset, stopY, mode]);
 
-  // If absolute, we place it at `top: stopY` (pinned)
+
   const containerStyle =
     mode === "fixed"
       ? { position: "fixed", top: 0, left: 0 }
