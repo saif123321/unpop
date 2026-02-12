@@ -60,34 +60,34 @@ export default function Home() {
   return (
     <div
       className='relative min-h-screen overflow-x-hidden'
-      style={{ backgroundColor: "#500730" }}
+      style={{ backgroundColor: "#300b21" }}
     >
-      <Scroll3DSection />
+      < Scroll3DSection />
       {/* Header */}
       <header
-        className='relative z-50 flex items-center justify-between px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
+        className='relative z-50 grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
         style={{ color: "#FF1275" }}
       >
         {/* Left – OUR STORY */}
         <a
           href='#our-story'
-          className='hover:opacity-70 transition-opacity duration-300 cursor-pointer'
+          className='hover:opacity-70 transition-opacity duration-300 cursor-pointer justify-self-start'
           style={{ color: "#FF1275" }}
         >
           Our Story
         </a>
 
-        {/* Center – Logo (updated for better visibility; replace src with your neon/pop style logo PNG/SVG) */}
-        <div className='flex-1 flex justify-center'>
+        {/* Center – Logo */}
+        <div className='flex justify-center'>
           <img
-            src='/images/logo.png' // Update to your reference image path, e.g., a pink neon "SUN POP!" graphic
+            src='/images/logo.png'
             alt='SUN POP! Logo'
-            className='w-12 md:w-16 h-auto drop-shadow-lg' // Larger size, added shadow for neon pop effect
+            className='w-12 md:w-16 h-auto drop-shadow-lg'
           />
         </div>
 
         {/* Right – CONTACT + BUY NOW */}
-        <div className='flex items-center gap-6 md:gap-8'>
+        <div className='flex items-center gap-6 md:gap-8 justify-self-end'>
           <a
             href='#contact'
             className='hover:opacity-70 transition-opacity duration-300 cursor-pointer'
@@ -119,8 +119,8 @@ export default function Home() {
               className='text-center font-montserrat'
               style={{
                 color: "#FF1275E5",
-                fontSize: "200px",
-                lineHeight: "1.1",
+                fontSize: "250px",
+                lineHeight: "0.8",
                 fontWeight: "400",
                 letterSpacing: "-0.02em",
                 zIndex: "10",
@@ -129,7 +129,7 @@ export default function Home() {
             >
               SODA
               <br />
-              UNJUNKED
+              <span style={{ fontSize: "180px" }}>UNJUNKED</span>
             </h1>
 
             {/* Can with POP! overlay - positioned absolutely over the heading */}
@@ -147,7 +147,7 @@ export default function Home() {
           {/* Product Description and CTA */}
           <div className='mt-24 flex items-end justify-between'>
             <div>
-              <div className='font-montserrat tracking-wide uppercase mb-4' style={{ color: "#FF1275E5" }}>
+              <div className='font-montserrat tracking-wide uppercase mb-4' style={{ color: "#FF1275E5", letterSpacing: "0.1em" }}>
                 <p className='text-sm md:text-base'>rich, crafted cola.</p>
                 <p className='text-sm md:text-base'>sweetened with organic dates</p>
                 <p className='text-sm md:text-base'>nothing artificial.</p>
@@ -165,27 +165,28 @@ export default function Home() {
                 Buy now
               </button>
             </div>
-            
-            <div className='ml-8 p-3 rounded-full' style={{ 
-              border: '2px solid #FF1275E5', 
-              backgroundColor: 'transparent' 
-            }}>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="#FF1275E5" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <circle cx="9" cy="21" r="1"/>
-                <circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-              </svg>
-            </div>
+          </div>
+          
+          {/* Fixed Shopping Cart Button - Bottom Right */}
+          <div className='fixed bottom-8 right-8 z-50 p-4 rounded-full cursor-pointer hover:opacity-70 transition-opacity' style={{ 
+            border: '2px solid #FF1275E5', 
+            backgroundColor: '#500730' 
+          }}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="28" 
+              height="28" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="#FF1275E5" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
           </div>
         </div>
       </section>
@@ -193,32 +194,30 @@ export default function Home() {
 
       {/* Sugar Facts Section */}
       <section
-        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
+        className='relative py-10 md:py-20 flex items-center overflow-visible px-4 md:px-16 lg:px-32'
       >
-        <div className='relative w-full flex items-center justify-between gap-16'>
-          <div className='max-w-xl'>
-            <div className='text-left'>
-              {/* Heading with Nineties Font */}
-              <h2
-                className='font-nineties mb-8'
+        <div className='relative w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-16'>
+          <div className='w-full lg:max-w-xl'>
+             <h2
+                className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
                 style={{
                   color: "#FF1275",
-                  fontSize: "100px",
                   lineHeight: "1.1",
                   fontWeight: "400",
                   letterSpacing: "0.02em",
-                  maxWidth: "600px",
                 }}
               >
                 15g of sugar
                 <br />
                 from dates.
               </h2>
+            <div className='text-center lg:text-left'>
+              {/* Heading with Nineties Font */}
+             
 
               {/* Benefits Text */}
               <div
-                className='space-y-2 mb-8 mt-32 font-montserrat tracking-widest text-xs md:text-sm'
+                className='space-y-1 md:space-y-2 mb-4 md:mb-8 mt-6 md:mt-32 font-montserrat tracking-widest text-xs md:text-base lg:text-lg'
                 style={{ color: "#FF1275" }}
               >
                 <p>LIGHT ON THE BODY,</p>
@@ -228,7 +227,7 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
+                className='px-4 md:px-8 py-2 md:py-3 rounded-full text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
                 style={{
                   border: `2px solid #FF1275`,
                   backgroundColor: "transparent",
@@ -241,11 +240,11 @@ export default function Home() {
           </div>
           
           {/* Right Image */}
-          <div className='flex-shrink-0 mt-32 '>
+          <div className='w-full lg:w-auto mt-6 lg:mt-32 flex justify-end'>
             <img
               src='/images/hero1.png'
               alt='Product'
-              className='w-[50%] ml-auto object-contain mt-32 '
+              className='w-3/4 sm:w-2/3 md:w-[80%] lg:w-[65%] object-contain'
             />
           </div>
         </div>
@@ -255,21 +254,19 @@ export default function Home() {
       {/* Our Story Section */}
       <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
       >
         <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-16 w-full items-center '>
           {/* Left Content */}
           <div className='text-left'>
             {/* Heading with Aloevera Font */}
             <h2
-              className='font-nineties mb-12'
+                className='font-nineties mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
               style={{
                 color: "#FF1275",
                 fontSize: "120px",
                 lineHeight: "1.2",
                 fontWeight: "100",
                 fontStyle: "italic",
-                letterSpacing: "0.02em",
               }}
             >
               a million miles
@@ -304,7 +301,6 @@ export default function Home() {
       {/* Reference Section - Light on the spots */}
       <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
       >
         <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-16 w-full items-center '>
           {/* Left Content */}
@@ -357,7 +353,7 @@ export default function Home() {
       {/* Cola Sublime Section */}
       <section
         className='relative w-full py-0 overflow-hidden'
-        style={{ backgroundColor: "#500730" }}
+        style={{ backgroundColor: "#3b0726" }}
       >
         {/* Top Pattern */}
         <div
@@ -443,29 +439,27 @@ export default function Home() {
         ></div>
       </section>
 
-      {/* Reference Section - 13g Sugar from Dates */}
+      {/* Reference Section - 15g Sugar from Dates */}
       <section
         className='relative w-full pt-32 pb-32 overflow-hidden'
-        style={{ backgroundColor: "#500730" }}
       >
         <div className='relative max-w-7xl mx-auto px-8 lg:px-16 h-full min-h-96 flex items-center justify-between'>
           {/* Left Content */}
           <div className='text-center flex-1 z-10'>
             <h2
-              className='font-quick-writers mb-8'
+              className='font-broton mb-4 md:mb-8 sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl'
               style={{
                 color: "#FF1275",
-                fontSize: "120px",
                 lineHeight: "1.1",
                 fontWeight: "100",
                 letterSpacing: "0.02em",
               }}
             >
-              13g
+              15g
               <br />
               sugar
               <br />
-              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
+              <span style={{ fontSize: "80px", fontWeight: "300", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
                 from dates
               </span>
             </h2>
@@ -475,8 +469,8 @@ export default function Home() {
 
       {/* Soda Back to Its Senses Section */}
        <section
-        className='relative py-20 overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
+        className='relative py-20 pb-0 overflow-visible px-16 lg:px-32'
+        style={{ backgroundColor: "#3b0726" }}
       >
         <div className='relative mx-auto px-8 lg:px-16 flex flex-col'>
           {/* Main Row - Heading and Ingredients */}
@@ -643,7 +637,6 @@ export default function Home() {
       {/* UPON! Logo Section - Design Reference Comparison */}
       <section
         className='relative w-full py-32 overflow-hidden z-[101]'
-        style={{ backgroundColor: "#350622" }}
       >
         <div className='relative max-w-7xl mx-auto px-8 lg:px-16'>
           {/* Comparison Grid - Similar to Reference Image */}
@@ -709,7 +702,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -721,7 +714,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -733,7 +726,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "500",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -759,7 +752,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -771,7 +764,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -783,7 +776,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "500",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -809,7 +802,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -821,7 +814,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -833,7 +826,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "500",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -859,7 +852,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -871,7 +864,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -883,7 +876,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "500",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -909,7 +902,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -921,7 +914,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "300",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -933,7 +926,7 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 fontSize: "13px",
-                fontWeight: "400",
+                fontWeight: "500",
                 letterSpacing: "0.08em",
                 lineHeight: "1.6",
               }}
@@ -944,7 +937,7 @@ export default function Home() {
           </div>
 
           {/* CTA Button */}
-          <div className='flex justify-center mt-16'>
+          {/* <div className='flex justify-center mt-16'>
             <button
               className='px-10 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
               style={{
@@ -955,12 +948,13 @@ export default function Home() {
             >
               GET YOUR 12 PACK
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
          <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
+        style={{ backgroundColor: "#350622" }}
+        
       >
         <div className='relative mx-auto px-8 lg:px-16'>
           {/* Heading */}
@@ -990,8 +984,8 @@ export default function Home() {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-start'>
             {/* Left - Story Text */}
             <div
-              className='space-y-3 font-montserrat tracking-widest text-xs md:text-sm'
-              style={{ color: "#FF1275" }}
+              className='space-y-4 font-montserrat tracking-widest text-xs md:text-sm'
+              style={{ color: "#FF1275" , letterSpacing: "0.2em" }}
             >
               <p>WE DIDN'T ASK FOR PERMISSION.</p>
               <p>BIG SODA TOLD US CORN SYRUP IS FINE.</p>
@@ -1027,7 +1021,6 @@ export default function Home() {
       {/* The UNPOP Club Section */}
       <section
         className='relative w-full py-0 overflow-hidden'
-        style={{ backgroundColor: "#500730" }}
       >
         {/* Top Pattern */}
         <div
@@ -1104,10 +1097,10 @@ export default function Home() {
       {/* Business Plan Section */}
       <section
         className='relative w-full py-0 overflow-visible'
-        style={{ backgroundColor: "#500730" }}
+        style={{ backgroundColor: "#350622" }}
       >
         {/* Main Content */}
-        <div className='relative w-full flex flex-col items-center justify-start pt-20 pb-20'>
+        <div className='relative w-full flex flex-col items-center justify-start pt-20'>
           {/* Text Content - Centered with Tilt */}
           <div
             className='z-20 text-center max-w-4xl px-8 mb-20'
@@ -1117,8 +1110,7 @@ export default function Home() {
               className='font-quick-writers italic'
               style={{
                 color: "#FF1275",
-                fontSize: "56px",
-                lineHeight: "1.3",
+                fontSize: "46px",
                 fontWeight: "700",
                 letterSpacing: "0.02em",
               }}
@@ -1126,11 +1118,10 @@ export default function Home() {
               REAL FRUIT. PLENTY OF FIZZ.
             </p>
             <p
-              className='font-quick-writers italic mt-6'
+              className='font-quick-writers italic'
               style={{
                 color: "#FF1275",
-                fontSize: "56px",
-                lineHeight: "1.3",
+                fontSize: "46px",
                 fontWeight: "700",
                 letterSpacing: "0.02em",
               }}
@@ -1138,11 +1129,10 @@ export default function Home() {
               YOU DRINK IT, YOU BURP.
             </p>
             <p
-              className='font-quick-writers italic mt-6'
+              className='font-quick-writers italic'
               style={{
                 color: "#FF1275",
-                fontSize: "56px",
-                lineHeight: "1.3",
+                fontSize: "46px",
                 fontWeight: "700",
                 letterSpacing: "0.02em",
               }}
@@ -1150,11 +1140,10 @@ export default function Home() {
               MAYBE YOU SMILE.
             </p>
             <p
-              className='font-quick-writers italic mt-6'
+              className='font-quick-writers italic'
               style={{
                 color: "#FF1275",
-                fontSize: "56px",
-                lineHeight: "1.3",
+                fontSize: "46px",
                 fontWeight: "700",
                 letterSpacing: "0.02em",
               }}
@@ -1162,11 +1151,10 @@ export default function Home() {
               THAT'S IT, THAT'S THE
             </p>
             <p
-              className='font-quick-writers italic mt-6'
+              className='font-quick-writers italic'
               style={{
                 color: "#FF1275",
                 fontSize: "64px",
-                lineHeight: "1.3",
                 fontWeight: "900",
                 letterSpacing: "0.02em",
               }}
@@ -1174,11 +1162,10 @@ export default function Home() {
               WHOLE BUSINESS PLAN.
             </p>
             <p
-              className='font-quick-writers italic mt-12'
+              className='font-quick-writers italic mt-6'
               style={{
                 color: "#FF1275",
                 fontSize: "36px",
-                lineHeight: "1.3",
                 fontWeight: "700",
                 letterSpacing: "0.02em",
               }}
@@ -1203,7 +1190,6 @@ export default function Home() {
       {/* FAQ Section */}
        <section
         className='relative py-20 overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
         <div className='relative w-full flex flex-col items-start justify-start pt-24 pb-0'>
@@ -1215,7 +1201,7 @@ export default function Home() {
                 color: "#FF1275",
                 fontSize: "80px",
                 lineHeight: "1.2",
-                fontWeight: "600",
+                fontWeight: "400",
                 letterSpacing: "0.02em",
                 marginBottom: "48px",
               }}
@@ -1244,10 +1230,9 @@ export default function Home() {
                     style={{ color: "#FF1275" }}
                   >
                     <span
-                      className='font-montserrat'
+                      className='font-nineties'
                       style={{
                         fontSize: "16px",
-                        fontStyle: "italic",
                         fontWeight: "700",
                         letterSpacing: "0.03em",
                         color: "#FF1275",
@@ -1299,16 +1284,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Bottom Pattern */}
-        <div
-          className='w-full h-20 flex items-center mt-24'
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(90deg, #FF1275 0px, #FF1275 2px, transparent 2px, transparent 12px)",
-            opacity: 0.3,
-          }}
-        ></div>
       </section>
 
       {/* Footer Section */}
