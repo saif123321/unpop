@@ -62,7 +62,8 @@ export default function Home() {
       className='relative min-h-screen overflow-x-hidden'
       style={{ backgroundColor: "#300b21" }}
     >
-      < Scroll3DSection />
+      <Scroll3DSection />
+
       {/* Header */}
       <header
         className='relative z-50 grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
@@ -107,7 +108,6 @@ export default function Home() {
           </button>
         </div>
       </header>
-
       {/* Hero Section */}
       <section className='relative min-h-[calc(100vh-80px)] flex items-center overflow-visible px-16 lg:px-32 py-20 mb-20'>
         {/* Centered Content Container */}
@@ -147,12 +147,14 @@ export default function Home() {
           {/* Product Description and CTA */}
           <div className='mt-24 flex items-end justify-between'>
             <div>
-              <div className='font-montserrat tracking-wide uppercase mb-4' style={{ color: "#FF1275E5", letterSpacing: "0.1em" }}>
+              <div className='font-montserrat tracking-wide uppercase mb-4' style={{ color: "#FF1275E5" }}>
                 <p className='text-sm md:text-base'>rich, crafted cola.</p>
-                <p className='text-sm md:text-base'>sweetened with organic dates</p>
+                <p className='text-sm md:text-base'>
+                  sweetened with organic dates
+                </p>
                 <p className='text-sm md:text-base'>nothing artificial.</p>
               </div>
-              
+
               {/* CTA Button */}
               <button
                 className='px-8 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
@@ -165,33 +167,31 @@ export default function Home() {
                 Buy now
               </button>
             </div>
-          </div>
-          
-          {/* Fixed Shopping Cart Button - Bottom Right */}
-          <div className='fixed bottom-8 right-8 z-50 p-4 rounded-full cursor-pointer hover:opacity-70 transition-opacity' style={{ 
-            border: '2px solid #FF1275E5', 
-            backgroundColor: '#500730' 
-          }}>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="28" 
-              height="28" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="#FF1275E5" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <circle cx="9" cy="21" r="1"/>
-              <circle cx="20" cy="21" r="1"/>
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-            </svg>
+            
+            <div className='ml-8 p-3 rounded-full' style={{ 
+              border: '2px solid #FF1275E5', 
+              backgroundColor: 'transparent' 
+            }}>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#FF1275E5" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
-      <section className="my-32 py-32"></section>
-
+      <section className='my-32 py-32'></section>
       {/* Sugar Facts Section */}
       <section
         className='relative py-10 md:py-20 flex items-center overflow-visible px-4 md:px-16 lg:px-32'
@@ -238,7 +238,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          
+
           {/* Right Image */}
           <div className='w-full lg:w-auto mt-6 lg:mt-32 flex justify-end'>
             <img
@@ -249,8 +249,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="my-32 py-32"></section>
-
+      <section className='my-32 py-32'></section>
       {/* Our Story Section */}
       <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
@@ -345,15 +344,15 @@ export default function Home() {
           </div>
 
           {/* Right Image */}
-          
         </div>
       </section>
-      <section className="my-32 py-32"></section>
+
+      <section id='cola-sublime' className='my-32 py-32'></section>
 
       {/* Cola Sublime Section */}
       <section
         className='relative w-full py-0 overflow-hidden'
-        style={{ backgroundColor: "#3b0726" }}
+        style={{ backgroundColor: "#500730" }}
       >
         {/* Top Pattern */}
         <div
@@ -442,6 +441,7 @@ export default function Home() {
       {/* Reference Section - 15g Sugar from Dates */}
       <section
         className='relative w-full pt-32 pb-32 overflow-hidden'
+        style={{ backgroundColor: "#500730" }}
       >
         <div className='relative max-w-7xl mx-auto px-8 lg:px-16 h-full min-h-96 flex items-center justify-between'>
           {/* Left Content */}
@@ -459,7 +459,7 @@ export default function Home() {
               <br />
               sugar
               <br />
-              <span style={{ fontSize: "80px", fontWeight: "300", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
+              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
                 from dates
               </span>
             </h2>
@@ -468,9 +468,9 @@ export default function Home() {
       </section>
 
       {/* Soda Back to Its Senses Section */}
-       <section
-        className='relative py-20 pb-0 overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#3b0726" }}
+      <section
+        className='relative py-20 overflow-visible px-16 lg:px-32 z-[100]'
+        style={{ backgroundColor: "#500730" }}
       >
         <div className='relative mx-auto px-8 lg:px-16 flex flex-col'>
           {/* Main Row - Heading and Ingredients */}
@@ -953,8 +953,7 @@ export default function Home() {
       </section>
          <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#350622" }}
-        
+        style={{ backgroundColor: "#500730" }}
       >
         <div className='relative mx-auto px-8 lg:px-16'>
           {/* Heading */}
@@ -1021,6 +1020,7 @@ export default function Home() {
       {/* The UNPOP Club Section */}
       <section
         className='relative w-full py-0 overflow-hidden'
+        style={{ backgroundColor: "#500730" }}
       >
         {/* Top Pattern */}
         <div
@@ -1097,7 +1097,7 @@ export default function Home() {
       {/* Business Plan Section */}
       <section
         className='relative w-full py-0 overflow-visible'
-        style={{ backgroundColor: "#350622" }}
+        style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
         <div className='relative w-full flex flex-col items-center justify-start pt-20'>
@@ -1190,6 +1190,7 @@ export default function Home() {
       {/* FAQ Section */}
        <section
         className='relative py-20 overflow-visible px-16 lg:px-32'
+        style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
         <div className='relative w-full flex flex-col items-start justify-start pt-24 pb-0'>
@@ -1288,7 +1289,7 @@ export default function Home() {
 
       {/* Footer Section */}
       <footer
-        className='relative w-full py-0 overflow-hidden'
+        className='relative w-full py-0 overflow-hidden z-[100]'
         style={{ backgroundColor: "#350622" }}
       >
         {/* Logo at Top */}

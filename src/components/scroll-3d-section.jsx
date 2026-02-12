@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ThreeScene from "./three-scene";
 
 function clamp01(v) {
@@ -22,33 +22,69 @@ export default function Scroll3DSection({
   hdrAsBackground = false,
   backgroundColor = "#050816",
   offset = 0.0,
+
+  stopAtId = "cola-sublime", 
+  stopOffsetPx = -300,
 }) {
   const [progress, setProgress] = useState(0);
+  const [mode, setMode] = useState("fixed"); 
+  const [stopY, setStopY] = useState(null);
+
+ 
+  useLayoutEffect(() => {
+    const measure = () => {
+      const el = document.getElementById(stopAtId);
+      if (!el) return;
+
+      const y = el.getBoundingClientRect().top + window.scrollY + stopOffsetPx;
+      setStopY(y);
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+
+   
+    const t = setTimeout(measure, 250);
+
+    return () => {
+      window.removeEventListener("resize", measure);
+      clearTimeout(t);
+    };
+  }, [stopAtId, stopOffsetPx]);
 
   useEffect(() => {
     let raf = 0;
 
     const tick = () => {
-      const p = getPageScrollProgress();
-      setProgress(clamp01(p - offset));
+      const y = window.scrollY || 0;
+
+      if (stopY != null && y >= stopY) {
+       
+        if (mode !== "absolute") setMode("absolute");
+      
+      } else {
+        if (mode !== "fixed") setMode("fixed");
+        const p = getPageScrollProgress();
+        setProgress(clamp01(p - offset));
+      }
+
       raf = requestAnimationFrame(tick);
     };
 
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [offset]);
+  }, [offset, stopY, mode]);
+
+
+  const containerStyle =
+    mode === "fixed"
+      ? { position: "fixed", top: 0, left: 0 }
+      : { position: "absolute", top: stopY ?? 0, left: 0 };
 
   return (
     <div
-      style={{
-        position: "fixed",
-        zIndex: 100,
-        backgroundColor: "transparent",
-        top: 0,
-        height: "100vh",
-        width: "100%",
-        overflow: "hidden",
-      }}
+      style={containerStyle}
+      className='w-full h-screen z-[9999] pointer-events-none'
     >
       <ThreeScene
         progress={progress}
