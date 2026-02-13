@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Scroll3DSection from "../components/scroll-3d-section";
+import CartModal from "../components/cart-modal";
 
 export default function Home() {
+  const navigate = useNavigate();
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const faqItems = [
     {
@@ -66,8 +70,8 @@ export default function Home() {
 
       {/* Header */}
       <header
-        className='relative z-50 grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
-        style={{ color: "#FF1275" }}
+        className='absolute top-0 left-0 right-0  grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
+        style={{ color: "#FF1275" , zIndex: 111111 }}
       >
         {/* Left – OUR STORY */}
         <a
@@ -94,7 +98,7 @@ export default function Home() {
             className='hover:opacity-70 transition-opacity duration-300 cursor-pointer'
             style={{ color: "#FF1275" }}
           >
-            Contact
+            Contact Us
           </a>
           <button
             className='px-4 py-1.5 md:px-5 md:py-2 rounded-full font-semibold hover:bg-[#FF1275] hover:text-white transition-all duration-300 font-montserrat cursor-pointer'
@@ -103,6 +107,7 @@ export default function Home() {
               backgroundColor: "transparent",
               color: "#FF1275",
             }}
+            onClick={() => setIsCartOpen(true)}
           >
             Buy Now
           </button>
@@ -207,7 +212,7 @@ export default function Home() {
                   letterSpacing: "0.02em",
                 }}
               >
-                15g of sugar
+                16g of sugar
                 <br />
                 from dates.
               </h2>
@@ -234,7 +239,7 @@ export default function Home() {
                   color: "#FF1275",
                 }}
               >
-                BUY a 12-PACK TODAY
+                BUY a 12 PACK TODAY NOW
               </button>
             </div>
           </div>
@@ -281,8 +286,8 @@ export default function Home() {
               <p>WE TRAVELLED THE WORLD</p>
               <p>IN SEARCH OF A CLEAN SODA.</p>
               <p>AFTER COMING UP EMPTY.</p>
-              <p>WE DECIDED TO MAKE OUR OWN.</p>
-              <p>TWO YEARS LATER, WE MADE A COLA WE LOVE.</p>
+              <p>WE DECIDED TO MAKE </p>
+              <p>A COLA WE'D LOVE.</p>
               <p>WE HOPE YOU WILL TOO.</p>
             </div>
           </div>
@@ -338,7 +343,7 @@ export default function Home() {
                   color: "#FF1275",
                 }}
               >
-                Get your 12 pack
+                Grab a 12 pack
               </button>
             </div>
           </div>
@@ -438,7 +443,7 @@ export default function Home() {
         ></div>
       </section>
 
-      {/* Reference Section - 15g Sugar from Dates */}
+      {/* Reference Section - 13g Sugar from Dates */}
       <section
         className='relative w-full pt-32 pb-32 overflow-hidden'
         style={{ backgroundColor: "#500730" }}
@@ -455,7 +460,7 @@ export default function Home() {
                 letterSpacing: "0.02em",
               }}
             >
-              15g
+              13g
               <br />
               sugar
               <br />
@@ -1004,6 +1009,10 @@ export default function Home() {
               <p>WE DIDN'T UNJUNK SODA TO BE REBELLIOUS.</p>
               <p>WE UNJUNKED IT BECAUSE EVERYONE ELSE</p>
               <p>WAS BEATING AROUND THE TRUTH.</p>
+              <p>THIS IS UNPOP.</p>
+              <p>IF YOU ARE DONE COMPROMISING,</p>
+              <p>YOu'RE IN THE RIGHT PLACE.</p>
+              <p><b>UNPOP</b>. SODA. UNJUNKED</p>
             </div>
 
             {/* Right - Image */}
@@ -1605,7 +1614,7 @@ export default function Home() {
               }}
               className='font-montserrat'
             >
-              2025 © UNPOP!
+              {new Date().getFullYear()} © UNPOP!
             </p>
             <p
               style={{
@@ -1622,6 +1631,12 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <CartModal 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        onCheckout={() => { setIsCartOpen(false); navigate("/checkout"); }} 
+      />
+
     </div>
   );
 }

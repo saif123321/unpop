@@ -1,0 +1,42 @@
+/* Custom Radio Button and Checkbox Styling */
+.checkout-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #FF1275;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.checkout-radio[type="checkbox"] {
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.checkout-radio:hover {
+  background-color: rgba(255, 18, 117, 0.1);
+}
+
+.checkout-radio:checked {
+  background: radial-gradient(circle, #FF1275 30%, transparent 70%);
+  border-color: #FF1275;
+}
+
+.checkout-radio[type="checkbox"]:checked {
+  background: #FF1275;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path d="M16.7 7.1L9.4 14.4 3.3 8.3" stroke="white" stroke-width="2" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+}
+
+.checkout-radio:focus {
+  outline: 2px solid #FF1275;
+  outline-offset: 2px;
+}

@@ -1,0 +1,22 @@
+/* Number input spinner styling */
+.cart-quantity-input::-webkit-outer-spin-button,
+.cart-quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  appearance: none;
+}
+
+.cart-quantity-input::-webkit-outer-spin-button,
+.cart-quantity-input::-webkit-inner-spin-button {
+  background: #FF1275;
+  border-left: 1px solid #FF1275;
+}
+
+.cart-quantity-input::-webkit-outer-spin-button {
+  border-radius: 0 4px 4px 0;
+}
+
+/* For Firefox */
+.cart-quantity-input {
+  accent-color: #FF1275;
+}
