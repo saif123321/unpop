@@ -62,7 +62,7 @@ export default function Home() {
       className='relative min-h-screen overflow-x-hidden'
       style={{ backgroundColor: "#500730" }}
     >
-      <Scroll3DSection />
+      {/* <Scroll3DSection /> */}
 
       {/* Header */}
       <header
@@ -208,7 +208,7 @@ export default function Home() {
             <div className='text-left'>
               {/* Heading with Nineties Font */}
               <h2
-                className='font-nineties mb-8'
+                className='font-nineties italic mb-8'
                 style={{
                   color: "#FF1275",
                   fontSize: "100px",
@@ -274,7 +274,7 @@ export default function Home() {
                 fontSize: "120px",
                 lineHeight: "1.2",
                 fontWeight: "100",
-                fontStyle: "italic",
+
                 letterSpacing: "0.02em",
               }}
             >
