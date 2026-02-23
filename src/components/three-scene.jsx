@@ -25,7 +25,7 @@ function Loader() {
 
 export default function ThreeScene({
   progress,
-  modelUrl = "/can.glb",
+  modelUrl = "/can-2.glb",
   cameraPos = [0, 1.5, 4],
   hdrAsBackground = false,
   backgroundColor = "#050816",

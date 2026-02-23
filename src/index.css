@@ -48,3 +48,18 @@
 .font-nineties {
   font-family: "Behind The Nineties", sans-serif;
 }
+
+.font-nineties-italic {
+  font-family: "Behind The Nineties Italic", sans-serif;
+}
+
+/* Broton Font */
+@font-face {
+  font-family: "Broton";
+  src: url("./broton-font/NCLBroton.ttf") format("truetype");
+  font-weight: 400;
+}
+
+.font-broton {
+  font-family: "Broton", sans-serif;
+}
