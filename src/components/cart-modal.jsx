@@ -34,21 +34,21 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     <>
       {/* Cart Modal - Positioned below header on the right */}
       <div
-        className="fixed top-16 right-6 md:right-16 bg-opacity-95 w-[500px] rounded-lg p-6 max-h-[85vh] overflow-y-auto"
+        className="fixed top-16 sm:top-20 md:top-24 right-0 sm:right-4 md:right-6 lg:right-16 bg-opacity-95 w-full sm:w-96 md:w-[450px] lg:w-[500px] rounded-none sm:rounded-lg p-4 sm:p-6 max-h-[85vh] overflow-y-auto"
         style={{ backgroundColor: "#240416", zIndex: "11111"}}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 pb-6 border-b" style={{ borderColor: "#FF1275" }}>
+        <div className="flex items-center justify-between mb-6 sm:mb-8 pb-4 sm:pb-6 border-b" style={{ borderColor: "#FF1275" }}>
           <h2
-            className="text-2xl font-montserrat tracking-widest uppercase font-bold"
+            className="text-lg sm:text-xl md:text-2xl font-montserrat tracking-widest uppercase font-bold"
             style={{ color: "#FF1275" }}
           > 
             CART
           </h2>
           <button
             onClick={onClose}
-            className="text-3xl hover:opacity-70 transition-opacity"
+            className="text-2xl sm:text-3xl hover:opacity-70 transition-opacity"
             style={{ color: "#FF1275" }}
           >
             ×
@@ -56,9 +56,9 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
         </div>
 
         {/* Product Item */}
-        <div className="flex gap-4 mb-8 items-start">
+        <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8 items-start">
           {/* Product Image */}
-          <div className="w-32 flex-shrink-0">
+          <div className="w-24 sm:w-28 md:w-32 flex-shrink-0">
             <img
               src={product.image}
               alt={product.name}
@@ -67,10 +67,10 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
           </div>
 
           {/* Product Details */}
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-4 mb-2">
+          <div className="flex-1 w-full">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
               <h3
-                className="text-base font-montserrat tracking-wide uppercase font-semibold"
+                className="text-sm sm:text-base font-montserrat tracking-wide uppercase font-semibold"
                 style={{ color: "#FF1275" }}
               >
                 {product.name}
@@ -81,7 +81,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
                 min="1"
                 value={quantity}
                 onChange={handleQuantityChange}
-                className="cart-quantity-input w-16 px-2 py-1 border-2 text-center font-montserrat font-semibold rounded flex-shrink-0"
+                className="cart-quantity-input w-16 px-2 py-1 border-2 text-center font-montserrat font-semibold rounded flex-shrink-0 text-xs sm:text-sm"
                 style={{
                   borderColor: "#FF1275",
                   backgroundColor: "#300b21",
@@ -90,14 +90,14 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
               />
             </div>
             <p
-              className="text-lg font-montserrat font-semibold mb-4"
+              className="text-base sm:text-lg font-montserrat font-semibold mb-4"
               style={{ color: "#FF1275" }}
             >
               ${product.price.toFixed(2)} USD
             </p>
 
             {/* Remove Link */}
-            <div className="flex justify-end">
+            <div className="flex justify-start sm:justify-end">
               <button
                 onClick={onClose}
                 className="text-xs font-montserrat tracking-widest uppercase font-semibold hover:opacity-70 transition-opacity"
@@ -113,16 +113,16 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
         <div className="border-t mb-6" style={{ borderColor: "#FF1275" }}></div>
 
         {/* Pricing Summary */}
-        <div className="space-y-3 mb-8">
+        <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
           <div className="flex justify-between items-center">
             <p
-              className="font-montserrat tracking-widest uppercase text-xs"
+              className="font-montserrat tracking-widest uppercase text-xs sm:text-sm"
               style={{ color: "#FF1275" }}
             >
               SUBTOTAL
             </p>
             <p
-              className="font-montserrat font-semibold text-base"
+              className="font-montserrat font-semibold text-sm sm:text-base"
               style={{ color: "#FF1275" }}
             >
               ${subtotal} USD
@@ -131,28 +131,28 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
 
           <div className="flex justify-between items-center">
             <p
-              className="font-montserrat tracking-widest uppercase text-xs"
+              className="font-montserrat tracking-widest uppercase text-xs sm:text-sm"
               style={{ color: "#FF1275" }}
             >
               TAXES
             </p>
             <p
-              className="font-montserrat font-semibold text-base"
+              className="font-montserrat font-semibold text-sm sm:text-base"
               style={{ color: "#FF1275" }}
             >
               ${taxes} USD
             </p>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-2">
             <p
-              className="font-montserrat tracking-widest uppercase text-xs"
+              className="font-montserrat tracking-widest uppercase text-xs sm:text-sm"
               style={{ color: "#FF1275" }}
             >
               SHIPPING
             </p>
             <p
-              className="font-montserrat tracking-widest uppercase text-xs"
+              className="font-montserrat tracking-widest uppercase text-xs sm:text-sm text-right"
               style={{ color: "#FF1275" }}
             >
               CALCULATED AT CHECKOUT
@@ -161,11 +161,11 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
         </div>
 
         {/* Divider */}
-        <div className="border-t mb-8" style={{ borderColor: "#FF1275" }}></div>
+        <div className="border-t mb-6 sm:mb-8" style={{ borderColor: "#FF1275" }}></div>
 
         {/* Checkout Button */}
         <button
-          className="w-full py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-sm transition-all duration-300 transform hover:scale-105"
+          className="w-full py-2 sm:py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105"
           style={{
             border: "2px solid #FF1275",
             backgroundColor: "transparent",

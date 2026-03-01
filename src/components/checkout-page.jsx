@@ -59,11 +59,11 @@ export default function CheckoutPage({ onBack }) {
 
     return (
         <div
-            className="fixed inset-0 overflow-y-auto py-8"
+            className="fixed inset-0 overflow-y-auto py-8 hide-scrollbar"
             style={{ backgroundColor: "#300b21", zIndex: "11111" }}
         >
             {/* Logo - Top Center */}
-            <div className="flex justify-center mb-12">
+            <div className="fixed top-0 left-0 right-0 flex justify-center py-4 z-50" style={{ backgroundColor: "#300b21" }}>
                 <a href="/">
                     <img
                         src="/images/logo.png"
@@ -71,11 +71,10 @@ export default function CheckoutPage({ onBack }) {
                         className="w-32 h-auto"
                     />
                 </a>
-
             </div>
 
             {/* Main Content */}
-            <div className="mx-auto px-6 md:px-16">
+            <div className="mx-auto px-6 md:px-16 mt-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Side - Form */}
                     <div>
@@ -448,7 +447,7 @@ export default function CheckoutPage({ onBack }) {
                     </div>
 
                     {/* Right Side - Order Summary + Image */}
-                    <div className="relative sticky top-8 h-fit">
+                    <div className="sticky top-24 h-fit">
                         {/* Items in Order */}
                         <div className="mb-12 p-6 rounded-3xl" style={{ backgroundColor: "#250416" }}>
                             <h3
