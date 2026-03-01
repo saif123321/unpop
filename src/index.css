@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @layer base {
   *,
@@ -17,55 +17,49 @@
 
 /* Behind The Nineties Font - Secondary Font */
 @font-face {
-  font-family: 'Behind The Nineties';
-  src: url('./behind-the-nineties/Behind The Nineties Regular.ttf') format('truetype');
+  font-family: "Behind The Nineties";
+  src: url("./behind-the-nineties/Behind The Nineties Variable Italic.ttf")
+    format("truetype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Behind The Nineties';
-  src: url('./behind-the-nineties/Behind The Nineties Bold.ttf') format('truetype');
+  font-family: "Behind The Nineties";
+  src: url("./behind-the-nineties/Behind The Nineties Bold.ttf")
+    format("truetype");
   font-weight: 700;
-}
-
-
-@font-face {
-  font-family: 'Behind The Nineties Italic';
-  src: url('./behind-the-nineties/Behind The Nineties Italic.ttf') format('truetype');
-  font-weight: 400;
 }
 
 /* Behind The Nineties Font - Secondary Font */
 @font-face {
-  font-family: 'Quick Writers';
-  src: url('./quick-writers-font/quickwriters.otf') format('opentype');
+  font-family: "Quick Writers";
+  src: url("./quick-writers-font/quickwriters.otf") format("opentype");
   font-weight: 400;
 }
 
 .font-montserrat {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-  .font-quick-writers {
-    font-family: 'Quick Writers', sans-serif;
-  }
+.font-quick-writers {
+  font-family: "Quick Writers", sans-serif;
+}
 
 .font-nineties {
-  font-family: 'Behind The Nineties', sans-serif;
+  font-family: "Behind The Nineties", sans-serif;
 }
 
-
 .font-nineties-italic {
-  font-family: 'Behind The Nineties Italic', sans-serif;
+  font-family: "Behind The Nineties Italic", sans-serif;
 }
 
 /* Broton Font */
 @font-face {
-  font-family: 'Broton';
-  src: url('./broton-font/NCLBroton.ttf') format('truetype');
+  font-family: "Broton";
+  src: url("./broton-font/NCLBroton.ttf") format("truetype");
   font-weight: 400;
 }
 
 .font-broton {
-  font-family: 'Broton', sans-serif;
+  font-family: "Broton", sans-serif;
 }

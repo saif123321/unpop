@@ -23,14 +23,13 @@ export default function Scroll3DSection({
   backgroundColor = "#050816",
   offset = 0.0,
 
-  stopAtId = "cola-sublime", 
+  stopAtId = "cola-sublime",
   stopOffsetPx = -300,
 }) {
   const [progress, setProgress] = useState(0);
-  const [mode, setMode] = useState("fixed"); 
+  const [mode, setMode] = useState("fixed");
   const [stopY, setStopY] = useState(null);
 
- 
   useLayoutEffect(() => {
     const measure = () => {
       const el = document.getElementById(stopAtId);
@@ -43,7 +42,6 @@ export default function Scroll3DSection({
     measure();
     window.addEventListener("resize", measure);
 
-   
     const t = setTimeout(measure, 250);
 
     return () => {
@@ -59,9 +57,7 @@ export default function Scroll3DSection({
       const y = window.scrollY || 0;
 
       if (stopY != null && y >= stopY) {
-       
         if (mode !== "absolute") setMode("absolute");
-      
       } else {
         if (mode !== "fixed") setMode("fixed");
         const p = getPageScrollProgress();
@@ -75,11 +71,10 @@ export default function Scroll3DSection({
     return () => cancelAnimationFrame(raf);
   }, [offset, stopY, mode]);
 
-
   const containerStyle =
     mode === "fixed"
       ? { position: "fixed", top: 0, left: 0 }
-      : { position: "absolute", top: stopY ?? 0, left: 0 };
+      : { position: "fixed", top: 0, left: 0, zIndex: 0 };
 
   return (
     <div

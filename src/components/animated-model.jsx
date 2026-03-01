@@ -13,19 +13,16 @@ export default function AnimatedModel({ url, progress }) {
 
   const firstName = names?.[0];
 
-  
   const BASE_SCALE = 1.2;
   const BASE_Y = -2;
 
   const TARGET_SCALE = 0.7;
   const TARGET_Y = 0;
 
-  
   const TRANSFORM_START = 0.02;
   const TRANSFORM_END = 0.05;
 
-  
-  const ANIM_END = 0.38;
+  const ANIM_END = 0.37;
 
   useEffect(() => {
     if (!firstName) {
@@ -46,7 +43,6 @@ export default function AnimatedModel({ url, progress }) {
   }, [actions, firstName]);
 
   useEffect(() => {
-   
     scene.position.set(0, BASE_Y, 0);
     scene.scale.setScalar(BASE_SCALE);
 
@@ -63,18 +59,15 @@ export default function AnimatedModel({ url, progress }) {
     const action = actions?.[firstName];
     if (!action) return;
 
-    
     const animT = invLerpClamped(progress, 0, ANIM_END);
     const clipDuration = action.getClip().duration;
     action.time = clipDuration * animT;
 
-  
     const t = invLerpClamped(progress, TRANSFORM_START, TRANSFORM_END);
 
     const targetScale = lerp(BASE_SCALE, TARGET_SCALE, t);
     const targetY = lerp(BASE_Y, TARGET_Y, t);
 
-   
     const damp = THREE.MathUtils.damp;
 
     const s = damp(scene.scale.x, targetScale, 12, delta);
@@ -83,13 +76,7 @@ export default function AnimatedModel({ url, progress }) {
     scene.position.y = damp(scene.position.y, targetY, 12, delta);
   });
 
-  return (
-    <primitive
-      object={scene}
-      rotation={[-0.5, 0, 0]}
-      
-    />
-  );
+  return <primitive object={scene} rotation={[-0.5, 0, 0]} />;
 }
 
 useGLTF.preload("./models/can.glb");

@@ -70,7 +70,7 @@ export default function Home() {
 
       {/* Header */}
       <header
-        className='absolute top-0 left-0 right-0 grid grid-cols-3 items-center px-4 sm:px-6 md:px-16 py-3 sm:py-4 md:py-6 text-xs sm:text-xs md:text-xs tracking-widest font-montserrat uppercase'
+        className='absolute top-0 left-0 right-0  grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
         style={{ color: "#FF1275", zIndex: 111111 }}
       >
         {/* Left – OUR STORY */}
@@ -152,9 +152,12 @@ export default function Home() {
           {/* Product Description and CTA */}
           <div className='mt-8 sm:mt-12 md:mt-24 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 sm:gap-8'>
             <div>
-              <div className='font-montserrat tracking-wide uppercase mb-4 text-xs sm:text-sm md:text-base' style={{ color: "#FF1275E5" }}>
-                <p>rich, crafted cola.</p>
-                <p>
+              <div
+                className='font-montserrat tracking-wide uppercase mb-4'
+                style={{ color: "#FF1275E5" }}
+              >
+                <p className='text-sm md:text-base'>rich, crafted cola.</p>
+                <p className='text-sm md:text-base'>
                   sweetened with organic dates
                 </p>
                 <p>nothing artificial.</p>
@@ -172,25 +175,25 @@ export default function Home() {
                 Buy now
               </button>
             </div>
-
-            <div className='ml-8 p-3 rounded-full' style={{
-              border: '2px solid #FF1275E5',
-              backgroundColor: 'transparent'
+            
+            <div className='ml-8 p-3 rounded-full' style={{ 
+              border: '2px solid #FF1275E5', 
+              backgroundColor: 'transparent' 
             }}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FF1275E5"
-                strokeWidth="2"
-                strokeLinecap="round"
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#FF1275E5" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
                 strokeLinejoin="round"
               >
-                <circle cx="9" cy="21" r="1" />
-                <circle cx="20" cy="21" r="1" />
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
               </svg>
             </div>
           </div>
@@ -198,27 +201,25 @@ export default function Home() {
       </section>
       <section className='my-32 py-32'></section>
       {/* Sugar Facts Section */}
-      <section
-        className='relative py-10 md:py-20 flex items-center overflow-visible px-4 md:px-16 lg:px-32'
-      >
+      <section className='relative py-10 md:py-20 flex items-center overflow-visible px-4 md:px-16 lg:px-32'>
         <div className='relative w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-16'>
           <div className='w-full lg:max-w-xl'>
-            <h2
-              className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
-              style={{
-                color: "#FF1275",
-                lineHeight: "1.1",
-                fontWeight: "400",
-                letterSpacing: "0.02em",
-              }}
-            >
-              16g of sugar
-              <br />
-              from dates.
-            </h2>
+             <h2
+                className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+                style={{
+                  color: "#FF1275",
+                  lineHeight: "1.1",
+                  fontWeight: "400",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                16g of sugar
+                <br />
+                from dates.
+              </h2>
             <div className='text-center lg:text-left'>
               {/* Heading with Nineties Font */}
-
+             
 
               {/* Benefits Text */}
               <div
@@ -257,14 +258,14 @@ export default function Home() {
       <section className='my-32 py-32'></section>
       {/* Our Story Section */}
       <section
-        className='relative py-10 md:py-20 flex items-center overflow-visible px-4 sm:px-8 md:px-16 lg:px-32'
+        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
       >
-        <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 md:gap-16 w-full items-center '>
+        <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-16 w-full items-center '>
           {/* Left Content */}
           <div className='text-left'>
             {/* Heading with Aloevera Font */}
             <h2
-              className='font-nineties mb-4 md:mb-8 italic text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
+                className='font-nineties mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
               style={{
                 color: "#FF1275",
                 lineHeight: "1.2",
@@ -303,9 +304,9 @@ export default function Home() {
       </section>
       {/* Reference Section - Light on the spots */}
       <section
-        className='relative py-10 md:py-20 flex items-center overflow-visible px-4 sm:px-8 md:px-16 lg:px-32'
+        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
       >
-        <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 md:gap-16 w-full items-center '>
+        <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-16 w-full items-center '>
           {/* Left Content */}
           <div className='flex-shrink-0'>
             <img
@@ -444,7 +445,7 @@ export default function Home() {
               <br />
               sugar
               <br />
-              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase", fontFamily: 'Montserrat' }}>
+              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
                 from dates
               </span>
             </h2>
@@ -616,9 +617,9 @@ export default function Home() {
 
       {/* UPON! Logo Section - Design Reference Comparison */}
       <section
-        className='relative w-full py-16 md:py-32 overflow-hidden z-[101]'
+        className='relative w-full py-32 overflow-hidden z-[101]'
       >
-        <div className='relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-16'>
+        <div className='relative max-w-7xl mx-auto px-8 lg:px-16'>
           {/* Comparison Grid - Similar to Reference Image */}
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8'>
             {/* Column Headers */}
@@ -908,8 +909,8 @@ export default function Home() {
           </div> */}
         </div>
       </section>
-      <section
-        className='relative py-12 md:py-20 flex items-center overflow-visible px-4 sm:px-8 md:px-16 lg:px-32'
+         <section
+        className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#500730" }}
       >
         <div className='relative mx-auto px-4 sm:px-8 md:px-16'>
@@ -939,8 +940,8 @@ export default function Home() {
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-start'>
             {/* Left - Story Text */}
             <div
-              className='space-y-3 md:space-y-4 font-montserrat tracking-widest text-xs sm:text-sm md:text-base'
-              style={{ color: "#FF1275", letterSpacing: "0.2em" }}
+              className='space-y-4 font-montserrat tracking-widest text-xs md:text-sm'
+              style={{ color: "#FF1275" , letterSpacing: "0.2em" }}
             >
               <p>WE DIDN'T ASK FOR PERMISSION.</p>
               <p>BIG SODA TOLD US CORN SYRUP IS FINE.</p>
@@ -963,7 +964,9 @@ export default function Home() {
               <p>THIS IS UNPOP.</p>
               <p>IF YOU ARE DONE COMPROMISING,</p>
               <p>YOu'RE IN THE RIGHT PLACE.</p>
-              <p><b>UNPOP</b>. SODA. UNJUNKED</p>
+              <p>
+                <b>UNPOP</b>. SODA. UNJUNKED
+              </p>
             </div>
 
             {/* Right - Image */}
@@ -1144,8 +1147,8 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section
-        className='relative py-12 md:py-20 overflow-visible px-4 sm:px-8 md:px-16 lg:px-32'
+       <section
+        className='relative py-20 overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#500730" }}
       >
         {/* Main Content */}
@@ -1562,12 +1565,11 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      <CartModal
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        onCheckout={() => { setIsCartOpen(false); navigate("/checkout"); }}
+      <CartModal 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        onCheckout={() => { setIsCartOpen(false); navigate("/checkout"); }} 
       />
-
     </div>
   );
 }
