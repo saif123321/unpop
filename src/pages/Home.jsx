@@ -269,7 +269,6 @@ export default function Home() {
               style={{
                 color: "#FF1275",
                 lineHeight: "1.2",
-                fontWeight: "100",
                 fontStyle: "italic",
               }}
             >

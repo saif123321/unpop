@@ -15,9 +15,15 @@
   }
 }
 
+/* Broton Font */
+@font-face {
+  font-family: "Broton";
+  src: url("./broton-font/NCLBroton.ttf") format("truetype");
+  font-weight: 400;
+}
 /* Behind The Nineties Font - Secondary Font */
 @font-face {
-  font-family: "Behind The Nineties";
+  font-family: "Behind The Nineties Italic";
   src: url("./behind-the-nineties/Behind The Nineties Variable Italic.ttf")
     format("truetype");
   font-weight: 400;
@@ -25,7 +31,7 @@
 
 @font-face {
   font-family: "Behind The Nineties";
-  src: url("./behind-the-nineties/Behind The Nineties Bold.ttf")
+  src: url("./behind-the-nineties/Behind The Nineties Regular.ttf")
     format("truetype");
   font-weight: 700;
 }
@@ -53,12 +59,6 @@
   font-family: "Behind The Nineties Italic", sans-serif;
 }
 
-/* Broton Font */
-@font-face {
-  font-family: "Broton";
-  src: url("./broton-font/NCLBroton.ttf") format("truetype");
-  font-weight: 400;
-}
 
 .font-broton {
   font-family: "Broton", sans-serif;
