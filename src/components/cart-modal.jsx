@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./cart-modal.css";
+import { getUnpopProduct } from "../shopifyProduct";
+import { createCheckout } from "../createCheckout";
 
 export default function CartModal({ isOpen, onClose, onCheckout }) {
   const [quantity, setQuantity] = useState(1);
@@ -13,13 +15,20 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     }
   }, [isOpen]);
 
-  const product = {
-    name: "UNPOP 12PK CASE",
-    price: 26.99,
-    image: "/images/cart-image.png",
-  };
+const [product, setProduct] = useState(null);
+const [variantId, setVariantId] = useState(null);
 
-  const subtotal = (product.price * quantity).toFixed(2);
+useEffect(() => {
+  async function loadProduct() {
+    const data = await getUnpopProduct();
+    setProduct(data);
+    setVariantId(data.variantId);
+  }
+
+  loadProduct();
+}, []);
+
+  const subtotal = product ? (product.price * quantity).toFixed(2) : "0.00";
   const taxes = "0.00";
 
   const handleQuantityChange = (e) => {
@@ -73,7 +82,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
                 className="text-sm sm:text-base font-montserrat tracking-wide uppercase font-semibold"
                 style={{ color: "#FF1275" }}
               >
-                {product.name}
+                {product?.title}
               </h3>
               {/* Quantity Selector */}
               <input
@@ -93,7 +102,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
               className="text-base sm:text-lg font-montserrat font-semibold mb-4"
               style={{ color: "#FF1275" }}
             >
-              ${product.price.toFixed(2)} USD
+             ${Number(product?.price || 0).toFixed(2)}  USD
             </p>
 
             {/* Remove Link */}
@@ -171,7 +180,10 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
             backgroundColor: "transparent",
             color: "#FF1275",
           }}
-          onClick={onCheckout}
+         onClick={async () => {
+  const url = await createCheckout(variantId, quantity);
+  window.location.href = url;
+}}
           onMouseEnter={(e) => {
             e.target.style.backgroundColor = "#FF1275";
             e.target.style.color = "#240416";
