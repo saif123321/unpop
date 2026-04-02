@@ -5,6 +5,7 @@ import { createCheckout } from "../createCheckout";
 
 export default function CartModal({ isOpen, onClose, onCheckout }) {
   const [quantity, setQuantity] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -15,18 +16,18 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     }
   }, [isOpen]);
 
-const [product, setProduct] = useState(null);
-const [variantId, setVariantId] = useState(null);
+  const [product, setProduct] = useState(null);
+  const [variantId, setVariantId] = useState(null);
 
-useEffect(() => {
-  async function loadProduct() {
-    const data = await getUnpopProduct();
-    setProduct(data);
-    setVariantId(data.variantId);
-  }
+  useEffect(() => {
+    async function loadProduct() {
+      const data = await getUnpopProduct();
+      setProduct(data);
+      setVariantId(data.variantId);
+    }
 
-  loadProduct();
-}, []);
+    loadProduct();
+  }, []);
 
   const subtotal = product ? (product.price * quantity).toFixed(2) : "0.00";
   const taxes = "0.00";
@@ -44,7 +45,7 @@ useEffect(() => {
       {/* Cart Modal - Positioned below header on the right */}
       <div
         className="fixed top-16 sm:top-20 md:top-24 right-0 sm:right-4 md:right-6 lg:right-16 bg-opacity-95 w-full sm:w-96 md:w-[450px] lg:w-[500px] rounded-none sm:rounded-lg p-4 sm:p-6 max-h-[85vh] overflow-y-auto"
-        style={{ backgroundColor: "#240416", zIndex: "11111"}}
+        style={{ backgroundColor: "#240416", zIndex: "11111" }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -52,7 +53,7 @@ useEffect(() => {
           <h2
             className="text-lg sm:text-xl md:text-2xl font-montserrat tracking-widest uppercase font-bold"
             style={{ color: "#FF1275" }}
-          > 
+          >
             CART
           </h2>
           <button
@@ -102,7 +103,7 @@ useEffect(() => {
               className="text-base sm:text-lg font-montserrat font-semibold mb-4"
               style={{ color: "#FF1275" }}
             >
-             ${Number(product?.price || 0).toFixed(2)}  USD
+              ${Number(product?.price || 0).toFixed(2)}  USD
             </p>
 
             {/* Remove Link */}
@@ -174,26 +175,32 @@ useEffect(() => {
 
         {/* Checkout Button */}
         <button
-          className="w-full py-2 sm:py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105"
+          disabled={isLoading}
+          className="w-full py-2 sm:py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             border: "2px solid #FF1275",
             backgroundColor: "transparent",
             color: "#FF1275",
           }}
-         onClick={async () => {
-  const url = await createCheckout(variantId, quantity);
-  window.location.href = url;
-}}
+          onClick={async () => {
+            setIsLoading(true);
+            const url = await createCheckout(variantId, quantity);
+            window.location.href = url;
+          }}
           onMouseEnter={(e) => {
-            e.target.style.backgroundColor = "#FF1275";
-            e.target.style.color = "#240416";
+            if (!isLoading) {
+              e.target.style.backgroundColor = "#FF1275";
+              e.target.style.color = "#240416";
+            }
           }}
           onMouseLeave={(e) => {
-            e.target.style.backgroundColor = "transparent";
-            e.target.style.color = "#FF1275";
+            if (!isLoading) {
+              e.target.style.backgroundColor = "transparent";
+              e.target.style.color = "#FF1275";
+            }
           }}
         >
-          CONTINUE TO CHECKOUT
+          {isLoading ? "PROCESSING..." : "CONTINUE TO CHECKOUT"}
         </button>
       </div>
     </>

@@ -64,8 +64,7 @@ export default function Home() {
   return (
     <div
       className='relative min-h-screen overflow-x-hidden'
-      style={{ backgroundColor: "#300b21" }}
-    >
+      style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
       <Scroll3DSection />
 
       {/* Header */}
@@ -154,7 +153,7 @@ export default function Home() {
             <div>
               <div
                 className='font-montserrat tracking-wide uppercase mb-4'
-                style={{ color: "#FF1275E5" }}
+                style={{ color: "#FF1275" }}
               >
                 <p className='text-sm md:text-base'>rich, crafted cola.</p>
                 <p className='text-sm md:text-base'>
@@ -165,21 +164,30 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-[0.7rem] sm:text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat whitespace-nowrap'
+                onClick={() => setIsCartOpen(true)}
+                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-[0.7rem] sm:text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat whitespace-nowrap cursor-pointer'
                 style={{
-                  border: `1px solid #FF1275E5`,
+                  border: `1px solid #FF1275`,
                   backgroundColor: "transparent",
-                  color: "#FF1275E5",
+                  color: "#FF1275",
+                  position: "relative",
+                  zIndex: 10000
                 }}
               >
                 Buy now
               </button>
             </div>
             
-            <div className='ml-8 p-3 rounded-full' style={{ 
-              border: '2px solid #FF1275E5', 
-              backgroundColor: 'transparent' 
-            }}>
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className='ml-8 p-3 rounded-full hover:opacity-70 transition cursor-pointer' 
+              style={{ 
+                border: '2px solid #FF1275', 
+                backgroundColor: 'transparent',
+                position: "relative",
+                zIndex: 10000
+              }}
+            >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 
@@ -195,7 +203,7 @@ export default function Home() {
                 <circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
               </svg>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -233,11 +241,14 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-4 md:px-8 py-2 md:py-3 rounded-full text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
+                onClick={() => setIsCartOpen(true)}
+                className='px-4 md:px-8 py-2 md:py-3 rounded-full text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat cursor-pointer'
                 style={{
                   border: `2px solid #FF1275`,
-                  backgroundColor: "transparent",
+                  backgroundColor: "#ff127512",
                   color: "#FF1275",
+                  position: "relative",
+                  zIndex: 10000
                 }}
               >
                 BUY a 12 PACK TODAY NOW
@@ -265,12 +276,12 @@ export default function Home() {
           <div className='text-left'>
             {/* Heading with Aloevera Font */}
             <h2
-                className='font-nineties mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
-              style={{
-                color: "#FF1275",
-                lineHeight: "1.2",
-                fontStyle: "italic",
-              }}
+                className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left'
+                style={{
+                  color: "#FF1275",
+                  lineHeight: "1.2",
+                  fontStyle: "italic",
+                  fontSize: "clamp(4.5rem, 6vw, 8rem)",}}
             >
               a million miles
               <br />
@@ -334,11 +345,14 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat mt-4'
+                onClick={() => setIsCartOpen(true)}
+                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat mt-4 cursor-pointer'
                 style={{
                   border: `2px solid #FF1275`,
-                  backgroundColor: "transparent",
+                  backgroundColor: "#ff127512",
                   color: "#FF1275",
+                  position: "relative",
+                  // zIndex: 10000
                 }}
               >
                 Grab a 12 pack
@@ -385,12 +399,13 @@ export default function Home() {
             <div className='text-left pt-8 sm:pt-16 md:pt-24'>
               {/* Heading */}
               <h2
-                className='font-montserrat mb-6 sm:mb-8 md:mb-12 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+                className='font-montserrat mb-6 sm:mb-8 md:mb-12 mt-12 text-center'
                 style={{
                   color: "#FF1275",
                   lineHeight: "0.9",
                   fontWeight: "400",
                   letterSpacing: "0.03em",
+                  fontSize: "clamp(4.5rem, 11vw, 17rem)"
                 }}
               >
                 cola sublimé
@@ -398,12 +413,15 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-6 sm:px-10 py-2 sm:py-3 rounded-full text-xs sm:text-sm hover:opacity-70 transition uppercase tracking-widest font-montserrat'
+                onClick={() => setIsCartOpen(true)}
+                className='px-6 sm:px-10 py-2 sm:py-3 rounded-full text-xs sm:text-sm hover:opacity-70 transition uppercase tracking-widest font-montserrat cursor-pointer'
                 style={{
-                  border: "none",
-                  backgroundColor: "#FF1275",
-                  color: "#500730",
+                  border: "1px solid #FF1275",
+                  backgroundColor: "#410627",
+                  color: "#FF1275",
                   fontWeight: "600",
+                  position: "relative",
+                  zIndex: 10000
                 }}
               >
                 TRY UNPOP NOW
@@ -426,28 +444,29 @@ export default function Home() {
       {/* Reference Section - 13g Sugar from Dates */}
       <section
         className='relative w-full pt-32 pb-32 overflow-hidden'
-        style={{ backgroundColor: "#500730" }}
-      >
+      style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+
         <div className='relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 h-full min-h-64 sm:min-h-96 flex items-center justify-between'>
           {/* Left Content */}
           <div className='text-center flex-1 z-10 w-full'>
              <h2
-              className='font-broton text-7xl mb-4 md:mb-8 sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl'
+              className='font-broton'
               style={{
                 color: "#FF1275",
                 lineHeight: "1.1",
                 fontWeight: "100",
                 letterSpacing: "0.02em",
+                fontSize: "clamp(3rem, 10vw, 12rem)",
               }}
             >
               16g
               <br />
               sugar
-              <br />
-              <span style={{ fontSize: "80px", fontWeight: "600", textTransform: "uppercase" , fontFamily: 'Montserrat' }}>
+            </h2>
+            <span style={{ fontSize: "clamp(2rem, 10vw, 6rem)", fontWeight: "400", textTransform: "uppercase" , fontFamily: 'Montserrat', wordSpacing: "0.9em" ,color: "#FF1275",
+               }}>
                 from dates
               </span>
-            </h2>
           </div>
         </div>
       </section>
@@ -455,7 +474,7 @@ export default function Home() {
       {/* Soda Back to Its Senses Section */}
       <section
         className='relative py-10 md:py-20 overflow-visible px-4 sm:px-8 md:px-16 lg:px-32 z-[100]'
-        style={{ backgroundColor: "#500730" }}
+        style={{ backgroundColor: "#410627" }}
       >
         <div className='relative mx-auto px-4 sm:px-8 md:px-16 flex flex-col'>
           {/* Main Row - Heading and Ingredients */}
@@ -463,13 +482,14 @@ export default function Home() {
             {/* Left - Heading */}
             <div>
               <h2
-                className='font-nineties-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
+                className='font-nineties-italic'
                 style={{
                   color: "#FF1275",
                   lineHeight: "1.1",
                   fontWeight: "100",
                   fontStyle: "italic",
                   letterSpacing: "-0.01em",
+                  fontSize: "clamp(3rem, 10vw, 8rem)",
                 }}
               >
                 soda,
@@ -617,7 +637,8 @@ export default function Home() {
       {/* UPON! Logo Section - Design Reference Comparison */}
       <section
         className='relative w-full py-32 overflow-hidden z-[101]'
-      >
+            style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+
         <div className='relative max-w-7xl mx-auto px-8 lg:px-16'>
           {/* Comparison Grid - Similar to Reference Image */}
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8'>
@@ -910,13 +931,14 @@ export default function Home() {
       </section>
          <section
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
+        style={{ backgroundColor: "#410627" }}
+
       >
         <div className='relative mx-auto px-4 sm:px-8 md:px-16'>
           {/* Heading */}
           <div className='text-center mb-8 md:mb-16'>
             <h2
-              className='font-nineties text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
+              className='font-nineties-italic'
               style={{
                 color: "#FF1275",
                 lineHeight: "1.1",
@@ -927,6 +949,7 @@ export default function Home() {
                 textDecorationColor: "#FF1275",
                 textDecorationThickness: "2px",
                 textUnderlineOffset: "12px",
+                fontSize: "clamp(3rem, 10vw, 5rem)",
               }}
             >
               our
@@ -936,7 +959,7 @@ export default function Home() {
           </div>
 
           {/* Content Grid */}
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-start'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16'>
             {/* Left - Story Text */}
             <div
               className='space-y-4 font-montserrat tracking-widest text-xs md:text-sm'
@@ -969,7 +992,7 @@ export default function Home() {
             </div>
 
             {/* Right - Image */}
-            <div className='flex justify-center items-start'>
+            <div className='flex justify-center items-end'>
               <img
                 src='/images/hero5.png'
                 alt='Our Story - Motorcycle'
@@ -982,8 +1005,8 @@ export default function Home() {
       {/* The UNPOP Club Section */}
       <section
         className='relative w-full py-0 overflow-hidden'
-        style={{ backgroundColor: "#500730" }}
-      >
+                    style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+
         {/* Top Pattern */}
         <div
           className='w-full h-20 flex items-center'
@@ -1001,12 +1024,13 @@ export default function Home() {
             <div className='text-left z-20 flex items-end gap-4 sm:gap-8 flex-col sm:flex-row'>
               {/* Heading */}
               <h2
-                className='font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl'
+                className='font-montserrat '
                 style={{
                   color: "#FF1275",
                   lineHeight: "0.9",
                   fontWeight: "400",
                   letterSpacing: "0.03em",
+                  fontSize: "clamp(3rem, 10vw, 6rem)"
                 }}
               >
                 the
@@ -1021,7 +1045,7 @@ export default function Home() {
                 className='px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
                 style={{
                   border: "1px solid #FF1275",
-                  backgroundColor: "transparent",
+                  backgroundColor: "#ff12750c",
                   color: "#FF1275",
                   whiteSpace: "nowrap",
                 }}
@@ -1058,7 +1082,8 @@ export default function Home() {
       {/* Business Plan Section */}
       <section
         className='relative w-full py-0 overflow-visible'
-        style={{ backgroundColor: "#500730" }}
+        style={{ backgroundColor: "#410627" }}
+
       >
         {/* Main Content */}
         <div className='relative w-full flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20'>
@@ -1148,14 +1173,15 @@ export default function Home() {
       {/* FAQ Section */}
        <section
         className='relative py-20 overflow-visible px-16 lg:px-32'
-        style={{ backgroundColor: "#500730" }}
+                style={{ backgroundColor: "#410627" }}
+
       >
         {/* Main Content */}
         <div className='relative w-full flex flex-col items-start justify-start pt-12 sm:pt-16 md:pt-24 pb-0'>
           <div className='mx-auto px-4 sm:px-8 md:px-16 w-full'>
             {/* Heading */}
             <h2
-              className='font-nineties italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
+              className='font-nineties-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
               style={{
                 color: "#FF1275",
                 lineHeight: "1.2",
@@ -1188,11 +1214,10 @@ export default function Home() {
                     style={{ color: "#FF1275" }}
                   >
                     <span
-                      className='font-nineties'
+                      className='font-nineties-bold'
                       style={{
-                        fontSize: "16px",
-                        fontWeight: "700",
-                        letterSpacing: "0.03em",
+                        fontSize: "20px",
+                        letterSpacing: "0.01em",
                         color: "#FF1275",
                       }}
                     >
@@ -1228,9 +1253,9 @@ export default function Home() {
                       className='pb-6 font-montserrat'
                       style={{
                         color: "#FF1275",
-                        fontSize: "14px",
+                        fontSize: "18px",
                         fontWeight: "400",
-                        letterSpacing: "0.03em",
+                        letterSpacing: "0.05em",
                         lineHeight: "1.6",
                       }}
                     >
@@ -1260,7 +1285,7 @@ export default function Home() {
 
         {/* 5 Column Grid */}
         <div className='w-full px-4 sm:px-8 md:px-16 py-8 sm:py-10 md:py-12'>
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 md:gap-12 lg:gap-8'>
             {/* Column 1 - UNPOP! Links */}
             <div className='flex flex-col gap-3 sm:gap-4'>
               <p
@@ -1391,7 +1416,7 @@ export default function Home() {
             </div>
 
             {/* Column 4 - KEEP IN TOUCH */}
-            <div className='flex flex-col gap-3 sm:gap-4'>
+            <div className='flex flex-col gap-3 sm:gap-4 lg:col-span-1'>
               <p
                 style={{
                   color: "#FF1275",
@@ -1404,7 +1429,7 @@ export default function Home() {
               >
                 KEEP IN TOUCH!
               </p>
-              <div className='flex flex-col sm:flex-row gap-2'>
+              <div className='flex flex-col gap-2 w-full'>
                 <input
                   type='email'
                   placeholder='Email address'
@@ -1416,19 +1441,19 @@ export default function Home() {
                     cursor: "pointer",
                     letterSpacing: "0.03em",
                   }}
-                  className='font-montserrat px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm flex-1'
+                  className='font-montserrat px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm w-full'
                 />
                 <button
                   style={{
                     border: "1px solid #FF1275",
-                    backgroundColor: "transparent",
+                    backgroundColor: "#ff127509",
                     color: "#FF1275",
                     borderRadius: "20px",
                     fontWeight: "700",
                     cursor: "pointer",
                     letterSpacing: "0.03em",
                   }}
-                  className='font-montserrat hover:opacity-70 transition px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap'
+                  className='font-montserrat hover:opacity-70 transition px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap w-full'
                 >
                   Subscribe
                 </button>
@@ -1436,7 +1461,7 @@ export default function Home() {
             </div>
 
             {/* Column 5 - Email and Social */}
-            <div className='flex flex-col gap-3 sm:gap-4'>
+            <div className='flex flex-col gap-3 sm:gap-4 lg:col-span-1'>
               <p
                 style={{
                   color: "#FF1275",
