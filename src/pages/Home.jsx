@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div
       className='relative min-h-screen overflow-x-hidden'
-      style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+      style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}>
       <Scroll3DSection />
 
       {/* Header */}
@@ -93,18 +93,17 @@ export default function Home() {
         {/* Right – CONTACT + BUY NOW */}
         <div className='flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-self-end'>
           <a
-            href='#contact'
+            href='/contact-us'
             className='hover:opacity-70 transition-opacity duration-300 cursor-pointer text-[0.65rem] sm:text-xs md:text-sm lg:text-base'
             style={{ color: "#FF1275" }}
           >
             Contact Us
           </a>
           <button
-            className='px-2 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full text-[0.6rem] sm:text-xs md:text-sm font-semibold hover:bg-[#FF1275] hover:text-white transition-all duration-300 font-montserrat cursor-pointer whitespace-nowrap'
+            className='px-2 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full text-[0.6rem] sm:text-xs md:text-sm font-semibold 
+            bg-[#ff127514] hover:bg-[#FF1275] hover:text-black transition-all duration-300 font-montserrat cursor-pointer whitespace-nowrap'
             style={{
               border: "1px solid #FF1275",
-              backgroundColor: "transparent",
-              color: "#FF1275",
             }}
             onClick={() => setIsCartOpen(true)}
           >
@@ -165,43 +164,45 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-[0.7rem] sm:text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat whitespace-nowrap cursor-pointer'
+                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-[0.7rem] sm:text-xs 
+                md:text-sm font-semibold bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
+                hover:text-black transition uppercase tracking-widest font-montserrat 
+                whitespace-nowrap cursor-pointer md:z-[10000]'
                 style={{
                   border: `1px solid #FF1275`,
-                  backgroundColor: "transparent",
-                  color: "#FF1275",
-                  position: "relative",
-                  zIndex: 10000
+                  position: "relative"
                 }}
               >
                 Buy now
               </button>
             </div>
-            
+
             <button
               onClick={() => setIsCartOpen(true)}
-              className='ml-8 p-3 rounded-full hover:opacity-70 transition cursor-pointer' 
-              style={{ 
-                border: '2px solid #FF1275', 
-                backgroundColor: 'transparent',
-                position: "relative",
+              className='p-3 rounded-full transition cursor-pointer'
+              style={{
+                border: '2px solid #FF1275',
+                backgroundColor: '#410627',
+                position: "fixed",
+                bottom: "2rem",
+                right: "2rem",
                 zIndex: 10000
               }}
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="#FF1275E5" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#FF1275E5"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <circle cx="9" cy="21" r="1"/>
-                <circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
               </svg>
             </button>
           </div>
@@ -212,22 +213,22 @@ export default function Home() {
       <section className='relative py-10 md:py-20 flex items-center overflow-visible px-4 md:px-16 lg:px-32'>
         <div className='relative w-full flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-16'>
           <div className='w-full lg:max-w-xl'>
-             <h2
-                className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
-                style={{
-                  color: "#FF1275",
-                  lineHeight: "1.1",
-                  fontWeight: "400",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                16g of sugar
-                <br />
-                from dates.
-              </h2>
+            <h2
+              className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left text-9xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'
+              style={{
+                color: "#FF1275",
+                lineHeight: "1.1",
+                fontWeight: "400",
+                letterSpacing: "0.02em",
+              }}
+            >
+              16g of sugar
+              <br />
+              from dates.
+            </h2>
             <div className='text-center lg:text-left'>
               {/* Heading with Nineties Font */}
-             
+
 
               {/* Benefits Text */}
               <div
@@ -242,13 +243,14 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className='px-4 md:px-8 py-2 md:py-3 rounded-full text-xs md:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat cursor-pointer'
+                className='px-4 md:px-8 py-2 md:py-3 md:z-[10000] rounded-full text-xs md:text-sm font-semibold 
+                transition uppercase tracking-widest
+                bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
+                hover:text-black
+                font-montserrat cursor-pointer'
                 style={{
                   border: `2px solid #FF1275`,
-                  backgroundColor: "#ff127512",
-                  color: "#FF1275",
                   position: "relative",
-                  zIndex: 10000
                 }}
               >
                 BUY a 12 PACK TODAY NOW
@@ -276,12 +278,13 @@ export default function Home() {
           <div className='text-left'>
             {/* Heading with Aloevera Font */}
             <h2
-                className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left'
-                style={{
-                  color: "#FF1275",
-                  lineHeight: "1.2",
-                  fontStyle: "italic",
-                  fontSize: "clamp(4.5rem, 6vw, 8rem)",}}
+              className='font-nineties-italic mb-4 md:mb-8 italic text-center lg:text-left'
+              style={{
+                color: "#FF1275",
+                lineHeight: "1.2",
+                fontStyle: "italic",
+                fontSize: "clamp(4.5rem, 6vw, 8rem)",
+              }}
             >
               a million miles
               <br />
@@ -346,11 +349,12 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat mt-4 cursor-pointer'
+                className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm 
+                font-semibold bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
+                hover:text-black transition uppercase tracking-widest 
+                font-montserrat mt-4 cursor-pointer'
                 style={{
                   border: `2px solid #FF1275`,
-                  backgroundColor: "#ff127512",
-                  color: "#FF1275",
                   position: "relative",
                   // zIndex: 10000
                 }}
@@ -414,11 +418,13 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className='px-6 sm:px-10 py-2 sm:py-3 rounded-full text-xs sm:text-sm hover:opacity-70 transition uppercase tracking-widest font-montserrat cursor-pointer'
+                className='px-6 sm:px-10 py-2 sm:py-3 rounded-full text-xs sm:text-sm 
+                bg-[#41062718]  hover:bg-[#FF1275] text-[#FF1275] 
+                hover:text-black transition uppercase tracking-widest font-montserrat cursor-pointer'
                 style={{
                   border: "1px solid #FF1275",
-                  backgroundColor: "#410627",
-                  color: "#FF1275",
+                  // backgroundColor: "#41062718",
+                  // color: "#FF1275",
                   fontWeight: "600",
                   position: "relative",
                   zIndex: 10000
@@ -444,12 +450,12 @@ export default function Home() {
       {/* Reference Section - 13g Sugar from Dates */}
       <section
         className='relative w-full pt-32 pb-32 overflow-hidden'
-      style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+        style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}>
 
         <div className='relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 h-full min-h-64 sm:min-h-96 flex items-center justify-between'>
           {/* Left Content */}
           <div className='text-center flex-1 z-10 w-full'>
-             <h2
+            <h2
               className='font-broton'
               style={{
                 color: "#FF1275",
@@ -463,10 +469,11 @@ export default function Home() {
               <br />
               sugar
             </h2>
-            <span style={{ fontSize: "clamp(2rem, 10vw, 6rem)", fontWeight: "400", textTransform: "uppercase" , fontFamily: 'Montserrat', wordSpacing: "0.9em" ,color: "#FF1275",
-               }}>
-                from dates
-              </span>
+            <span style={{
+              fontSize: "clamp(2rem, 10vw, 6rem)", fontWeight: "400", textTransform: "uppercase", fontFamily: 'Montserrat', wordSpacing: "0.9em", color: "#FF1275",
+            }}>
+              from dates
+            </span>
           </div>
         </div>
       </section>
@@ -637,11 +644,11 @@ export default function Home() {
       {/* UPON! Logo Section - Design Reference Comparison */}
       <section
         className='relative w-full py-32 overflow-hidden z-[101]'
-            style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+        style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}>
 
-        <div className='relative max-w-7xl mx-auto px-8 lg:px-16'>
+        <div className='relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-16'>
           {/* Comparison Grid - Similar to Reference Image */}
-          <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8'>
+          <div className='hidden lg:grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8'>
             {/* Column Headers */}
             <div className='col-span-1 lg:col-span-4'>
               <div className='grid grid-cols-4 gap-4 md:gap-8 mb-6 md:mb-8'>
@@ -914,7 +921,328 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* Mobile/Tablet Version - Scrollable with Sticky Left Column */}
+          <div className='lg:hidden overflow-x-auto pb-4'>
+            <div className='flex gap-4 md:gap-8 min-w-min'>
+              {/* Sticky Left Column */}
+              <div className='flex flex-col bg-[#3A0422] gap-8 sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 md:pr-8'>
+                {/* Headers Column */}
+                <div className='flex flex-col gap-6'>
+                  <div></div>
+                  <div
+                    className='text-sm md:text-base font-nineties'
+                    style={{
+                      color: "#FF1275",
+                      fontStyle: "italic",
+                      letterSpacing: "0.05em",
+                      minWidth: "150px",
+                    }}
+                  >
+                    {/* Category */}
+                  </div>
+                </div>
+
+                {/* Sweetener */}
+                <div
+                  className='text-sm md:text-base font-nineties'
+                  style={{
+                    color: "#FF1275",
+                    fontStyle: "italic",
+                    fontWeight: "100",
+                    letterSpacing: "0.05em",
+                    minWidth: "100px",
+                  }}
+                >
+                  Sweetener
+                </div>
+
+                {/* Aftertaste */}
+                <div
+                  className='text-sm md:text-base font-nineties'
+                  style={{
+                    color: "#FF1275",
+                    fontStyle: "italic",
+                    fontWeight: "100",
+                    letterSpacing: "0.05em",
+                    minWidth: "100px",
+                  }}
+                >
+                  Aftertaste
+                </div>
+
+                {/* The Talk */}
+                <div
+                  className='text-sm md:text-base font-nineties'
+                  style={{
+                    color: "#FF1275",
+                    fontStyle: "italic",
+                    fontWeight: "100",
+                    letterSpacing: "0.05em",
+                    minWidth: "100px",
+                  }}
+                >
+                  The talk
+                </div>
+
+                {/* The Feels */}
+                <div
+                  className='text-sm md:text-base font-nineties'
+                  style={{
+                    color: "#FF1275",
+                    fontStyle: "italic",
+                    fontWeight: "100",
+                    letterSpacing: "0.05em",
+                    minWidth: "100px",
+                  }}
+                >
+                  The feels
+                </div>
+
+                {/* What You're Buying */}
+                <div
+                  style={{
+                    color: "#FF1275",
+                    fontStyle: "italic",
+                    fontWeight: "100",
+                    letterSpacing: "0.05em",
+                    minWidth: "130px",
+                  }}
+                  className='text-sm md:text-base font-nineties'
+                >
+                  What you're buying
+                </div>
+              </div>
+
+              {/* Scrollable Columns */}
+              <div className='flex gap-4 md:gap-8'>
+                {/* BIG SODA Column */}
+                <div className='flex flex-col gap-8 min-w-max'>
+                  <div
+                    className='text-sm md:text-base font-nineties'
+                    style={{
+                      color: "#FF1275",
+                      fontStyle: "italic",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    BIG SODA
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    HF CORN SYRUP OR ASPARTAME
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    CLOYING SUGAR CRASH
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    NOSTALGIA & JINGLES
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    HEAVY
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    A FEELING FROM 1987
+                  </div>
+                </div>
+
+                {/* GUT SODA Column */}
+                <div className='flex flex-col gap-8 min-w-max'>
+                  <div
+                    className='text-sm md:text-base font-nineties'
+                    style={{
+                      color: "#FF1275",
+                      fontStyle: "italic",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    GUT SODA
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    STEVIA + SUGAR + PREBIOTICS
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    CHALKY, FAKE-SWEET
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    SCIENCE PROJECT MEETS NSYNC
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    CONFUSED
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "300",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    QUESTIONABLE GUT SCIENCE
+                  </div>
+                </div>
+
+                {/* UNPOP Column */}
+                <div className='flex flex-col gap-8 min-w-max'>
+                  <div
+                    className='text-sm md:text-base font-nineties'
+                    style={{
+                      color: "#FF1275",
+                      fontStyle: "italic",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    <img
+                      src='/images/logo.png'
+                      alt='UPON! Logo'
+                      className='w-10 sm:w-12 h-auto drop-shadow-lg'
+                    />
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "500",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    DATE SYRUP + STEVIA
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "500",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    CLEAN, CRISP, & GONE
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "500",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    HONESTLY
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "500",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    ALIVE, FIZZY, REAL
+                  </div>
+
+                  <div
+                    className='text-xs md:text-sm font-montserrat'
+                    style={{
+                      color: "#FF1275",
+                      fontWeight: "500",
+                      letterSpacing: "0.08em",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    SODA, HOW IT OUGHT TO BE
+                  </div>
+                </div>
+              </div>
+            </div>
+          
           {/* <div className='flex justify-center mt-16'>
             <button
               className='px-10 py-3 rounded-full text-xs font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
@@ -928,8 +1256,12 @@ export default function Home() {
             </button>
           </div> */}
         </div>
+          </div>
+
       </section>
-         <section
+
+
+      <section id="our-story"
         className='relative py-20 flex items-center overflow-visible px-16 lg:px-32'
         style={{ backgroundColor: "#410627" }}
 
@@ -963,7 +1295,7 @@ export default function Home() {
             {/* Left - Story Text */}
             <div
               className='space-y-4 font-montserrat tracking-widest text-xs md:text-sm'
-              style={{ color: "#FF1275" , letterSpacing: "0.2em" }}
+              style={{ color: "#FF1275", letterSpacing: "0.2em" }}
             >
               <p>WE DIDN'T ASK FOR PERMISSION.</p>
               <p>BIG SODA TOLD US CORN SYRUP IS FINE.</p>
@@ -1005,7 +1337,7 @@ export default function Home() {
       {/* The UNPOP Club Section */}
       <section
         className='relative w-full py-0 overflow-hidden'
-                    style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)"}}>
+        style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}>
 
         {/* Top Pattern */}
         <div
@@ -1042,11 +1374,13 @@ export default function Home() {
 
               {/* CTA Button */}
               <button
-                className='px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm font-semibold hover:opacity-70 transition uppercase tracking-widest font-montserrat'
+                className='px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm font-semibold 
+                bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
+                hover:text-black transition uppercase tracking-widest font-montserrat'
                 style={{
                   border: "1px solid #FF1275",
-                  backgroundColor: "#ff12750c",
-                  color: "#FF1275",
+                  // backgroundColor: "#ff12750c",
+                  // color: "#FF1275",
                   whiteSpace: "nowrap",
                 }}
               >
@@ -1171,9 +1505,9 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-       <section
+      <section id="faqs-section"
         className='relative py-20 overflow-visible px-16 lg:px-32'
-                style={{ backgroundColor: "#410627" }}
+        style={{ backgroundColor: "#410627" }}
 
       >
         {/* Main Content */}
@@ -1204,12 +1538,11 @@ export default function Home() {
                   key={index}
                   className='border-b'
                   style={{ borderColor: "#FF1275" }}
+                  onMouseEnter={() => setOpenFaqIndex(index)}
+                  onMouseLeave={() => setOpenFaqIndex(null)}
                 >
                   {/* Question Button */}
                   <button
-                    onClick={() =>
-                      setOpenFaqIndex(openFaqIndex === index ? null : index)
-                    }
                     className='w-full py-6 flex items-center justify-between hover:opacity-70 transition-opacity text-left'
                     style={{ color: "#FF1275" }}
                   >
@@ -1271,6 +1604,7 @@ export default function Home() {
 
       {/* Footer Section */}
       <footer
+        id="contact"
         className='relative w-full py-0 overflow-hidden z-[100]'
         style={{ backgroundColor: "#350622" }}
       >
@@ -1299,20 +1633,23 @@ export default function Home() {
               >
                 UNPOP!
               </p>
-              <a
-                href='#'
+              <button
+                onClick={() => setIsCartOpen(true)}
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
                   letterSpacing: "0.02em",
                   textDecoration: "none",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
                 }}
-                className='font-montserrat hover:opacity-70 transition text-sm sm:text-base'
+                className='font-montserrat text-justify hover:opacity-70 transition text-sm sm:text-base'
               >
                 Buy Unpop!
-              </a>
+              </button>
               <a
-                href='#'
+                href='#our-story'
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
@@ -1339,7 +1676,7 @@ export default function Home() {
                 SUPPORT
               </p>
               <a
-                href='#'
+                href='/contact-us'
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
@@ -1351,7 +1688,7 @@ export default function Home() {
                 Contact Us
               </a>
               <a
-                href='#'
+                href='#faqs-section'
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
@@ -1378,7 +1715,7 @@ export default function Home() {
                 MORE
               </p>
               <a
-                href='#'
+                href='/terms-of-use'
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
@@ -1390,7 +1727,7 @@ export default function Home() {
                 Terms of use
               </a>
               <a
-                href='#'
+                href='/sales-policy'
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
@@ -1402,7 +1739,7 @@ export default function Home() {
                 Sales Policy
               </a>
               <a
-                href='#'
+                href='/privacy-policy'
                 style={{
                   color: "#FF1275",
                   fontWeight: "400",
@@ -1446,14 +1783,15 @@ export default function Home() {
                 <button
                   style={{
                     border: "1px solid #FF1275",
-                    backgroundColor: "#ff127509",
-                    color: "#FF1275",
+                    // backgroundColor: "#ff127509",
+                    // color: "#FF1275",
                     borderRadius: "20px",
                     fontWeight: "700",
                     cursor: "pointer",
                     letterSpacing: "0.03em",
                   }}
-                  className='font-montserrat hover:opacity-70 transition px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap w-full'
+                  className='font-montserrat bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
+                hover:text-black transition px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap w-full'
                 >
                   Subscribe
                 </button>
@@ -1589,10 +1927,10 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      <CartModal 
-        isOpen={isCartOpen} 
-        onClose={() => setIsCartOpen(false)} 
-        onCheckout={() => { setIsCartOpen(false); navigate("/checkout"); }} 
+      <CartModal
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        onCheckout={() => { setIsCartOpen(false); navigate("/checkout"); }}
       />
     </div>
   );
