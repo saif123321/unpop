@@ -57,21 +57,82 @@ export default function TermsOfUse() {
         </div>
       </header>
 
-      {/* Coming Soon Section */}
-      <section className='relative min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32 py-12 sm:py-16 md:py-20'>
-        <div className='relative w-full flex items-center justify-center'>
+      {/* Terms of Use Content Section */}
+      <section className='relative min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-20 sm:py-24 md:py-32'>
+        <div className='relative w-full max-w-4xl mx-auto'>
           <h1
-            className='text-center font-nineties-italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl'
+            className='font-nineties-italic text-5xl sm:text-6xl md:text-7xl mb-12'
             style={{
-              color: "#FF1275E5",
-              lineHeight: "0.8",
+              color: "#FF1275",
+              lineHeight: "1",
               fontWeight: "400",
-              letterSpacing: "-0.02em",
-              fontSize: "clamp(60px, 20vw, 250px)",
             }}
           >
-            Coming Soon
+            Terms of Use
           </h1>
+
+          <div className='space-y-8 font-montserrat' style={{ color: "#FF1275" }}>
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                1. Acceptance of Terms
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. UNPOP! reserves the right to make changes to these terms at any time without notice.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                2. Use License
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                Permission is granted to temporarily download one copy of the materials (information or software) on UNPOP!'s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+              </p>
+              <ul className='list-disc list-inside text-sm md:text-base leading-relaxed mt-2'>
+                <li>Modify or copy the materials</li>
+                <li>Use the materials for any commercial purpose or for any public display</li>
+                <li>Attempt to decompile or reverse engineer any software contained on the website</li>
+                <li>Remove any copyright or other proprietary notations from the materials</li>
+                <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                3. Disclaimer
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                The materials on UNPOP!'s website are provided on an 'as is' basis. UNPOP! makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                4. Limitations
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                In no event shall UNPOP! or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on UNPOP!'s website.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                5. Accuracy of Materials
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                The materials appearing on UNPOP!'s website could include technical, typographical, or photographic errors. UNPOP! does not warrant that any of the materials on our website are accurate, complete, or current. UNPOP! may make changes to the materials contained on its website at any time without notice.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                6. Contact Information
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                If you have any questions about these Terms of Use, please contact us at hello@drinkunpop.com
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -370,21 +431,21 @@ export default function TermsOfUse() {
                   <svg
                     width='14'
                     height='14'
-                    viewBox='0 0 24 24'
-                    fill='none'
+                    viewBox='0 0 22 22'
+                    fill='#FF1275'
                     xmlns='http://www.w3.org/2000/svg'
                   >
-                    <path
-                      d='M9 2C5.134 2 2 5.134 2 9v6c0 3.866 3.134 7 7 7h6c3.866 0 7-3.134 7-7V9c0-3.866-3.134-7-7-7H9z'
-                      stroke='#FF1275'
-                      strokeWidth='2'
-                    />
-                    <path
-                      d='M9.5 6v12M14.5 8v8'
-                      stroke='#FF1275'
-                      strokeWidth='1.5'
-                      strokeLinecap='round'
-                    />
+                    <g clip-path='url(#clip0_18_55)'>
+                      <path
+                        d='M11.1909 0.0178701C12.3614 0 13.523 0.00893503 14.6845 0C14.756 1.36706 15.2474 2.76092 16.2481 3.72591C17.2489 4.71769 18.6606 5.17338 20.0366 5.32528V8.92609C18.7499 8.88142 17.4544 8.61337 16.2839 8.0594C15.7746 7.82708 15.301 7.53223 14.8364 7.22844C14.8275 9.83747 14.8453 12.4465 14.8185 15.0466C14.747 16.2975 14.336 17.5395 13.6123 18.567C12.4418 20.2825 10.4136 21.3994 8.3317 21.4351C7.05399 21.5066 5.77628 21.1581 4.68621 20.5148C2.88133 19.4516 1.61256 17.5037 1.42493 15.4129C1.40706 14.9662 1.39812 14.5194 1.41599 14.0816C1.57682 12.3839 2.41671 10.7578 3.72123 9.64983C5.20444 8.36319 7.27737 7.74667 9.21627 8.113C9.23414 9.43539 9.18053 10.7578 9.18053 12.0802C8.29596 11.7942 7.2595 11.8747 6.48215 12.4108C5.91924 12.7771 5.49036 13.34 5.26699 13.9744C5.07935 14.4301 5.13296 14.9304 5.1419 15.4129C5.35634 16.8783 6.76807 18.1113 8.26916 17.9773C9.26988 17.9683 10.2259 17.3876 10.7442 16.5387C10.9139 16.2439 11.1016 15.9401 11.1105 15.5916C11.1998 13.9923 11.1641 12.4018 11.173 10.8024C11.182 7.20163 11.1641 3.60975 11.1909 0.0178701Z'
+                        fill='#FF1275'
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id='clip0_18_55'>
+                        <rect width='21.4441' height='21.4441' fill='#FF1275' />
+                      </clipPath>
+                    </defs>
                   </svg>
                 </a>
               </div>

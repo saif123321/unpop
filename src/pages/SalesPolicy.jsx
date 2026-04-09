@@ -57,21 +57,102 @@ export default function SalesPolicy() {
         </div>
       </header>
 
-      {/* Coming Soon Section */}
-      <section className='relative min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32 py-12 sm:py-16 md:py-20'>
-        <div className='relative w-full flex items-center justify-center'>
+      {/* Sales Policy Content Section */}
+      <section className='relative min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-20 sm:py-24 md:py-32'>
+        <div className='relative w-full max-w-4xl mx-auto'>
           <h1
-            className='text-center font-nineties-italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl'
+            className='font-nineties-italic text-5xl sm:text-6xl md:text-7xl mb-12'
             style={{
-              color: "#FF1275E5",
-              lineHeight: "0.8",
+              color: "#FF1275",
+              lineHeight: "1",
               fontWeight: "400",
-              letterSpacing: "-0.02em",
-              fontSize: "clamp(60px, 20vw, 250px)",
             }}
           >
-            Coming Soon
+            Sales Policy
           </h1>
+
+          <div className='space-y-8 font-montserrat' style={{ color: "#FF1275" }}>
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                1. Order Acceptance
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                UNPOP! reserves the right to refuse any order at its sole discretion. We will confirm your order by email after payment is received and processed. If we cannot process your order, we will notify you and refund any payments made.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                2. Pricing and Availability
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                All prices are subject to change without notice. Product availability is limited and subject to stock. We make every effort to provide accurate pricing and product information on our website. However, we do not warrant that product descriptions, prices, or other content is accurate, complete, reliable, or error-free.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                3. Bulk Orders and B2B Sales
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                For wholesale, bulk, and B2B inquiries, please contact us at hello@drinkunpop.com. We work with retailers, distributors, and businesses to bring UNPOP! to shelves. Pricing and terms for bulk orders are available upon request and subject to negotiation.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                4. Payment Terms
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                We accept various payment methods including credit cards and digital payment services. Payment must be received before order shipment. We reserve the right to cancel any order if payment is not received or if payment information proves to be invalid.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                5. Shipping and Delivery
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                Orders are shipped via carrier services and delivery times may vary. Shipping costs are calculated based on location and order size. We are not responsible for delays caused by shipping carriers or unforeseen circumstances. Customers are responsible for providing accurate shipping addresses.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                6. Returns and Refunds
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                Products must be returned within 30 days of purchase in original condition for a full refund. Items must be unopened and in sellable condition. Refunds will be issued to the original payment method within 5-7 business days of receipt and inspection of returned items.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                7. Distributor and Retailer Partnerships
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                UNPOP! is actively seeking distributors and retail partners. If you are interested in stocking UNPOP! products in your store or region, please reach out to us at hello@drinkunpop.com. We offer competitive wholesale pricing and marketing support for our partners.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                8. Limitation of Liability
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                UNPOP! shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the purchase, use, or inability to use our products or services, even if advised of the possibility of such damages.
+              </p>
+            </div>
+
+            <div>
+              <h2 className='text-xl md:text-2xl font-bold mb-3' style={{ color: "#FF1275" }}>
+                9. Contact Information
+              </h2>
+              <p className='text-sm md:text-base leading-relaxed'>
+                For questions regarding our Sales Policy or to place a wholesale order, please contact us at hello@drinkunpop.com
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -370,21 +451,21 @@ export default function SalesPolicy() {
                   <svg
                     width='14'
                     height='14'
-                    viewBox='0 0 24 24'
-                    fill='none'
+                    viewBox='0 0 22 22'
+                    fill='#FF1275'
                     xmlns='http://www.w3.org/2000/svg'
                   >
-                    <path
-                      d='M9 2C5.134 2 2 5.134 2 9v6c0 3.866 3.134 7 7 7h6c3.866 0 7-3.134 7-7V9c0-3.866-3.134-7-7-7H9z'
-                      stroke='#FF1275'
-                      strokeWidth='2'
-                    />
-                    <path
-                      d='M9.5 6v12M14.5 8v8'
-                      stroke='#FF1275'
-                      strokeWidth='1.5'
-                      strokeLinecap='round'
-                    />
+                    <g clip-path='url(#clip0_18_55)'>
+                      <path
+                        d='M11.1909 0.0178701C12.3614 0 13.523 0.00893503 14.6845 0C14.756 1.36706 15.2474 2.76092 16.2481 3.72591C17.2489 4.71769 18.6606 5.17338 20.0366 5.32528V8.92609C18.7499 8.88142 17.4544 8.61337 16.2839 8.0594C15.7746 7.82708 15.301 7.53223 14.8364 7.22844C14.8275 9.83747 14.8453 12.4465 14.8185 15.0466C14.747 16.2975 14.336 17.5395 13.6123 18.567C12.4418 20.2825 10.4136 21.3994 8.3317 21.4351C7.05399 21.5066 5.77628 21.1581 4.68621 20.5148C2.88133 19.4516 1.61256 17.5037 1.42493 15.4129C1.40706 14.9662 1.39812 14.5194 1.41599 14.0816C1.57682 12.3839 2.41671 10.7578 3.72123 9.64983C5.20444 8.36319 7.27737 7.74667 9.21627 8.113C9.23414 9.43539 9.18053 10.7578 9.18053 12.0802C8.29596 11.7942 7.2595 11.8747 6.48215 12.4108C5.91924 12.7771 5.49036 13.34 5.26699 13.9744C5.07935 14.4301 5.13296 14.9304 5.1419 15.4129C5.35634 16.8783 6.76807 18.1113 8.26916 17.9773C9.26988 17.9683 10.2259 17.3876 10.7442 16.5387C10.9139 16.2439 11.1016 15.9401 11.1105 15.5916C11.1998 13.9923 11.1641 12.4018 11.173 10.8024C11.182 7.20163 11.1641 3.60975 11.1909 0.0178701Z'
+                        fill='#FF1275'
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id='clip0_18_55'>
+                        <rect width='21.4441' height='21.4441' fill='#FF1275' />
+                      </clipPath>
+                    </defs>
                   </svg>
                 </a>
               </div>
