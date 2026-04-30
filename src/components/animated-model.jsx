@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -10,19 +10,33 @@ const lerp = (a, b, t) => a + (b - a) * t;
 export default function AnimatedModel({ url, progress }) {
   const { scene, animations } = useGLTF(url);
   const { actions, names } = useAnimations(animations, scene);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
   const firstName = names?.[0];
 
-  const BASE_SCALE = 1.2;
+  // Reduce size by 25% on mobile (multiply by 0.75)
+  const SCALE_MULTIPLIER = isMobile ? 0.75 : 1;
+
+  const BASE_SCALE = 1.2 * SCALE_MULTIPLIER;
   const BASE_Y = -2;
 
-  const TARGET_SCALE = 0.7;
+  const TARGET_SCALE = 0.7 * SCALE_MULTIPLIER;
   const TARGET_Y = 0;
 
   const TRANSFORM_START = 0.02;
   const TRANSFORM_END = 0.05;
 
   const ANIM_END = 0.37;
+
+  // Detect mobile view on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (!firstName) {
@@ -52,7 +66,7 @@ export default function AnimatedModel({ url, progress }) {
         child.receiveShadow = true;
       }
     });
-  }, [scene]);
+  }, [scene, BASE_SCALE]);
 
   useFrame((_, delta) => {
     if (!firstName) return;

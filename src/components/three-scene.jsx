@@ -41,6 +41,9 @@ export default function ThreeScene({
       dpr={dpr}
       camera={{ fov: 45, position: cameraPos, near: 0.1, far: 100 }}
       gl={{ alpha: true, antialias: true }}
+      style={{
+        pointerEvents: "none",
+      }}
     >
       <hemisphereLight args={[0xffffff, 0x222222, 0.8]} position={[0, 2, 0]} />
       <directionalLight intensity={0.8} position={[5, 10, 7]} />
