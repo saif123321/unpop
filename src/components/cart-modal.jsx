@@ -29,6 +29,18 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     loadProduct();
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   const subtotal = product ? (product.price * quantity).toFixed(2) : "0.00";
   const taxes = "0.00";
 
@@ -44,8 +56,8 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     <>
       {/* Cart Modal - Positioned below header on the right */}
       <div
-        className="fixed top-0 sm:top-20 md:top-24 right-0 sm:right-4 md:right-6 lg:right-16 bg-opacity-95 w-screen sm:w-96 md:w-[450px] lg:w-[500px] h-screen sm:h-auto sm:rounded-lg overflow-hidden flex flex-col"
-        style={{ backgroundColor: "#240416", zIndex: "111111111", maxHeight: "none" }}
+        className="fixed top-0 sm:top-20 md:top-24 right-0 sm:right-4 md:right-6 lg:right-16 bg-opacity-95 w-screen sm:w-96 md:w-[450px] lg:w-[500px] h-dvh sm:h-auto sm:max-h-none max-h-dvh sm:rounded-lg overflow-hidden flex flex-col"
+        style={{ backgroundColor: "#240416", zIndex: "111111111" }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
