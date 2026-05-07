@@ -93,4 +93,4 @@ export default function AnimatedModel({ url, progress }) {
   return <primitive object={scene} rotation={[-0.5, 0, 0]} />;
 }
 
-useGLTF.preload("./models/can.glb");
+useGLTF.preload("./models/can-transformed.glb");

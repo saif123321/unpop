@@ -17,7 +17,7 @@ function getPageScrollProgress() {
 }
 
 export default function Scroll3DSection({
-  modelUrl = "./models/can.glb",
+  modelUrl = "./models/can-transformed.glb",
   cameraPos = [0, 1.5, 4],
   hdrAsBackground = false,
   backgroundColor = "#050816",
