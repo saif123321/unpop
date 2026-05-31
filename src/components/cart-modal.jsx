@@ -61,7 +61,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-0 pb-4 sm:pb-6 border-b p-4 sm:p-6 flex-shrink-0" style={{ borderColor: "#FF1275" }}>
+        <div className="flex items-center justify-between mb-0 pb-4 sm:pb-6 p-4 sm:p-6 flex-shrink-0" style={{ borderColor: "#FF1275" }}>
           <h2
             className="text-lg sm:text-xl md:text-2xl font-montserrat tracking-widest uppercase font-bold"
             style={{ color: "#FF1275" }}
@@ -138,7 +138,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
         </div>
 
         {/* Sticky Footer - Pricing Summary and Checkout Button */}
-        <div className="flex-shrink-0 border-t p-4 sm:p-6" style={{ backgroundColor: "#240416", borderColor: "#FF1275" }}>
+        <div className="flex-shrink-0 p-4 sm:p-6" style={{ backgroundColor: "#240416", borderColor: "#FF1275" }}>
           {/* Pricing Summary */}
           <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
             <div className="flex justify-between items-center">
@@ -164,10 +164,10 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
                 TAXES
               </p>
               <p
-                className="font-montserrat font-semibold text-sm sm:text-base"
+                className="font-montserrat tracking-widest uppercase text-xs sm:text-sm text-right"
                 style={{ color: "#FF1275" }}
               >
-                ${taxes} USD
+                CALCULATED AT CHECKOUT
               </p>
             </div>
 
@@ -188,7 +188,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
           </div>
 
           {/* Divider */}
-          <div className="border-t mb-4 sm:mb-6" style={{ borderColor: "#FF1275" }}></div>
+          <div className="mb-4 sm:mb-6" style={{ borderColor: "#FF1275" }}></div>
 
           {/* Checkout Button */}
           <button

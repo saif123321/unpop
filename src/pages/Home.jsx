@@ -561,7 +561,7 @@ export default function Home() {
                     lineHeight: "1.6",
                   }}
                 >
-                  VANILLA BEAN,
+                  CARDAMOM,
                   <br />
                   CINNAMON, NUTMEG –<br />
                   FLAVOR WITH SOUL.
@@ -926,370 +926,335 @@ export default function Home() {
           </div>
 
           {/* Mobile/Tablet Version - Scrollable with Sticky Left Column */}
-          <div className='lg:hidden overflow-x-auto pb-4 relative'>
-            {/* Scroll Indicator Icon - Sticky Right Center Within Section */}
-            <div
-              className='sticky left-36 right-4 top-1/2 transform translate-y-1/2 z-50 pointer-events-none'
-              style={{
-                animation: 'pulse 2s infinite',
-                backgroundColor: '#3A0422',
-                borderRadius: '50%',
-                border: '2px solid #FF1275',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '40px',
-                height: '40px',
-              }}
-            >
-              <svg
-                width='32'
-                height='32'
-                viewBox='0 0 24 24'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  d='M9 6l6 6-6 6'
-                  stroke='#FF1275'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                />
-              </svg>
-            </div>
+          <div className='lg:hidden overflow-x-auto pb-4'>
+            <table className='w-full border-collapse'>
+              <tbody>
+                {/* Header Row */}
+                <tr>
+                  <td className='sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 py-4 min-w-[130px]'></td>
+                  <td className='px-2 md:px-4 py-4 min-w-[140px] text-center'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      BIG SODA
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 min-w-[140px] text-center'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      GUT SODA
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 min-w-[140px] text-center'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      <img
+                        src='/images/logo.png'
+                        alt='UNPOP Logo'
+                        className='w-10 sm:w-12 h-auto drop-shadow-lg mx-auto'
+                      />
+                    </div>
+                  </td>
+                </tr>
 
-            {/* Add pulse animation CSS */}
-            <style>{`
-              @keyframes pulse {
-                0%, 100% {
-                  opacity: 1;
-                }
-                50% {
-                  opacity: 0.5;
-                }
-              }
-            `}</style>
+                {/* Sweetener Row */}
+                <tr>
+                  <td className='sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 py-4 bg-[#3A0422]'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        fontWeight: "100",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      Sweetener
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      HF CORN SYRUP OR ASPARTAME
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      STEVIA + SUGAR + PREBIOTICS
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "500",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      DATE SYRUP + STEVIA
+                    </div>
+                  </td>
+                </tr>
 
-            <div className='flex gap-4 md:gap-8 min-w-min'>
-              {/* Sticky Left Column */}
-              <div className='flex flex-col bg-[#3A0422] gap-8 sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 md:pr-8'>
-                {/* Headers Column */}
-                <div className='flex flex-col gap-6'>
-                  <div></div>
-                  <div
-                    className='text-sm md:text-base font-nineties'
-                    style={{
-                      color: "#FF1275",
-                      fontStyle: "italic",
-                      letterSpacing: "0.05em",
-                      minWidth: "150px",
-                    }}
-                  >
-                    {/* Category */}
-                  </div>
-                </div>
+                {/* Aftertaste Row */}
+                <tr>
+                  <td className='sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 py-4 bg-[#3A0422]'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        fontWeight: "100",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      Aftertaste
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      CLOYING SUGAR CRASH
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      CHALKY, FAKE-SWEET
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "500",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      CLEAN, CRISP, & GONE
+                    </div>
+                  </td>
+                </tr>
 
-                {/* Sweetener */}
-                <div
-                  className='text-sm md:text-base font-nineties'
-                  style={{
-                    color: "#FF1275",
-                    fontStyle: "italic",
-                    fontWeight: "100",
-                    letterSpacing: "0.05em",
-                    minWidth: "100px",
-                  }}
-                >
-                  Sweetener
-                </div>
+                {/* The Talk Row */}
+                <tr>
+                  <td className='sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 py-4 bg-[#3A0422]'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        fontWeight: "100",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      The talk
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      NOSTALGIA & JINGLES
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      SCIENCE PROJECT MEETS NSYNC
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "500",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      HONESTLY
+                    </div>
+                  </td>
+                </tr>
 
-                {/* Aftertaste */}
-                <div
-                  className='text-sm md:text-base font-nineties'
-                  style={{
-                    color: "#FF1275",
-                    fontStyle: "italic",
-                    fontWeight: "100",
-                    letterSpacing: "0.05em",
-                    minWidth: "100px",
-                  }}
-                >
-                  Aftertaste
-                </div>
+                {/* The Feels Row */}
+                <tr>
+                  <td className='sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 py-4 bg-[#3A0422]'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        fontWeight: "100",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      The feels
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      HEAVY
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      CONFUSED
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "500",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      ALIVE, FIZZY, REAL
+                    </div>
+                  </td>
+                </tr>
 
-                {/* The Talk */}
-                <div
-                  className='text-sm md:text-base font-nineties'
-                  style={{
-                    color: "#FF1275",
-                    fontStyle: "italic",
-                    fontWeight: "100",
-                    letterSpacing: "0.05em",
-                    minWidth: "100px",
-                  }}
-                >
-                  The talk
-                </div>
-
-                {/* The Feels */}
-                <div
-                  className='text-sm md:text-base font-nineties'
-                  style={{
-                    color: "#FF1275",
-                    fontStyle: "italic",
-                    fontWeight: "100",
-                    letterSpacing: "0.05em",
-                    minWidth: "100px",
-                  }}
-                >
-                  The feels
-                </div>
-
-                {/* What You're Buying */}
-                <div
-                  style={{
-                    color: "#FF1275",
-                    fontStyle: "italic",
-                    fontWeight: "100",
-                    letterSpacing: "0.05em",
-                    minWidth: "130px",
-                  }}
-                  className='text-sm md:text-base font-nineties'
-                >
-                  What you're buying
-                </div>
-              </div>
-
-              {/* Scrollable Columns */}
-              <div className='flex gap-4 md:gap-8'>
-                {/* BIG SODA Column */}
-                <div className='flex flex-col gap-8 min-w-max'>
-                  <div
-                    className='text-sm md:text-base font-nineties'
-                    style={{
-                      color: "#FF1275",
-                      fontStyle: "italic",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    BIG SODA
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    HF CORN SYRUP OR ASPARTAME
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    CLOYING SUGAR CRASH
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    NOSTALGIA & JINGLES
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    HEAVY
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    A FEELING FROM 1987
-                  </div>
-                </div>
-
-                {/* GUT SODA Column */}
-                <div className='flex flex-col gap-8 min-w-max'>
-                  <div
-                    className='text-sm md:text-base font-nineties'
-                    style={{
-                      color: "#FF1275",
-                      fontStyle: "italic",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    GUT SODA
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    STEVIA + SUGAR + PREBIOTICS
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    CHALKY, FAKE-SWEET
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    SCIENCE PROJECT MEETS NSYNC
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    CONFUSED
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "300",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    QUESTIONABLE GUT SCIENCE
-                  </div>
-                </div>
-
-                {/* UNPOP Column */}
-                <div className='flex flex-col gap-8 min-w-max'>
-                  <div
-                    className='text-sm md:text-base font-nineties'
-                    style={{
-                      color: "#FF1275",
-                      fontStyle: "italic",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    <img
-                      src='/images/logo.png'
-                      alt='UPON! Logo'
-                      className='w-10 sm:w-12 h-auto drop-shadow-lg'
-                    />
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "500",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    DATE SYRUP + STEVIA
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "500",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    CLEAN, CRISP, & GONE
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "500",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    HONESTLY
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "500",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    ALIVE, FIZZY, REAL
-                  </div>
-
-                  <div
-                    className='text-xs md:text-sm font-montserrat'
-                    style={{
-                      color: "#FF1275",
-                      fontWeight: "500",
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    SODA, HOW IT OUGHT TO BE
-                  </div>
-                </div>
-              </div>
-            </div>
+                {/* What You're Buying Row */}
+                <tr>
+                  <td className='sticky left-0 bg-gradient-to-r from-[#3A0422] to-transparent pr-4 py-4 bg-[#3A0422]'>
+                    <div
+                      className='text-sm md:text-base font-nineties'
+                      style={{
+                        color: "#FF1275",
+                        fontStyle: "italic",
+                        fontWeight: "100",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
+                      What you're buying
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      A FEELING FROM 1987
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "300",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      QUESTIONABLE GUT SCIENCE
+                    </div>
+                  </td>
+                  <td className='px-2 md:px-4 py-4 align-top'>
+                    <div
+                      className='text-xs md:text-sm font-montserrat'
+                      style={{
+                        color: "#FF1275",
+                        fontWeight: "500",
+                        letterSpacing: "0.08em",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      SODA, HOW IT OUGHT TO BE
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             {/* <div className='flex justify-center mt-16'>
             <button
