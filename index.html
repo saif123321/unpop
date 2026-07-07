@@ -1,13 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unpop</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UnPop! | Radically Honest Botanical Craft Soft Drinks</title>
+  <meta name="description" content="Reject wellness fatigue and pseudo-medical hype. Experience an elite, low-sugar craft soda brewed with whole organic dates and real botanical barks." />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://drinkunpop.com/" />
+  <meta property="og:title" content="UNPOP | Craft Soda Redefined" />
+  <meta property="og:description" content="Real spices, wellness-focused flavors, and zero junk. Experience the new sound of craft soda." />
+  <meta property="og:image" content="https://drinkunpop.com/assets/og-homepage-banner.jpg" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://drinkunpop.com/" />
+  <meta name="twitter:title" content="UNPOP | Craft Soda Redefined" />
+  <meta name="twitter:description" content="Real spices, wellness-focused flavors, and zero junk. Experience the new sound of craft soda." />
+  <meta name="twitter:image" content="https://drinkunpop.com/assets/og-homepage-banner.jpg" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQN8RRZX89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VQN8RRZX89');
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2260918031316213');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2260918031316213&ev=PageView&noscript=1"
+  /></noscript>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

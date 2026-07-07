@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
@@ -6,6 +6,63 @@ import Footer from "../components/Footer";
 export default function TermsOfUse() {
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Terms of Use | The UnPop! Digital Platform Rules';
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = 'Review the legal guidelines, user responsibilities, and structural framework governing your interaction with the UnPop! web ecosystem. Zero fluff.';
+
+    // Open Graph tags
+    const ogTags = [
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://drinkunpop.com/terms-of-use' },
+      { property: 'og:title', content: 'Terms of Use | The UnPop! Digital Platform Rules' },
+      { property: 'og:description', content: 'Review the legal guidelines and structural framework governing your interaction with UnPop!' },
+      { property: 'og:image', content: 'https://drinkunpop.com/assets/og-homepage-banner.jpg' },
+    ];
+
+    ogTags.forEach(tag => {
+      let meta = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', tag.property);
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+
+    // Twitter tags
+    const twitterTags = [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:url', content: 'https://drinkunpop.com/terms-of-use' },
+      { name: 'twitter:title', content: 'Terms of Use | The UnPop! Digital Platform Rules' },
+      { name: 'twitter:description', content: 'Review the legal guidelines and structural framework governing your interaction with UnPop!' },
+      { name: 'twitter:image', content: 'https://drinkunpop.com/assets/og-homepage-banner.jpg' },
+    ];
+
+    twitterTags.forEach(tag => {
+      let meta = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = tag.name;
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = 'https://drinkunpop.com/terms-of-use';
+  }, []);
 
   return (
     <div

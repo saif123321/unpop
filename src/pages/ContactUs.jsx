@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
@@ -6,6 +6,63 @@ import Footer from "../components/Footer";
 export default function ContactUs() {
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Contact UnPop! | Connect with Our Texas Craft Team';
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = 'Have questions about our botanical brewing process or your Texas doorstep delivery? Reach out to the UnPop! team directly. Zero noise, pure clarity.';
+
+    // Open Graph tags
+    const ogTags = [
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://drinkunpop.com/contact-us' },
+      { property: 'og:title', content: 'Contact UnPop! | Connect with Our Texas Craft Team' },
+      { property: 'og:description', content: 'Have questions about our botanical brewing process or your Texas doorstep delivery? Reach out to the UnPop! team directly.' },
+      { property: 'og:image', content: 'https://drinkunpop.com/assets/og-homepage-banner.jpg' },
+    ];
+
+    ogTags.forEach(tag => {
+      let meta = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', tag.property);
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+
+    // Twitter tags
+    const twitterTags = [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:url', content: 'https://drinkunpop.com/contact-us' },
+      { name: 'twitter:title', content: 'Contact UnPop! | Connect with Our Texas Craft Team' },
+      { name: 'twitter:description', content: 'Have questions about our botanical brewing process or your Texas doorstep delivery? Reach out to the UnPop! team directly.' },
+      { name: 'twitter:image', content: 'https://drinkunpop.com/assets/og-homepage-banner.jpg' },
+    ];
+
+    twitterTags.forEach(tag => {
+      let meta = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = tag.name;
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = 'https://drinkunpop.com/contact-us';
+  }, []);
   
   // Form state
   const [formData, setFormData] = useState({

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Scroll3DSection from "../components/scroll-3d-section";
 import CartModal from "../components/cart-modal";
@@ -8,6 +8,63 @@ export default function Home() {
   const navigate = useNavigate();
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'UnPop! | Radically Honest Botanical Craft Soft Drinks';
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = 'Reject wellness fatigue and pseudo-medical hype. Experience an elite, low-sugar craft soda brewed with whole organic dates and real botanical barks.';
+
+    // Open Graph tags
+    const ogTags = [
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://drinkunpop.com/' },
+      { property: 'og:title', content: 'UNPOP | Craft Soda Redefined' },
+      { property: 'og:description', content: 'Real spices, wellness-focused flavors, and zero junk. Experience the new sound of craft soda.' },
+      { property: 'og:image', content: 'https://drinkunpop.com/assets/og-homepage-banner.jpg' },
+    ];
+
+    ogTags.forEach(tag => {
+      let meta = document.querySelector(`meta[property="${tag.property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', tag.property);
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+
+    // Twitter tags
+    const twitterTags = [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:url', content: 'https://drinkunpop.com/' },
+      { name: 'twitter:title', content: 'UNPOP | Craft Soda Redefined' },
+      { name: 'twitter:description', content: 'Real spices, wellness-focused flavors, and zero junk. Experience the new sound of craft soda.' },
+      { name: 'twitter:image', content: 'https://drinkunpop.com/assets/og-homepage-banner.jpg' },
+    ];
+
+    twitterTags.forEach(tag => {
+      let meta = document.querySelector(`meta[name="${tag.name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = tag.name;
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = 'https://drinkunpop.com/';
+  }, []);
 
   const faqItems = [
     {
@@ -1330,7 +1387,7 @@ export default function Home() {
               <p>WAS BEATING AROUND THE TRUTH.</p>
               <p>THIS IS UNPOP.</p>
               <p>IF YOU ARE DONE COMPROMISING,</p>
-              <p>YOu'RE IN THE RIGHT PLACE.</p>
+              <p>YOU'RE IN THE RIGHT PLACE.</p>
               <p>
                 <b>UNPOP</b>. SODA. UNJUNKED
               </p>
