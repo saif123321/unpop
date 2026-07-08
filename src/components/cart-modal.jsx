@@ -193,7 +193,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
           {/* Checkout Button */}
           <button
             disabled={isLoading}
-            className="w-full py-2 sm:py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-2 sm:py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               border: "2px solid #FF1275",
               backgroundColor: "transparent",

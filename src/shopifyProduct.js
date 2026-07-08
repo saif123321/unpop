@@ -4,7 +4,6 @@ export async function getUnpopProduct() {
   const products = await client.product.fetchAll();
 
   const product = products[0];
-
   return {
     title: product.title,
     price: product.variants[0].price.amount,
