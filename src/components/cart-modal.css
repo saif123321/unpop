@@ -1,3 +1,17 @@
+/* Variant select styling */
+.cart-variant-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23FF1275' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+.cart-variant-select option {
+  background-color: #300b21;
+  color: #FF1275;
+}
+
 /* Number input spinner styling */
 .cart-quantity-input::-webkit-outer-spin-button,
 .cart-quantity-input::-webkit-inner-spin-button {

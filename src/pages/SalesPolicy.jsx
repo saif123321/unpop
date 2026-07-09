@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
+import { useBuyNow } from "../hooks/useBuyNow";
 
 export default function SalesPolicy() {
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const { handleBuyNow, isBuying, buyNowLabel } = useBuyNow();
 
   useEffect(() => {
     document.title = 'Sales Policy | Direct Texas Allocation & Subscriptions';
@@ -104,13 +106,14 @@ export default function SalesPolicy() {
           </a>
           <button
             className='px-2 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full text-[0.6rem] sm:text-xs md:text-sm font-semibold 
-            bg-[#ff127514] hover:bg-[#FF1275] hover:text-black transition-all duration-300 font-montserrat cursor-pointer whitespace-nowrap'
+            bg-[#ff127514] hover:bg-[#FF1275] hover:text-black transition-all duration-300 font-montserrat cursor-pointer whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed'
             style={{
               border: "1px solid #FF1275",
             }}
-            onClick={() => setIsCartOpen(true)}
+            onClick={handleBuyNow}
+            disabled={isBuying}
           >
-            Buy Now
+            {buyNowLabel || "Buy Now"}
           </button>
         </div>
       </header>
@@ -244,7 +247,7 @@ export default function SalesPolicy() {
               </svg>
             </button>
 
-      <Footer onCartClick={() => setIsCartOpen(true)} />
+      <Footer onCartClick={handleBuyNow} />
 
 
       {/* Cart Modal */}

@@ -23,11 +23,27 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     async function loadProduct() {
       const data = await getUnpopProduct();
       setProduct(data);
-      setVariantId(data.variantId);
+
+      const savedVariantId = localStorage.getItem("cartVariantId");
+      const savedVariant = data.variants.find((variant) => variant.id === savedVariantId);
+      const defaultVariant =
+        savedVariant ||
+        data.variants.find((variant) => variant.title.toLowerCase().includes("12")) ||
+        data.variants[0];
+
+      setVariantId(defaultVariant?.id ?? null);
     }
 
     loadProduct();
   }, []);
+
+  const selectedVariant = product?.variants?.find((variant) => variant.id === variantId);
+
+  const handleVariantChange = (e) => {
+    const newVariantId = e.target.value;
+    setVariantId(newVariantId);
+    localStorage.setItem("cartVariantId", newVariantId);
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -41,7 +57,9 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     };
   }, [isOpen]);
 
-  const subtotal = product ? (product.price * quantity).toFixed(2) : "0.00";
+  const subtotal = selectedVariant
+    ? (selectedVariant.price * quantity).toFixed(2)
+    : "0.00";
   const taxes = "0.00";
 
   const handleQuantityChange = (e) => {
@@ -84,8 +102,8 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
             {/* Product Image */}
             <div className="w-24 sm:w-28 md:w-32 flex-shrink-0">
               <img
-                src={product.image}
-                alt={product.name}
+                src={product?.image}
+                alt={product?.title}
                 className="w-full h-full object-contain"
               />
             </div>
@@ -117,8 +135,37 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
                 className="text-base sm:text-lg font-montserrat font-semibold mb-4"
                 style={{ color: "#FF1275" }}
               >
-                ${Number(product?.price || 0).toFixed(2)}  USD
+                ${Number(selectedVariant?.price || 0).toFixed(2)} USD
               </p>
+
+              {product?.variants?.length > 1 && (
+                <div className="mb-4">
+                  <label
+                    htmlFor="cart-variant-select"
+                    className="block text-xs font-montserrat tracking-widest uppercase font-semibold mb-2"
+                    style={{ color: "#FF1275" }}
+                  >
+                    {product.optionName}
+                  </label>
+                  <select
+                    id="cart-variant-select"
+                    value={variantId || ""}
+                    onChange={handleVariantChange}
+                    className="cart-variant-select w-full px-3 py-2 border-2 rounded font-montserrat font-semibold text-xs sm:text-sm cursor-pointer"
+                    style={{
+                      borderColor: "#FF1275",
+                      backgroundColor: "#300b21",
+                      color: "#FF1275",
+                    }}
+                  >
+                    {product.variants.map((variant) => (
+                      <option key={variant.id} value={variant.id}>
+                        {variant.title} - ${Number(variant.price).toFixed(2)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               {/* Remove Link */}
               <div className="flex justify-start sm:justify-end">
@@ -192,7 +239,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
 
           {/* Checkout Button */}
           <button
-            disabled={isLoading}
+            disabled={isLoading || !variantId}
             className="w-full py-2 sm:py-3 rounded-full font-montserrat tracking-widest uppercase font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               border: "2px solid #FF1275",
