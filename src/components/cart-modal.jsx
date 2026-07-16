@@ -6,38 +6,60 @@ import { createCheckout } from "../createCheckout";
 export default function CartModal({ isOpen, onClose, onCheckout }) {
   const [quantity, setQuantity] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      const savedQuantity = localStorage.getItem("cartQuantity");
-      if (savedQuantity) {
-        setQuantity(parseInt(savedQuantity));
-      }
-    }
-  }, [isOpen]);
-
   const [product, setProduct] = useState(null);
   const [variantId, setVariantId] = useState(null);
 
   useEffect(() => {
     async function loadProduct() {
-      const data = await getUnpopProduct();
-      setProduct(data);
+      try {
+        const data = await getUnpopProduct();
+        setProduct(data);
 
-      const savedVariantId = localStorage.getItem("cartVariantId");
-      const savedVariant = data.variants.find((variant) => variant.id === savedVariantId);
-      const defaultVariant =
-        savedVariant ||
-        data.variants.find((variant) => variant.title.toLowerCase().includes("12")) ||
-        data.variants[0];
+        const savedVariantId = localStorage.getItem("cartVariantId");
+        const savedVariant = data.variants.find(
+          (variant) => String(variant.id) === String(savedVariantId)
+        );
+        const defaultVariant =
+          savedVariant ||
+          data.variants.find((variant) =>
+            variant.title.toLowerCase().includes("6")
+          ) ||
+          data.variants.find((variant) =>
+            variant.title.toLowerCase().includes("12")
+          ) ||
+          data.variants[0];
 
-      setVariantId(defaultVariant?.id ?? null);
+        setVariantId(defaultVariant?.id ? String(defaultVariant.id) : null);
+      } catch (error) {
+        console.error("Failed to load cart product:", error);
+      }
     }
 
     loadProduct();
   }, []);
 
-  const selectedVariant = product?.variants?.find((variant) => variant.id === variantId);
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const savedQuantity = localStorage.getItem("cartQuantity");
+    if (savedQuantity) {
+      setQuantity(parseInt(savedQuantity, 10));
+    }
+
+    const savedVariantId = localStorage.getItem("cartVariantId");
+    if (savedVariantId && product?.variants?.length) {
+      const savedVariant = product.variants.find(
+        (variant) => String(variant.id) === String(savedVariantId)
+      );
+      if (savedVariant) {
+        setVariantId(String(savedVariant.id));
+      }
+    }
+  }, [isOpen, product]);
+
+  const selectedVariant = product?.variants?.find(
+    (variant) => String(variant.id) === String(variantId)
+  );
 
   const handleVariantChange = (e) => {
     const newVariantId = e.target.value;
@@ -62,8 +84,8 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
     : "0.00";
   const taxes = "0.00";
 
-  const handleQuantityChange = (e) => {
-    const value = Math.max(1, parseInt(e.target.value) || 1);
+  const handleQuantityChange = (nextQuantity) => {
+    const value = Math.max(1, nextQuantity);
     setQuantity(value);
     localStorage.setItem("cartQuantity", value.toString());
   };
@@ -118,18 +140,29 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
                   {product?.title}
                 </h3>
                 {/* Quantity Selector */}
-                <input
-                  type="number"
-                  min="1"
-                  value={quantity}
-                  onChange={handleQuantityChange}
-                  className="cart-quantity-input w-16 px-2 py-1 border-2 text-center font-montserrat font-semibold rounded flex-shrink-0 text-xs sm:text-sm"
-                  style={{
-                    borderColor: "#FF1275",
-                    backgroundColor: "#300b21",
-                    color: "#FF1275",
-                  }}
-                />
+                <div className="cart-quantity-input" role="group" aria-label="Quantity">
+                  <button
+                    type="button"
+                    className="cart-quantity-input__btn"
+                    onClick={() => handleQuantityChange(quantity - 1)}
+                    aria-label="Decrease quantity"
+                    disabled={quantity <= 1}
+                  >
+                    <span className="cart-quantity-input__minus" />
+                  </button>
+                  <div className="cart-quantity-input__value" aria-live="polite">
+                    {quantity}
+                  </div>
+                  <button
+                    type="button"
+                    className="cart-quantity-input__btn"
+                    onClick={() => handleQuantityChange(quantity + 1)}
+                    aria-label="Increase quantity"
+                  >
+                    <span className="cart-quantity-input__plus-h" />
+                    <span className="cart-quantity-input__plus-v" />
+                  </button>
+                </div>
               </div>
               <p
                 className="text-base sm:text-lg font-montserrat font-semibold mb-4"
@@ -208,7 +241,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
                 className="font-montserrat tracking-widest uppercase text-xs sm:text-sm"
                 style={{ color: "#FF1275" }}
               >
-                TAXES
+                TAXES AND SHIPPING
               </p>
               <p
                 className="font-montserrat tracking-widest uppercase text-xs sm:text-sm text-right"
@@ -218,7 +251,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
               </p>
             </div>
 
-            <div className="flex justify-between items-center gap-2">
+            {/* <div className="flex justify-between items-center gap-2">
               <p
                 className="font-montserrat tracking-widest uppercase text-xs sm:text-sm"
                 style={{ color: "#FF1275" }}
@@ -231,7 +264,7 @@ export default function CartModal({ isOpen, onClose, onCheckout }) {
               >
                 CALCULATED AT CHECKOUT
               </p>
-            </div>
+            </div> */}
           </div>
 
           {/* Divider */}

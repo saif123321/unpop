@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
+import SiteHeader from "../components/SiteHeader";
 import { useBuyNow } from "../hooks/useBuyNow";
 
 export default function PrivacyPolicy() {
-  const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { handleBuyNow, isBuying, buyNowLabel } = useBuyNow();
+  const { handleBuyNow } = useBuyNow();
 
   useEffect(() => {
     document.title = 'Privacy Policy | Uncompromised Data Protection';
@@ -71,52 +70,7 @@ export default function PrivacyPolicy() {
       className='relative min-h-screen overflow-x-hidden'
       style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}
     >
-      {/* Header */}
-      <header
-        className='absolute top-0 left-0 right-0 grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
-        style={{ color: "#FF1275", zIndex: 111111 }}
-      >
-        {/* Left – OUR STORY */}
-        <a
-          href='/'
-          className='hover:opacity-70 transition-opacity duration-300 cursor-pointer justify-self-start text-[0.65rem] sm:text-xs md:text-sm lg:text-base'
-          style={{ color: "#FF1275" }}
-        >
-          Home
-        </a>
-
-        {/* Center – Logo */}
-        <div className='flex justify-center'>
-          <img
-            src='/images/logo.png'
-            alt='SUN POP! Logo'
-            className='w-8 sm:w-10 md:w-12 lg:w-16 h-auto drop-shadow-lg cursor-pointer'
-            onClick={() => navigate('/')}
-          />
-        </div>
-
-        {/* Right – CONTACT + BUY NOW */}
-        <div className='flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-self-end'>
-          <a
-            href='/contact-us'
-            className='hover:opacity-70 transition-opacity duration-300 cursor-pointer text-[0.65rem] sm:text-xs md:text-sm lg:text-base'
-            style={{ color: "#FF1275" }}
-          >
-            Contact Us
-          </a>
-          <button
-            className='px-2 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full text-[0.6rem] sm:text-xs md:text-sm font-semibold 
-            bg-[#ff127514] hover:bg-[#FF1275] hover:text-black transition-all duration-300 font-montserrat cursor-pointer whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed'
-            style={{
-              border: "1px solid #FF1275",
-            }}
-            onClick={handleBuyNow}
-            disabled={isBuying}
-          >
-            {buyNowLabel || "Buy Now"}
-          </button>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Privacy Policy Content Section */}
       <section className='relative min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-20 sm:py-24 md:py-32'>

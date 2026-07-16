@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Scroll3DSection from "../components/scroll-3d-section";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
+import SiteHeader from "../components/SiteHeader";
 import { useBuyNow } from "../hooks/useBuyNow";
 
 export default function Home() {
@@ -127,51 +128,14 @@ export default function Home() {
       style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}>
       <Scroll3DSection />
 
-      {/* Header */}
-      <header
-        className='absolute top-0 left-0 right-0  grid grid-cols-3 items-center px-6 md:px-16 py-4 md:py-6 text-sm md:text-xs tracking-widest font-montserrat uppercase'
-        style={{ color: "#FF1275", zIndex: 111111 }}
-      >
-        {/* Left – OUR STORY */}
-        <a
-          href='#our-story'
-          className='hover:opacity-70 transition-opacity duration-300 cursor-pointer justify-self-start text-[0.65rem] sm:text-xs md:text-sm lg:text-base'
-          style={{ color: "#FF1275" }}
-        >
-          Our Story
-        </a>
-
-        {/* Center – Logo */}
-        <div className='flex justify-center'>
-          <img
-            src='/images/logo.png'
-            alt='SUN POP! Logo'
-            className='w-8 sm:w-10 md:w-12 lg:w-16 h-auto drop-shadow-lg'
-          />
-        </div>
-
-        {/* Right – CONTACT + BUY NOW */}
-        <div className='flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-self-end'>
-          <a
-            href='/contact-us'
-            className='hover:opacity-70 transition-opacity duration-300 cursor-pointer text-[0.65rem] sm:text-xs md:text-sm lg:text-base'
-            style={{ color: "#FF1275" }}
-          >
-            Contact Us
-          </a>
-          <button
-            className='px-2 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2 rounded-full text-[0.6rem] sm:text-xs md:text-sm font-semibold 
-            bg-[#ff127514] hover:bg-[#FF1275] hover:text-black transition-all duration-300 font-montserrat cursor-pointer whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed'
-            style={{
-              border: "1px solid #FF1275",
-            }}
-            onClick={handleBuyNow}
-            disabled={isBuying}
-          >
-            {buyNowLabel || "Buy Now"}
-          </button>
-        </div>
-      </header>
+      <SiteHeader
+        leftLinkHref="#our-story"
+        leftLinkLabel="Our Story"
+        mobileLinks={[
+          { href: "#our-story", label: "Our Story" },
+          { href: "/contact-us", label: "Contact Us" },
+        ]}
+      />
       {/* Hero Section */}
       <section className='relative min-h-screen md:min-h-[calc(100vh-80px)] flex items-center overflow-visible px-4 sm:px-8 md:px-16 lg:px-32 py-12 sm:py-16 md:py-20 mb-10 md:mb-20'>
         {/* Centered Content Container */}

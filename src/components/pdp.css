@@ -1,0 +1,1396 @@
+/* =========================================================
+   PDP Page shell + fixed header (Unpop12pkCase only)
+   ========================================================= */
+
+.pdp-page {
+  --pdp-pink: #ff1275;
+  --pdp-maroon: #3a0422;
+  --pdp-header-height: 88px;
+
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(270deg, #3a0422 -99.24%, #3a0422 104.65%);
+}
+
+.pdp-page__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 111111;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: var(--pdp-header-height);
+  padding: 1rem 1.5rem;
+  color: var(--pdp-pink);
+  background: var(--pdp-maroon);
+  border-bottom: 1px solid rgba(255, 18, 117, 0.25);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pdp-page__header-link {
+  color: var(--pdp-pink);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  justify-self: start;
+  font-size: clamp(0.65rem, 1.5vw, 1rem);
+}
+
+.pdp-page__header-link:hover {
+  opacity: 0.7;
+}
+
+.pdp-page__header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdp-page__header-logo img {
+  width: 2.5rem;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+  cursor: pointer;
+}
+
+.pdp-page__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: end;
+}
+
+.pdp-page__header-actions .pdp-page__header-link {
+  justify-self: auto;
+}
+
+.pdp-page__header-buy {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid var(--pdp-pink);
+  background: rgba(255, 18, 117, 0.08);
+  color: var(--pdp-pink);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.6rem, 1.4vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+
+.pdp-page__header-buy:hover:not(:disabled) {
+  background: var(--pdp-pink);
+  color: #000;
+}
+
+.pdp-page__header-buy:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pdp-page__header-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pdp-page__header-menu-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pdp-pink);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.pdp-page__header.is-menu-open .pdp-page__header-menu-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.pdp-page__header.is-menu-open .pdp-page__header-menu-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.pdp-page__header.is-menu-open .pdp-page__header-menu-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.pdp-page__header-mobile-nav {
+  display: none;
+}
+
+.pdp-page__main {
+  padding-top: var(--pdp-header-height);
+}
+
+/* =========================================================
+   PDP Banner — matches Figma node 2007:8
+   ========================================================= */
+
+.pdp-banner {
+  --pdp-pink: #ff1275;
+  --pdp-maroon: #3a0422;
+  --pdp-white: #ffffff;
+  --pdp-divider: rgba(255, 18, 117, 0.25);
+  --pdp-left-grad: linear-gradient(
+    180deg,
+    rgba(218, 57, 115, 0.9) 0%,
+    rgba(153, 25, 65, 0.9) 100%
+  );
+
+  position: relative;
+  width: 100%;
+  color: var(--pdp-white);
+  font-family: "Montserrat", sans-serif;
+}
+
+.pdp-banner__status {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  background: var(--pdp-maroon);
+}
+
+.pdp-banner__status-text {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: var(--pdp-white);
+}
+
+.pdp-banner__status-text--error {
+  color: var(--pdp-pink);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.pdp-banner__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  min-height: 100vh;
+}
+
+/* ---------- Left: gallery ---------- */
+
+.pdp-banner__gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  background: #991941;
+  min-height: 560px;
+  width: 100%;
+}
+
+.pdp-banner__gallery-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pdp-banner__gallery-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--pdp-left-grad);
+}
+
+.pdp-banner__gallery-bubbles {
+  position: absolute;
+  inset: -4% 1%;
+  width: 98%;
+  height: 108%;
+  object-fit: cover;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pdp-banner__gallery-inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 560px;
+}
+
+.pdp-banner__main-image-wrap {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-banner__main-image {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35));
+}
+
+.pdp-banner__thumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pdp-banner__thumb {
+  width: clamp(48px, 14vw, 100px);
+  height: clamp(48px, 14vw, 100px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid #410426;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.pdp-banner__thumb.is-active {
+  border: 1.5px solid #ffffff;
+}
+
+.pdp-banner__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Right: details ---------- */
+
+.pdp-banner__details {
+  position: relative;
+  background: var(--pdp-maroon);
+  padding: 2.5rem 1.5rem;
+  width: 100%;
+}
+
+.pdp-banner__details-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+.pdp-banner__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pdp-banner__rating-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdp-banner__stars {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pdp-banner__stars-img {
+  height: 16px;
+  width: auto;
+  display: block;
+}
+
+.pdp-banner__reviews {
+  color: var(--pdp-white);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-transform: capitalize;
+}
+
+.pdp-banner__reviews:hover {
+  opacity: 0.8;
+}
+
+.pdp-banner__title {
+  margin: 0;
+  color: var(--pdp-pink);
+  font-family: "Behind The Nineties Italic", "Behind The Nineties", serif;
+  font-size: clamp(2.25rem, 5vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.pdp-banner__short-desc {
+  margin: 0;
+  color: var(--pdp-white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.pdp-banner__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--pdp-divider);
+  border: 0;
+  margin: 0;
+}
+
+/* ---------- Pack size ---------- */
+
+.pdp-banner__pack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-top: 8px;
+}
+
+.pdp-banner__pack-label {
+  margin: 0;
+  color: var(--pdp-white);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  list-style-position: inside;
+  padding: 0;
+}
+
+.pdp-banner__pack-label li {
+  margin: 0;
+}
+
+.pdp-banner__pack-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pdp-banner__pack-card-wrap {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.pdp-banner__best-value {
+  position: absolute;
+  bottom: calc(100% - 0px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: var(--pdp-pink);
+  color: var(--pdp-white);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 4px 10px;
+  border-radius: 10px 10px 0 0;
+  white-space: nowrap;
+  line-height: 1.2;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-banner__pack-card {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--pdp-pink);
+  background: transparent;
+  color: var(--pdp-white);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.pdp-banner__pack-card.is-selected {
+  background: var(--pdp-pink);
+  border-color: var(--pdp-pink);
+}
+
+.pdp-banner__pack-card-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.pdp-banner__radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--pdp-pink);
+  background: transparent;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.pdp-banner__pack-card.is-selected .pdp-banner__radio {
+  border-color: var(--pdp-white);
+  background: var(--pdp-white);
+}
+
+.pdp-banner__radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pdp-pink);
+  display: block;
+}
+
+.pdp-banner__pack-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-transform: capitalize;
+}
+
+.pdp-banner__pack-name {
+  margin: 0;
+  color: var(--pdp-white);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.pdp-banner__pack-pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.pdp-banner__pack-price {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--pdp-pink);
+}
+
+.pdp-banner__pack-card.is-selected .pdp-banner__pack-price {
+  color: var(--pdp-white);
+}
+
+.pdp-banner__pack-per-can {
+  margin: 0;
+  color: var(--pdp-white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ---------- Qty + ATC ---------- */
+
+.pdp-banner__purchase {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.pdp-banner__purchase-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.pdp-banner__qty {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 140px;
+  min-height: 56px;
+  border-radius: 9999px;
+  border: 1px solid var(--pdp-pink);
+  background: var(--pdp-maroon);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.pdp-banner__qty-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+}
+
+.pdp-banner__qty-btn:hover {
+  opacity: 0.75;
+}
+
+.pdp-banner__qty-minus,
+.pdp-banner__qty-plus-h {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--pdp-white);
+}
+
+.pdp-banner__qty-plus-v {
+  position: absolute;
+  width: 1.5px;
+  height: 18px;
+  background: var(--pdp-white);
+}
+
+.pdp-banner__qty-value {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--pdp-white);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: capitalize;
+}
+
+.pdp-banner__atc {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 56px;
+  border: 0;
+  border-radius: 300px;
+  background: var(--pdp-pink);
+  color: var(--pdp-white);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.pdp-banner__atc:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.pdp-banner__atc:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pdp-banner__shop-pay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-banner__shop-pay-text {
+  margin: 0;
+  color: var(--pdp-white);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pdp-banner__shop-pay-logo {
+  height: 15px;
+  width: auto;
+  display: block;
+}
+
+/* ---------- Trust ---------- */
+
+.pdp-banner__trust {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pdp-banner__trust-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.pdp-banner__trust-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pdp-banner__trust-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.pdp-banner__trust-label {
+  margin: 0;
+  color: var(--pdp-white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  white-space: pre-line;
+}
+
+/* ---------- Description ---------- */
+
+.pdp-banner__description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--pdp-white);
+  padding-bottom: 40px;
+}
+
+.pdp-banner__description-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.pdp-banner__description-list {
+  margin: 0;
+  padding-left: 24px;
+  list-style: disc;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.pdp-banner__description-list li {
+  margin-bottom: 0;
+  line-height: 24px;
+}
+
+.pdp-banner__description-list li + li {
+  margin-top: 4px;
+}
+
+.pdp-banner__description-html {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--pdp-white);
+}
+
+.pdp-banner__description-html p {
+  margin: 0 0 8px;
+}
+
+.pdp-banner__description-html p:last-child {
+  margin-bottom: 0;
+}
+
+.pdp-banner__description-html ul,
+.pdp-banner__description-html ol {
+  margin: 0;
+  padding-left: 24px;
+  list-style: disc;
+}
+
+.pdp-banner__description-html ol {
+  list-style: decimal;
+}
+
+.pdp-banner__description-html li {
+  margin: 0;
+  line-height: 24px;
+}
+
+.pdp-banner__description-html li + li {
+  margin-top: 4px;
+}
+
+.pdp-banner__description-html a {
+  color: var(--pdp-pink);
+  text-decoration: underline;
+}
+
+.pdp-banner__description-html strong,
+.pdp-banner__description-html b {
+  font-weight: 700;
+}
+
+.pdp-banner__short-desc p {
+  margin: 0;
+}
+
+/* =========================================================
+   PDP Sip Section — Figma node 112:45 "Sip And Uplift"
+   ========================================================= */
+
+.pdp-sip-section__container-bg {
+  --pdp-pink: #ff1275;
+  --pdp-maroon: #3a0422;
+  --pdp-deep: #410426;
+  --pdp-white: #ffffff;
+
+  position: relative;
+  width: 100%;
+  background: var(--pdp-maroon);
+  overflow: hidden;
+}
+
+
+
+.pdp-sip-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: transparent;
+  color: var(--pdp-white);
+  padding: 4rem 1.5rem 2rem;
+  overflow: visible;
+}
+
+.pdp-sip-section__inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.pdp-sip-section__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 508px;
+}
+
+.pdp-sip-section__title {
+  margin: 0;
+  color: var(--pdp-pink);
+  font-family: "Behind The Nineties Italic", "Behind The Nineties", serif;
+  font-size: clamp(2.5rem, 5vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 1.04px;
+}
+
+.pdp-sip-section__desc {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--pdp-white);
+}
+
+.pdp-sip-section__ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pdp-sip-section__ingredients-label {
+  margin: 0;
+  color: var(--pdp-pink);
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.pdp-sip-section__ingredients-text {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--pdp-white);
+}
+
+.pdp-sip-section__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pdp-sip-section__can-wrap {
+  position: relative;
+  width: min(100%, 520px);
+  flex-shrink: 0;
+}
+
+.pdp-sip-section__can {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pdp-sip-section__joy {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 1904px;
+  margin: 0 auto;
+  padding: 0rem 1rem;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+/* =========================================================
+   Handshake — still (apart) → scroll move → play (splash)
+   ========================================================= */
+
+.pdp-handshake-section__container-bg {
+  position: relative;
+  width: 100%;
+  background: #3a0422;
+  overflow: hidden;
+}
+
+.pdp-handshake-section {
+  --handshake-progress: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+}
+
+.pdp-handshake-section__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: clamp(240px, 52vw, 640px);
+  overflow: hidden;
+}
+
+.pdp-handshake-section__side {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.pdp-handshake-section__side--left {
+  justify-self: start;
+  margin-left: 0;
+}
+
+.pdp-handshake-section__side--right {
+  justify-self: end;
+  margin-right: 0;
+}
+
+.pdp-handshake-section__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
+  mix-blend-mode: screen;
+}
+
+.pdp-handshake-section__img--still {
+  position: relative;
+}
+
+.pdp-handshake-section__img--play {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.pdp-pattern-section {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  margin-top: -12%;
+}
+
+.pdp-pattern-section__bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* =========================================================
+   PDP Fans Say — Figma node 2053:7 (infinite video slider)
+   ========================================================= */
+
+.pdp-fansay {
+  --pdp-pink: #ff1275;
+  --pdp-deep: #410426;
+  --pdp-maroon: #3a0422;
+  --pdp-white: #ffffff;
+
+  width: 100%;
+  background: var(--pdp-maroon);
+  color: var(--pdp-white);
+  padding: 0;
+  overflow: hidden;
+}
+
+.pdp-fansay__inner {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pdp-fansay__title {
+  margin: 0;
+  padding: 0 1rem;
+  text-align: center;
+  color: var(--pdp-pink);
+  font-family: "Behind The Nineties Italic", "Behind The Nineties", serif;
+  font-size: clamp(2.25rem, 5.5vw, 56px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.pdp-fansay__slider {
+  position: relative;
+  width: 100%;
+}
+
+.pdp-fansay__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  padding: 0.15rem 1rem 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.pdp-fansay__track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.pdp-fansay__track::-webkit-scrollbar {
+  display: none;
+}
+
+.pdp-fansay__card {
+  flex: 0 0 auto;
+  width: min(42vw, 220px);
+  scroll-snap-align: start;
+  pointer-events: auto;
+}
+
+.pdp-fansay__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #0a0a0a;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pdp-fansay__poster,
+.pdp-fansay__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.pdp-fansay__video {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pdp-fansay__media.is-playing .pdp-fansay__video {
+  opacity: 1;
+}
+
+.pdp-fansay__media.is-playing .pdp-fansay__poster {
+  opacity: 0;
+}
+
+.pdp-fansay__poster-fallback {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+.pdp-fansay__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: rgba(255, 18, 117, 0.92);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pdp-fansay__play::before {
+  content: "";
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.pdp-fansay__play[data-playing="true"] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+.pdp-fansay__media:hover .pdp-fansay__play[data-playing="false"] {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+/* =========================================================
+   PDP Our Benefits — Figma node 196:4737 / Frame 2147227860
+   Comparison table: Features | unPop! | Big Soda | Gut Soda
+   ========================================================= */
+
+.pdp-our-benefits {
+  --pdp-pink: #ff1275;
+  --pdp-maroon: #3a0422;
+  --pdp-features: #330a21;
+  --pdp-deep: #410426;
+  --pdp-white: #ffffff;
+  --pdp-line: rgba(255, 255, 255, 0.2);
+
+  width: 100%;
+  background: var(--pdp-maroon);
+  color: var(--pdp-white);
+  padding: 3.5rem 1rem 4rem;
+}
+
+.pdp-our-benefits__inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.pdp-our-benefits__title {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--pdp-pink);
+  font-family: "Behind The Nineties Italic", "Behind The Nineties", serif;
+  font-size: clamp(2.5rem, 5vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: 1.04px;
+}
+
+.pdp-our-benefits__scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.pdp-our-benefits__table {
+  min-width: 920px;
+  width: 100%;
+  border: 1px solid var(--pdp-pink);
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--pdp-maroon);
+}
+
+.pdp-our-benefits__row {
+  display: grid;
+  grid-template-columns: minmax(160px, 1.2fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr);
+  min-height: 70px;
+}
+
+.pdp-our-benefits__row--head {
+  min-height: 110px;
+}
+
+.pdp-our-benefits__cell {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--pdp-white);
+  border-top: 1px solid var(--pdp-line);
+}
+
+.pdp-our-benefits__row--head .pdp-our-benefits__cell {
+  border-top: none;
+}
+
+.pdp-our-benefits__cell--feature {
+  background: var(--pdp-features);
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding-left: 24px;
+}
+
+.pdp-our-benefits__cell--feature.pdp-our-benefits__cell--head {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pdp-our-benefits__cell--unpop {
+  background: var(--pdp-pink);
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-top-color: rgba(255, 255, 255, 0.55);
+}
+
+.pdp-our-benefits__cell--brand {
+  background: var(--pdp-maroon);
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  border-left: 1px solid var(--pdp-line);
+}
+
+.pdp-our-benefits__cell--brand.pdp-our-benefits__cell--head {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pdp-our-benefits__logo {
+  display: block;
+  width: min(120px, 70%);
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* =========================================================
+   PDP FAQ — Figma Frame 2147227840 + Group 1686553128
+   ========================================================= */
+
+.pdp-faq {
+  --pdp-pink: #ff1275;
+  --pdp-maroon: #3a0422;
+  --pdp-deep: #410426;
+  --pdp-white: #ffffff;
+  --pdp-line: rgba(255, 255, 255, 0.28);
+
+  position: relative;
+  width: 100%;
+  background: var(--pdp-maroon);
+  color: var(--pdp-white);
+  padding: 3.5rem 1.25rem 4rem;
+}
+
+.pdp-faq__inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.pdp-faq__visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pdp-faq__image {
+  position: absolute;
+  left: 0;
+  top: 4.5rem;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pdp-faq__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pdp-faq__title {
+  margin: 0;
+  color: var(--pdp-pink);
+  font-family: "Behind The Nineties Italic", "Behind The Nineties", serif;
+  font-size: clamp(2rem, 4.5vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: 1.04px;
+  text-transform: capitalize;
+}
+
+.pdp-faq__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pdp-faq__item {
+  border-bottom: 1px solid var(--pdp-line);
+}
+
+.pdp-faq__question {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  color: var(--pdp-white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.pdp-faq__item.is-open .pdp-faq__question {
+  color: var(--pdp-pink);
+  padding-bottom: 0.65rem;
+}
+
+.pdp-faq__question-text {
+  flex: 1;
+}
+
+.pdp-faq__icon {
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  color: inherit;
+}
+
+.pdp-faq__answer {
+  padding: 0 1.75rem 1rem 0;
+}
+
+.pdp-faq__answer p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.48px;
+  color: var(--pdp-white);
+}

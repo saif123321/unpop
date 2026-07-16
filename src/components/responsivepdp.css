@@ -1,0 +1,616 @@
+/* =========================================================
+   PDP Responsive — desktop-first
+   One @media = one breakpoint (max-width only)
+   Import after pdp.css
+   ========================================================= */
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .pdp-handshake-section__side--left,
+  .pdp-handshake-section__side--right {
+    transform: none !important;
+  }
+}
+
+/* ---------- Desktop defaults (≥1024px) ---------- */
+
+.pdp-page {
+  --pdp-header-height: 104px;
+}
+
+.pdp-page__header {
+  padding: 1.5rem 4rem;
+  font-size: 0.75rem;
+}
+
+.pdp-page__header-logo img {
+  width: 4rem;
+}
+
+.pdp-page__header-actions {
+  gap: 2rem;
+}
+
+.pdp-page__header-buy {
+  padding: 0.5rem 1.25rem;
+}
+
+.pdp-banner__layout {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  min-height: calc(100vh - var(--pdp-header-height, 104px));
+}
+
+.pdp-banner__gallery {
+  position: sticky;
+  top: var(--pdp-header-height, 104px);
+  height: calc(100vh - var(--pdp-header-height, 104px));
+  min-height: 0;
+  max-height: calc(100vh - var(--pdp-header-height, 104px));
+  padding: 2.5rem 2rem 3rem;
+  align-self: start;
+  z-index: 1;
+}
+
+.pdp-banner__details {
+  position: relative;
+  padding: 40px 60px;
+  min-height: calc(100vh - var(--pdp-header-height, 104px));
+  align-self: start;
+}
+
+.pdp-banner__details-inner {
+  margin: 0;
+}
+
+.pdp-banner__title {
+  line-height: 75px;
+  letter-spacing: 1.04px;
+  white-space: nowrap;
+}
+
+.pdp-banner__thumbs {
+  gap: 20px;
+}
+
+.pdp-banner__main-image {
+  max-height: min(520px, calc(100vh - var(--pdp-header-height, 104px) - 220px));
+}
+
+.pdp-banner__qty {
+  width: 160px;
+  max-width: 160px;
+}
+
+.pdp-banner__pack-options {
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.pdp-banner__pack-card-wrap {
+  flex: 0 1 auto;
+}
+
+.pdp-banner__trust-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pdp-sip-section {
+  padding: 4.5rem 4rem 1.5rem;
+}
+
+.pdp-sip-section__inner {
+  grid-template-columns: minmax(0, 508px) minmax(0, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+.pdp-sip-section__copy {
+  gap: 24px;
+}
+
+.pdp-sip-section__title {
+  line-height: 75px;
+}
+
+.pdp-sip-section__visual {
+  justify-content: flex-end;
+}
+
+.pdp-sip-section__can-wrap {
+  width: 520px;
+}
+
+.pdp-sip-section__joy {
+  padding: 0rem 1rem;
+}
+
+.pdp-handshake-section {
+  padding: 0;
+}
+
+.pdp-handshake-section__inner {
+  min-height: clamp(420px, 46vw, 700px);
+}
+
+.pdp-handshake-section__side {
+  width: 100%;
+}
+
+.pdp-handshake-section__side--left {
+  margin-left: 0;
+}
+
+.pdp-handshake-section__side--right {
+  margin-right: 0;
+}
+
+.pdp-fansay {
+  padding: 0;
+}
+
+.pdp-fansay__inner {
+  gap: 2.5rem;
+}
+
+.pdp-fansay__card {
+  width: min(18vw, 260px);
+}
+
+.pdp-fansay__media {
+  border-radius: 20px;
+}
+
+.pdp-fansay__track {
+  gap: 20px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.pdp-our-benefits {
+  padding: 4.5rem 4rem 5rem;
+}
+
+.pdp-our-benefits__inner {
+  gap: 50px;
+}
+
+.pdp-our-benefits__table {
+  min-width: 0;
+}
+
+.pdp-our-benefits__row {
+  grid-template-columns: 1.15fr 0.95fr 1fr 0.95fr;
+  min-height: 72px;
+}
+
+.pdp-our-benefits__row--head {
+  min-height: 120px;
+}
+
+.pdp-our-benefits__cell--feature {
+  font-size: 18px;
+  padding-left: 30px;
+}
+
+.pdp-our-benefits__cell--feature.pdp-our-benefits__cell--head {
+  font-size: 20px;
+}
+
+.pdp-our-benefits__cell--unpop,
+.pdp-our-benefits__cell--brand {
+  font-size: 16px;
+}
+
+.pdp-our-benefits__cell--brand.pdp-our-benefits__cell--head {
+  font-size: 20px;
+}
+
+.pdp-our-benefits__logo {
+  width: 140px;
+}
+
+.pdp-faq {
+  padding: 4.5rem 4rem 5rem;
+}
+
+.pdp-faq__inner {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.pdp-faq__content {
+  gap: 2.5rem;
+}
+
+.pdp-faq__title {
+  line-height: 75px;
+}
+
+.pdp-faq__question {
+  font-size: 18px;
+  padding: 1.1rem 0;
+}
+
+.pdp-faq__answer p {
+  font-size: 16px;
+}
+
+/* ---------- ≤1023px (tablet) ---------- */
+
+@media (max-width: 1023px) {
+  .pdp-page__header {
+    padding: 1.25rem 4rem;
+  }
+  .pdp-faq__image {
+    position: static;
+    width: 100%;
+  }
+
+  .pdp-page__header-logo img {
+    width: 3.5rem;
+  }
+
+  .pdp-page__header-actions {
+    gap: 1.5rem;
+  }
+
+  .pdp-banner__layout {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  .pdp-banner__gallery {
+    position: relative;
+    top: auto;
+    height: auto;
+    max-height: none;
+    min-height: 560px;
+    padding: 3rem 1.5rem;
+    align-self: stretch;
+  }
+
+  .pdp-banner__details {
+    padding: 1.9rem 1rem;
+    min-height: 0;
+  }
+
+  .pdp-banner__details-inner {
+    margin: 0 auto;
+  }
+
+  .pdp-banner__title {
+    line-height: 1.15;
+    letter-spacing: normal;
+    white-space: normal;
+  }
+
+  .pdp-banner__thumbs {
+    gap: 12px;
+  }
+
+  .pdp-banner__main-image {
+    max-height: 520px;
+  }
+
+  .pdp-sip-section {
+    padding: 1.9rem 1rem 1.9rem;
+  }
+
+  .pdp-sip-section__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .pdp-sip-section__title {
+    line-height: normal;
+  }
+
+  .pdp-sip-section__visual {
+    justify-content: center;
+  }
+  .pdp-sip-section__visual {
+    order: 1;
+  }
+  .pdp-sip-section__copy {
+    order: 2;
+}
+  .pdp-sip-section__can-wrap {
+    width: min(100%, 520px);
+  }
+
+  .pdp-handshake-section__inner {
+    min-height: auto;
+  }
+
+  .pdp-fansay__card {
+    width: min(28vw, 240px);
+  }
+
+  .pdp-fansay__media {
+    border-radius: 18px;
+  }
+
+  .pdp-our-benefits {
+    padding: 4rem 2rem 4.5rem;
+  }
+
+  .pdp-our-benefits__table {
+    min-width: 920px;
+  }
+
+  .pdp-our-benefits__row {
+    grid-template-columns: minmax(160px, 1.2fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr);
+    min-height: 70px;
+  }
+
+  .pdp-our-benefits__row--head {
+    min-height: 110px;
+  }
+
+  .pdp-our-benefits__cell--unpop,
+  .pdp-our-benefits__cell--brand {
+    font-size: 15px;
+  }
+
+  .pdp-our-benefits__logo {
+    width: min(120px, 70%);
+  }
+
+  .pdp-faq{
+    padding: 1.9rem 0rem 0rem;
+  }
+  .pdp-faq__content{
+    padding: 0rem 1rem;
+  }
+  .pdp-faq__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .pdp-faq__content {
+    gap: 2rem;
+  }
+
+  .pdp-faq__title {
+    line-height: normal;
+  }
+
+  .pdp-faq__question {
+    font-size: 17px;
+  }
+  .pdp-faq__visual{
+    order: 2;
+  }
+  .pdp-faq__content{
+    order: 1;
+  }
+}
+
+/* ---------- ≤767px (mobile) ---------- */
+
+@media (max-width: 767px) {
+  .pdp-page {
+    --pdp-header-height: 72px;
+  }
+
+  .pdp-banner__trust-label {
+    white-space: normal;
+  }
+
+  img.pdp-sip-section__pattern,
+  img.pdp-faq__pattern-bg {
+    height: 68px;
+    object-fit: cover;
+  }
+
+  .pdp-banner__description {
+    padding-bottom: 0;
+  }
+
+  /* Mobile header — logo left, Buy Now + hamburger right */
+  .pdp-page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    min-height: var(--pdp-header-height);
+  }
+
+  .pdp-page__header-link--desktop {
+    display: none;
+  }
+
+  .pdp-page__header-logo {
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+
+  .pdp-page__header-logo img {
+    width: 3rem;
+  }
+
+  .pdp-page__header-actions {
+    gap: 0.75rem;
+    justify-self: auto;
+  }
+
+  .pdp-page__header-buy {
+    padding: 0.55rem 1.15rem;
+    border: 0;
+    background: var(--pdp-pink);
+    color: #ffffff;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  .pdp-page__header-buy:hover:not(:disabled) {
+    background: #e01068;
+    color: #ffffff;
+  }
+
+  .pdp-page__header-menu {
+    display: flex;
+  }
+
+  .pdp-page__header-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--pdp-maroon);
+    border-bottom: 1px solid rgba(255, 18, 117, 0.25);
+    padding: 0.5rem 1.25rem 1rem;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  }
+
+  .pdp-page__header-mobile-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .pdp-page__header-mobile-nav a {
+    display: block;
+    padding: 0.85rem 0;
+    color: var(--pdp-pink);
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 18, 117, 0.2);
+  }
+
+  .pdp-page__header-mobile-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .pdp-sip-section {
+    padding: 1.9rem 1rem 1.9rem;
+  }
+
+  .pdp-fansay {
+    padding-top: 30px;
+  }
+
+  .pdp-sip-section__inner {
+    gap: 3rem;
+  }
+
+  .pdp-sip-section__can-wrap {
+    width: 100%;
+  }
+
+  .pdp-fansay__inner {
+    gap: 2rem;
+  }
+
+  .pdp-fansay__card {
+    width: min(42vw, 220px);
+  }
+
+  .pdp-fansay__track {
+    gap: 20px;
+    padding: 0.15rem 1rem 0.5rem;
+  }
+
+  .pdp-our-benefits {
+    padding: 3.5rem 1rem 4rem;
+  }
+
+  .pdp-our-benefits__inner {
+    gap: 2.5rem;
+  }
+
+  .pdp-our-benefits__cell--feature {
+    font-size: 14px;
+    padding-left: 24px;
+  }
+  .pdp-our-benefits__table {
+      min-width: 730px;
+  }
+
+  .pdp-our-benefits__cell--feature.pdp-our-benefits__cell--head {
+    font-size: 18px;
+  }
+
+  .pdp-our-benefits__cell--unpop,
+  .pdp-our-benefits__cell--brand {
+    font-size: 14px;
+  }
+
+  .pdp-our-benefits__cell--brand.pdp-our-benefits__cell--head {
+    font-size: 18px;
+  }
+
+
+  .pdp-faq__content {
+    gap: 1rem;
+  }
+
+  .pdp-faq__question {
+    font-size: 16px;
+    padding: 1rem 0;
+  }
+
+  .pdp-faq__answer p {
+    font-size: 15px;
+  }
+}
+
+/* ---------- ≤639px ---------- */
+
+@media (max-width: 639px) {
+
+
+ 
+
+  .pdp-banner__pack-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pdp-banner__pack-card-wrap {
+    flex: 1 1 auto;
+  }
+
+  .pdp-banner__trust-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ---------- ≤479px ---------- */
+
+@media (max-width: 479px) {
+  .pdp-banner__purchase-row {
+    flex-direction: column;
+  }
+
+  
+
+  .pdp-banner__thumbs {
+    gap: 8px;
+  }
+
+  .pdp-banner__pack-card-wrap.has-badge {
+    margin-top: 20px;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { assetUrl } from "../utils/assetUrl";
 
 export default function Footer({ onCartClick }) {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ export default function Footer({ onCartClick }) {
       {/* Logo at Top */}
       <div className="w-full px-4 sm:px-8 md:px-16 pt-12 sm:pt-16 md:pt-24">
         <img
-          src="/images/logo.png"
+          src={assetUrl("/images/logo.png")}
           alt="UNPOP! Logo"
           className="w-16 sm:w-20 md:w-24 h-auto drop-shadow-lg"
         />

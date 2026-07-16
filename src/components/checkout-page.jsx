@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./checkout-page.css";
+import { assetUrl } from "../utils/assetUrl";
 
 export default function CheckoutPage({ onBack }) {
     const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ export default function CheckoutPage({ onBack }) {
     const product = {
         name: "UNPOP 12PK CASE",
         price: 26.99,
-        image: "/images/cart-image.png",
+        image: assetUrl("/images/cart-image.png"),
     };
 
     const subtotal = (product.price * quantity).toFixed(2);
@@ -66,7 +67,7 @@ export default function CheckoutPage({ onBack }) {
             <div className="fixed top-0 left-0 right-0 flex justify-center py-4 z-50" style={{ backgroundColor: "#300b21" }}>
                 <a href="/">
                     <img
-                        src="/images/logo.png"
+                        src={assetUrl("/images/logo.png")}
                         alt="Logo"
                         className="w-32 h-auto"
                     />
@@ -546,7 +547,7 @@ export default function CheckoutPage({ onBack }) {
                         {/* Hero Image - Bottom Right */}
                         <div className="mt-12">
                             <img
-                                src="/images/hero5.png"
+                                src={assetUrl("/images/hero5.png")}
                                 alt="Hero"
                                 className="w-full h-auto object-contain"
                             />
@@ -561,7 +562,7 @@ export default function CheckoutPage({ onBack }) {
                 {/* Logo at Top */}
                 <div className='w-full px-8 lg:px-16 pt-4 '>
                     <img
-                        src='/images/logo.png'
+                        src={assetUrl("/images/logo.png")}
                         alt='UNPOP! Logo'
                         className='w-24 h-auto drop-shadow-lg'
                     />
