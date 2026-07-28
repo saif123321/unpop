@@ -28,10 +28,12 @@ export default function SiteHeader({
   leftLinkHref = "/",
   leftLinkLabel = "Home",
   mobileLinks,
+  onBuyNow,
 }) {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { handleBuyNow, isBuying, buyNowLabel } = useBuyNow();
+  const buyNowAction = onBuyNow || handleBuyNow;
 
   const menuLinks =
     mobileLinks ||
@@ -69,7 +71,7 @@ export default function SiteHeader({
         <button
           type="button"
           className="site-header__buy"
-          onClick={handleBuyNow}
+          onClick={buyNowAction}
           disabled={isBuying}
         >
           {buyNowLabel || "Buy Now"}

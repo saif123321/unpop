@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router basename="/new-demo">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/checkout" element={<CheckoutPageRoute />} />

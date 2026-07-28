@@ -7,8 +7,8 @@ import PdpSipSection from "../components/pdp-sip-section";
 import PdpOurBenefits from "../components/pdp-our-benefits";
 import PdpFansay from "../components/pdp-fansay";
 import PdpFaq from "../components/pdp-faq";
-import { useBuyNow } from "../hooks/useBuyNow";
 import { assetUrl } from "../utils/assetUrl";
+import { prepareCartForOpen } from "../utils/openCart";
 import "../components/pdp.css";
 import "../components/responsivepdp.css";
 
@@ -16,7 +16,11 @@ export default function Unpop12pkCase() {
   const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { handleBuyNow, isBuying, buyNowLabel } = useBuyNow();
+  const openCart = () => {
+    prepareCartForOpen();
+    setIsCartOpen(true);
+  };
+  const handleBuyNow = openCart;
 
   useEffect(() => {
     document.title =
@@ -126,9 +130,8 @@ export default function Unpop12pkCase() {
           <button
             className="pdp-page__header-buy"
             onClick={handleBuyNow}
-            disabled={isBuying}
           >
-            {buyNowLabel || "Buy Now"}
+            Buy Now
           </button>
           <button
             type="button"
@@ -157,7 +160,7 @@ export default function Unpop12pkCase() {
       </header>
 
       <main className="pdp-page__main">
-        <PdpBanner onAddToCart={() => setIsCartOpen(true)} />
+        <PdpBanner onAddToCart={openCart} />
         <PdpSipSection />
         <PdpFansay />
         <PdpOurBenefits />
@@ -165,7 +168,7 @@ export default function Unpop12pkCase() {
       </main>
 
       <button
-        onClick={() => setIsCartOpen(true)}
+        onClick={openCart}
         className="p-3 rounded-full transition cursor-pointer"
         style={{
           border: "2px solid #FF1275",

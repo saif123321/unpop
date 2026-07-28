@@ -178,6 +178,8 @@ export async function getProductByName(productName = PRODUCT_NAME) {
     .map(mapVariant)
     .sort((a, b) => a.cans - b.cans);
   const defaultVariant =
+    variants.find((variant) => variant.cans === 12) ||
+    variants.find((variant) => variant.title.toLowerCase().includes("12")) ||
     variants.find((variant) => variant.cans === 6) ||
     variants.find((variant) => variant.title.toLowerCase().includes("6")) ||
     variants[0];

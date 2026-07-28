@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
 import SiteHeader from "../components/SiteHeader";
-import { useBuyNow } from "../hooks/useBuyNow";
+import { prepareCartForOpen } from "../utils/openCart";
 
 export default function TermsOfUse() {
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { handleBuyNow } = useBuyNow();
+  const openCart = () => {
+    prepareCartForOpen();
+    setIsCartOpen(true);
+  };
+  const handleBuyNow = openCart;
 
   useEffect(() => {
     document.title = 'Terms of Use | The UnPop! Digital Platform Rules';
@@ -70,7 +74,7 @@ export default function TermsOfUse() {
       className='relative min-h-screen overflow-x-hidden'
       style={{ background: "linear-gradient(270deg, #3A0422 -99.24%, #3A0422 104.65%)" }}
     >
-      <SiteHeader />
+      <SiteHeader onBuyNow={handleBuyNow} />
 
       {/* Terms of Use Content Section */}
       <section className='relative min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-20 sm:py-24 md:py-32'>
@@ -153,7 +157,7 @@ export default function TermsOfUse() {
 
       {/* Fixed Cart Button */}
        <button
-              onClick={() => setIsCartOpen(true)}
+              onClick={openCart}
               className='p-3 rounded-full transition cursor-pointer'
               style={{
                 border: '2px solid #FF1275',

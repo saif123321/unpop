@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Scroll3DSection from "../components/scroll-3d-section";
 import CartModal from "../components/cart-modal";
 import Footer from "../components/Footer";
 import SiteHeader from "../components/SiteHeader";
-import { useBuyNow } from "../hooks/useBuyNow";
+import { prepareCartForOpen } from "../utils/openCart";
 
 export default function Home() {
-  const navigate = useNavigate();
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { handleBuyNow, isBuying, buyNowLabel } = useBuyNow();
+  const openCart = () => {
+    prepareCartForOpen();
+    setIsCartOpen(true);
+  };
+  const handleBuyNow = openCart;
 
   useEffect(() => {
     document.title = 'UnPop! | Radically Honest Botanical Craft Soft Drinks';
@@ -131,6 +133,7 @@ export default function Home() {
       <SiteHeader
         leftLinkHref="#our-story"
         leftLinkLabel="Our Story"
+        onBuyNow={handleBuyNow}
         mobileLinks={[
           { href: "#our-story", label: "Our Story" },
           { href: "/contact-us", label: "Contact Us" },
@@ -189,23 +192,22 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={handleBuyNow}
-                disabled={isBuying}
                 className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-[0.7rem] sm:text-xs 
                 md:text-sm font-semibold bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
                 hover:text-black transition uppercase tracking-widest font-montserrat 
-                whitespace-nowrap cursor-pointer md:z-[10000] disabled:opacity-50 disabled:cursor-not-allowed'
+                whitespace-nowrap cursor-pointer md:z-[10000]'
                 style={{
                   border: `1px solid #FF1275`,
                   position: "relative",
                   pointerEvents: "auto"
                 }}
               >
-                {buyNowLabel || "Buy now"}
+                Buy now
               </button>
             </div>
 
             <button
-              onClick={() => setIsCartOpen(true)}
+              onClick={openCart}
               className='p-3 rounded-full transition cursor-pointer'
               style={{
                 border: '2px solid #FF1275',
@@ -271,18 +273,17 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={handleBuyNow}
-                disabled={isBuying}
                 className='px-4 md:px-8 py-2 md:py-3 md:z-[10000] rounded-full text-xs md:text-sm font-semibold 
                 transition uppercase tracking-widest
                 bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
                 hover:text-black
-                font-montserrat cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
+                font-montserrat cursor-pointer'
                 style={{
                   border: `2px solid #FF1275`,
                   position: "relative",
                 }}
               >
-                {buyNowLabel || "BUY a 12 PACK TODAY NOW"}
+                BUY a 12 PACK TODAY NOW
               </button>
             </div>
           </div>
@@ -378,18 +379,17 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={handleBuyNow}
-                disabled={isBuying}
                 className='px-6 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm 
                 font-semibold bg-[#ff127514]  hover:bg-[#FF1275] text-[#FF1275] 
                 hover:text-black transition uppercase tracking-widest 
-                font-montserrat mt-4 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
+                font-montserrat mt-4 cursor-pointer'
                 style={{
                   border: `2px solid #FF1275`,
                   position: "relative",
                   // zIndex: 10000
                 }}
               >
-                {buyNowLabel || "Grab a 12 pack"}
+                Grab a 12 pack
               </button>
             </div>
           </div>
@@ -449,10 +449,9 @@ export default function Home() {
               {/* CTA Button */}
               <button
                 onClick={handleBuyNow}
-                disabled={isBuying}
                 className='px-6 sm:px-10 py-2 sm:py-3 rounded-full text-xs sm:text-sm 
                 bg-[#41062718]  hover:bg-[#FF1275] text-[#FF1275] 
-                hover:text-black transition uppercase tracking-widest font-montserrat cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
+                hover:text-black transition uppercase tracking-widest font-montserrat cursor-pointer'
                 style={{
                   border: "1px solid #FF1275",
                   // backgroundColor: "#41062718",
@@ -462,7 +461,7 @@ export default function Home() {
                   zIndex: 10000
                 }}
               >
-                {buyNowLabel || "TRY UNPOP NOW"}
+                TRY UNPOP NOW
               </button>
             </div>
           </div>
@@ -1648,7 +1647,6 @@ export default function Home() {
       <CartModal
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
-        onCheckout={() => { setIsCartOpen(false); navigate("/checkout"); }}
       />
     </div>
   );

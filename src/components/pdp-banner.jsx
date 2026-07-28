@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { getUnpopSublimeColaProduct } from "../shopifyProduct-unpop-12pk";
 import { createCheckout } from "../createCheckout";
 import { assetUrl } from "../utils/assetUrl";
+import { seedCartStorage } from "../utils/cartStorage";
 import "./pdp.css";
 import "./responsivepdp.css";
 
@@ -66,6 +67,10 @@ export default function PdpBanner({ onAddToCart }) {
         );
         const defaultVariant =
           savedVariant ||
+          data.variants.find((variant) => variant.cans === 12) ||
+          data.variants.find((variant) =>
+            variant.title.toLowerCase().includes("12")
+          ) ||
           data.variants.find((variant) => variant.cans === 6) ||
           data.variants.find((variant) =>
             variant.title.toLowerCase().includes("6")
@@ -126,8 +131,7 @@ export default function PdpBanner({ onAddToCart }) {
   const handleAddToCart = async () => {
     if (!variantId || isAdding) return;
 
-    localStorage.setItem("cartVariantId", variantId);
-    localStorage.setItem("cartQuantity", String(quantity));
+    seedCartStorage({ quantity, variantId });
 
     if (typeof onAddToCart === "function") {
       onAddToCart();
